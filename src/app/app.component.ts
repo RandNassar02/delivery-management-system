@@ -14,6 +14,6 @@ export class AppComponent {
   constructor(private i18nService: I18nService) {}
 
   ngOnInit() {
-    this.i18nService.loadTranslations('en');
+    this.i18nService.loadTranslations('ar');
   }
 }
