@@ -1,0 +1,100 @@
+.auth-page {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.form-side {
+  flex: 1;
+  display: flex;
+  align-items: center; // للتوسيط عموديًا
+  justify-content: center; // للتوسيط أفقيًا
+}
+
+.info-side {
+  flex: 1;
+  background-color: #f9f9f9;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; // لإجبار الصورة تكون وسط المساحة
+}
+
+.info-side img {
+  max-width: 250px;
+  height: auto;
+  margin: 2rem auto 0;
+}
+
+.sign-up-form {
+  max-width: 400px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.sign-up-form input {
+  height: 50px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.sign-up-form small {
+  color: #e74c3c;
+  font-size: 12px;
+  display: block;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+.sign-up-form button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.sign-up-form button:hover {
+  background-color: #333;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+
+  .password-input {
+    width: 100%;
+    padding: 12px; // padding يمين ويسار علشان نترك مكان للأيقونة
+    box-sizing: border-box;
+  }
+
+  .toggle-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+  }
+
+  // ↔️ مكان الأيقونة حسب اتجاه الصفحة
+  :host-context([dir="rtl"]) .toggle-icon {
+    left: 12px;
+    right: auto;
+  }
+
+  :host-context([dir="ltr"]) .toggle-icon {
+    right: 12px;
+    left: auto;
+  }
+}

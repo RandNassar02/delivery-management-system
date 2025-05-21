@@ -1,5 +1,14 @@
 {
-  "test": {
-    "test": "اختبار"
-  }
+  "users": [
+    {
+      "id": "1",
+      "email": "admin",
+      "password": "1234",
+      "userType": "admin"
+    }
+  ],
+  "clients": [],
+  "customers": [],
+  "drivers": [],
+  "deliveryRequests": []
 }

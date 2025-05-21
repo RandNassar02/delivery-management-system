@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 60px;
+
+  position: relative; /* مهمة جدًا عشان نقدر نوسّط العنوان */
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
