@@ -1,0 +1,80 @@
+ .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+   min-height: 100vh;
+}
+
+.main-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.signup h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputbox div {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.errorMessage {
+  margin-top: 5px;
+  color: #d9534f;
+  font-size: 14px;
+}
+
+.errorMessage samp {
+  display: block;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+button[type="submit"]:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
