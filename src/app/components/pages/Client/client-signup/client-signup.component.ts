@@ -12,7 +12,7 @@ import { TranslatePipe } from '../../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-client-signup',
-  imports: [CommonModule, ReactiveFormsModule, TranslatePipe],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './client-signup.component.html',
   styleUrl: './client-signup.component.scss',
 })

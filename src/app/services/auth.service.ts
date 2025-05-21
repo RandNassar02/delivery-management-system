@@ -1,32 +1,40 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/users';
+  private usersUrl = 'http://localhost:3000/users';
+  private customersUrl = 'http://localhost:3000/customers';
   constructor(private http: HttpClient) {}
 
-  signup(user: {
+  signUpCustomer(data: {
+    name: string;
     email: string;
     password: string;
-    userType: string;
+    phone: string;
+    address: string;
   }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/users`, user);
-  }
+    const userPayload = {
+      email: data.email,
+      password: data.password,
+      userType: 'customer',
+    };
 
-  createCustomer(customer: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/customers`, customer);
-  }
+    return this.http.post<any>(this.usersUrl, userPayload).pipe(
+      switchMap((user) => {
+        const customerPayload = {
+          id: user.id,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          address: data.address,
+        };
 
-  createClient(client: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/clients`, client);
-  }
-  checkEmailExists(email: string): Observable<boolean> {
-    return this.http
-      .get<any[]>(`${this.apiUrl}/users?email=${email}`)
-      .pipe(map((users) => users.length > 0));
+        return this.http.post(this.customersUrl, customerPayload);
+      })
+    );
   }
 }

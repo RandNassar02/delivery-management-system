@@ -1,5 +1,11 @@
 {
-  "app": {
-    "name": "Test"
+  "custumer-signUp": {
+    "name": "Name",
+
+    "email": "Email",
+    "password": "Password ",
+    "confirmPassword": "Confirm Password  ",
+    "phoneNumber": "Phone Number",
+    "address": "Address"
   }
 }

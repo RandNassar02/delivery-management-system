@@ -5,24 +5,10 @@
       "email": "admin",
       "password": "1234",
       "userType": "admin"
-    },
-    {
-      "id": "e3f7",
-      "email": "test@test.com",
-      "password": "$2b$10$wXjbTmDGJK8zPxdIGUFwE.hMdIVPXvOB6zj4H3g22RQ2Puhj4QqnS",
-      "userType": "client"
     }
   ],
   "clients": [],
-  "customers": [
-    {
-      "id": "c51f",
-      "name": "test",
-      "email": "test@test.com",
-      "phone": "079 123 4567",
-      "address": "asdfgrfgh"
-    }
-  ],
+  "customers": [],
   "drivers": [],
   "deliveryRequests": []
 }
