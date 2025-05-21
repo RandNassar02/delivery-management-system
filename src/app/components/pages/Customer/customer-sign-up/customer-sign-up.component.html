@@ -1,0 +1,134 @@
+<div class="auth-page">
+  <div class="form-side">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="sign-up-form">
+      <h2>Sign up</h2>
+
+      <input
+        type="text"
+        formControlName="name"
+        [placeholder]="'custumer-signUp.name' | translate"
+      />
+      <div
+        *ngIf="form.controls['name'].touched && form.controls['name'].invalid"
+      >
+        <small *ngIf="form.controls['name'].errors?.['required']"
+          >Name is required</small
+        >
+        <small *ngIf="form.controls['name'].errors?.['minlength']"
+          >Minimum 5 characters</small
+        >
+      </div>
+
+      <input
+        type="email"
+        formControlName="email"
+        [placeholder]="'custumer-signUp.email' | translate"
+      />
+      <div
+        *ngIf="form.controls['email'].touched && form.controls['email'].invalid"
+      >
+        <small *ngIf="form.controls['email'].errors?.['required']"
+          >Email is required</small
+        >
+        <small *ngIf="form.controls['email'].errors?.['email']"
+          >Invalid email format</small
+        >
+      </div>
+      <div class="input-wrapper">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          [placeholder]="'custumer-signUp.password' | translate"
+          class="password-input"
+        />
+        <i
+          class="ri-eye-line toggle-icon"
+          *ngIf="!showPassword"
+          (click)="togglePasswordVisibility()"
+        ></i>
+        <i
+          class="ri-eye-close-line toggle-icon"
+          *ngIf="showPassword"
+          (click)="togglePasswordVisibility()"
+        ></i>
+      </div>
+
+      <div
+        *ngIf="
+          form.controls['password'].touched && form.controls['password'].invalid
+        "
+      >
+        <small *ngIf="form.controls['password'].errors?.['required']"
+          >Password is required</small
+        >
+        <small *ngIf="form.controls['password'].errors?.['minlength']"
+          >Minimum 5 characters</small
+        >
+        <small *ngIf="form.controls['password'].errors?.['pattern']"
+          >Must include uppercase, lowercase, and special character</small
+        >
+      </div>
+      <input
+        type="password"
+        formControlName="confirmPassword"
+        [placeholder]="'custumer-signUp.confirmPassword' | translate"
+      />
+      <div
+        *ngIf="
+          form.get('confirmPassword')?.touched &&
+          form.get('confirmPassword')?.invalid
+        "
+      >
+        <small *ngIf="form.get('confirmPassword')?.errors?.['required']"
+          >Confirmation is required</small
+        >
+      </div>
+      <div
+        *ngIf="form.errors?.['passwordMismatch'] && form.get('confirmPassword')?.touched"
+      >
+        <small>Passwords do not match</small>
+      </div>
+
+      <input
+        type="text"
+        formControlName="phone"
+        [placeholder]="'custumer-signUp.phoneNumber' | translate"
+      />
+      <div
+        *ngIf="form.controls['phone'].touched && form.controls['phone'].invalid"
+      >
+        <small *ngIf="form.controls['phone'].errors?.['required']"
+          >Phone number is required</small
+        >
+        <small *ngIf="form.controls['phone'].errors?.['pattern']"
+          >Must be exactly 10 digits</small
+        >
+      </div>
+
+      <input
+        type="text"
+        formControlName="address"
+        [placeholder]="'custumer-signUp.address' | translate"
+      />
+      <div
+        *ngIf="
+          form.controls['address'].touched && form.controls['address'].invalid
+        "
+      >
+        <small *ngIf="form.controls['address'].errors?.['required']"
+          >Address is required</small
+        >
+        <small *ngIf="form.controls['address'].errors?.['minlength']"
+          >Minimum 5 characters</small
+        >
+      </div>
+
+      <button type="submit" [disabled]="form.invalid">Create Account</button>
+    </form>
+  </div>
+
+  <div class="info-side">
+    <img src="assets/leaves.png" alt="plant" />
+  </div>
+</div>
+<p-toast></p-toast>

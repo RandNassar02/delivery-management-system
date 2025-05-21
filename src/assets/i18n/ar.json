@@ -1,5 +1,10 @@
 {
-  "app": {
-    "name": "اختبار"
+  "custumer-signUp": {
+    "name": "الاسم",
+    "email": "البريد الالكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تاكيد كلمة المرور",
+    "phoneNumber": "رقم الهاتف",
+    "address": "العنوان"
   }
 }

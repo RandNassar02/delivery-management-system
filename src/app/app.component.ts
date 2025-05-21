@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TranslatePipe } from './i18n/translate.pipe';
+
 import { I18nService } from './i18n/i18n.service';
+
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { CustomerSignUpComponent } from './components/pages/Customer/customer-sign-up/customer-sign-up.component';
+import { HeaderComponent } from './components/shared/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TranslatePipe],
+  imports: [
+    RouterOutlet,
+    CustomerSignUpComponent,
+    FooterComponent,
+    HeaderComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
