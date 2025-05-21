@@ -91,6 +91,12 @@
                 Confirm Password is required
               </samp>
             </div>
+            <div
+              class="errorMessage"
+              *ngIf="formClientSignup.errors?.['passwordMismatch']"
+            >
+              <samp>Passwords do not match</samp>
+            </div>
           </div>
 
           <div class="phone">
@@ -137,3 +143,4 @@
     </div>
   </div>
 </section>
+<p-toast></p-toast>

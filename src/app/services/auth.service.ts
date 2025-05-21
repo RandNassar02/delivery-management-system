@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, switchMap } from 'rxjs';
+import * as bcrypt from 'bcryptjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,9 +18,11 @@ export class AuthService {
     phone: string;
     address: string;
   }): Observable<any> {
+    const hashedPassword = bcrypt.hashSync(data.password, 10);
+
     const userPayload = {
       email: data.email,
-      password: data.password,
+      password: hashedPassword,
       userType: 'customer',
     };
 
