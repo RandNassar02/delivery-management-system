@@ -5,10 +5,24 @@
       "email": "admin",
       "password": "1234",
       "userType": "admin"
+    },
+    {
+      "id": "97bb",
+      "email": "test@test.com",
+      "password": "$2b$10$9YkB.T.k1Nq.HbdKOmzs9uGluBGzNY.UQMOUDo5jO2KTnHKzuys2O",
+      "userType": "client"
     }
   ],
   "clients": [],
-  "customers": [],
+  "customers": [
+    {
+      "id": "d468",
+      "name": "test",
+      "email": "test@test.com",
+      "phone": "1122222234",
+      "address": "hbgvfcdxs"
+    }
+  ],
   "drivers": [],
   "deliveryRequests": []
 }

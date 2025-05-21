@@ -9,17 +9,24 @@ import {
 import { ClientService } from '../../../../services/client.service';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../../i18n/translate.pipe';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-client-signup',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ToastModule],
   templateUrl: './client-signup.component.html',
   styleUrl: './client-signup.component.scss',
+  providers: [MessageService],
 })
 export class ClientSignupComponent {
   formClientSignup!: FormGroup;
 
-  constructor(private fb: FormBuilder, private clientService: ClientService) {}
+  constructor(
+    private fb: FormBuilder,
+    private clientService: ClientService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit(): void {
     this.formClientSignup = this.fb.group(
@@ -53,12 +60,19 @@ export class ClientSignupComponent {
 
     this.clientService.signUpClient(this.formClientSignup.value).subscribe({
       next: () => {
-        alert('Client signed up successfully!');
+        this.messageService.add({
+          severity: 'success',
+          summary: 'sucsses',
+          detail: 'creation account completed successfully',
+        });
         this.formClientSignup.reset();
       },
       error: (err) => {
-        console.error(err);
-        alert('Error during sign up.');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'error!',
+          detail: 'An error occurred during creation account',
+        });
       },
     });
   }
