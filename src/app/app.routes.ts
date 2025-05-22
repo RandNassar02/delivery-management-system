@@ -11,16 +11,20 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'signIn',
+    path: 'signin',
     component: SignInComponent,
   },
   {
-    path: 'signUp',
+    path: 'signup',
     component: CustomerSignUpComponent,
   },
   {
     path: 'signup-client',
     component: ClientSignupComponent,
+  },
+  {
+    path: 'signup-driver',
+    component: HomeComponent, //mest add the driver sign up component
   },
   {
     path: '**',
