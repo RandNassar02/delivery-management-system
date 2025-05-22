@@ -1,16 +1,25 @@
 <header class="header">
   <nav>
-    <img src="assets/logo ghosn.png" class="logo" alt="logo" />
-    <div class="nav-items">
-      <a routerLink="/sign-in">Contact Us</a>
-      <a routerLink="/home">Home</a>
-      <a routerLink="/about">About</a>
-    </div>
-    <div class="nav-links">
-      <button routerLink="/signup-client">Sign In as Client</button>
-
-      <button routerLink="/signIn">Sign In</button>
-      <button routerLink="/signUp">Sign Up</button>
+    <div class="nav-items-container">
+      <div class="nav-logo">
+        <a routerLink="/">
+          <img src="assets/logo ghosn.png" class="logo" alt="logo" />
+        </a>
+        <div class="nav-items">
+          <a routerLink="/contact">Contact Us</a>
+          <a routerLink="/home">Home</a>
+          <a routerLink="/about">About</a>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a routerLink="/signin" class="nav-link-btn nav-link-signin">Sign In</a>
+        <a routerLink="/signup" class="nav-link-btn nav-link-signup">Sign Up</a>
+      </div>
+      <div class="hamburger" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 </header>
