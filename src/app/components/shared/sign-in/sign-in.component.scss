@@ -1,0 +1,142 @@
+.login-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.form-container {
+  // flex: 1;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+}
+
+.logo img {
+  height: 100px;
+  // margin-bottom: 30px;
+}
+
+.title h1 {
+  font-size: 32px;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.title p {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+form input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 17px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+small {
+  color: #e53935;
+  font-size: 13px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+button[type="submit"] {
+  margin-top: 25px;
+  padding: 14px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:disabled {
+  background-color: var(--secondary-color);
+  cursor: not-allowed;
+} 
+
+.image-container {
+  flex: 1;
+  background-color: var(--background-img);
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.image-container h1 {
+  font-size: 26px;
+  color: var(--primary-color);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.image-container span {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.image-container p {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.image-container a {
+  margin-top: 20px;
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.image-container a:hover {
+  color: var(--heading-color);
+}
+
+.image-container img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .form-container, .image-container {
+    padding: 40px 30px;
+    width: 100%;
+  }
+
+  .image-container img {
+    max-width: 250px;
+    margin-top: 25px;
+  }
+}

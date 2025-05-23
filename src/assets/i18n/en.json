@@ -1,4 +1,16 @@
 {
+  "signIn": {
+    "title": "Sign In",
+    "subtitle": "Welcome back! Please enter your details to continue your green journey.",
+    "email": "Email",
+    "password": "Password",
+    "emailRequired": "Email is required and must be valid",
+    "passwordRequired": "Password is required",
+    "dontHaveAccount": "Don't have an account yet? ",
+    "createAccount": "Create one now",
+    "welcomeText": "Start your green journey today",
+    "description": "Discover the joy of plants and create your own natural space."
+  },
   "custumer-signUp": {
     "name": "Name",
 
