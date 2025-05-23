@@ -1,11 +1,15 @@
 <section class="container">
   <div class="main-container">
     <div class="signup">
-      <h2>Sign Up as Client</h2>
+      <h2>{{ "client-signup.title" | translate }}</h2>
       <div class="form-container inputbox">
         <form [formGroup]="formClientSignup" (ngSubmit)="onSubmit()">
           <div class="name">
-            <input type="text" formControlName="name" placeholder="Name" />
+            <input
+              type="text"
+              formControlName="name"
+              placeholder="{{ 'client-signup.name' | translate }}"
+            />
             <div
               class="errorMessage"
               *ngIf="
@@ -14,12 +18,16 @@
               "
             >
               <samp *ngIf="formClientSignup.get('name')?.errors?.['required']">
-                Name is required
+                {{ "massages.nameRequired" | translate }}
               </samp>
             </div>
           </div>
           <div class="email">
-            <input type="email" formControlName="email" placeholder="Email" />
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="{{ 'client-signup.email' | translate }}"
+            />
             <div
               class="errorMessage"
               *ngIf="
@@ -28,10 +36,10 @@
               "
             >
               <samp *ngIf="formClientSignup.get('email')?.errors?.['required']">
-                Email is required
+                {{ "massages.emailRequired" | translate }}
               </samp>
               <samp *ngIf="formClientSignup.get('email')?.errors?.['email']">
-                Valid email is required
+                {{ "massages.emailInvalid" | translate }}
               </samp>
             </div>
           </div>
@@ -39,7 +47,7 @@
             <input
               type="password"
               formControlName="password"
-              placeholder="Password"
+              placeholder="{{ 'client-signup.password' | translate }}"
             />
             <div
               class="errorMessage"
@@ -51,12 +59,12 @@
               <samp
                 *ngIf="formClientSignup.get('password')?.errors?.['required']"
               >
-                Password is required
+                {{ "massages.passwordRequired" | translate }}
               </samp>
               <samp
                 *ngIf="formClientSignup.get('password')?.errors?.['minlength']"
               >
-                Minimum 6 characters
+                {{ "massages.passwordMinLength" | translate }}
               </samp>
               <samp
                 *ngIf="
@@ -64,8 +72,7 @@
                   formClientSignup.get('password')?.touched
                 "
               >
-                Password must contain at least one uppercase letter, one
-                lowercase letter, and one special character
+                {{ "massages.passwordPattern" | translate }}
               </samp>
             </div>
           </div>
@@ -74,7 +81,7 @@
             <input
               type="password"
               formControlName="confirmPassword"
-              placeholder="Confirm Password"
+              placeholder="{{ 'client-signup.confirmPassword' | translate }}"
             />
             <div
               class="errorMessage"
@@ -88,19 +95,23 @@
                   formClientSignup.get('confirmPassword')?.errors?.['required']
                 "
               >
-                Confirm Password is required
+                {{ "massages.confirmPasswordRequired" | translate }}
               </samp>
             </div>
             <div
               class="errorMessage"
               *ngIf="formClientSignup.errors?.['passwordMismatch']"
             >
-              <samp>Passwords do not match</samp>
+              <samp>{{ "massages.passwordsNotMatch" | translate }}</samp>
             </div>
           </div>
 
           <div class="phone">
-            <input type="text" formControlName="phone" placeholder="Phone" />
+            <input
+              type="text"
+              formControlName="phone"
+              placeholder="{{ 'client-signup.phone' | translate }}"
+            />
             <div
               class="errorMessage"
               *ngIf="
@@ -109,7 +120,7 @@
               "
             >
               <samp *ngIf="formClientSignup.get('phone')?.errors?.['required']">
-                Phone is required
+                {{ "massages.phoneRequired" | translate }}
               </samp>
             </div>
           </div>
@@ -118,7 +129,7 @@
             <input
               type="text"
               formControlName="address"
-              placeholder="Address"
+              placeholder="{{ 'client-signup.address' | translate }}"
             />
             <div
               class="errorMessage"
@@ -130,13 +141,13 @@
               <samp
                 *ngIf="formClientSignup.get('address')?.errors?.['required']"
               >
-                Address is required
+                {{ "massages.addressRequired" | translate }}
               </samp>
             </div>
           </div>
 
           <button type="submit" [disabled]="formClientSignup.invalid">
-            Sign Up
+            {{ "client-signup.createAccount" | translate }}
           </button>
         </form>
       </div>

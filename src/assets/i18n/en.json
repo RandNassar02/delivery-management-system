@@ -19,5 +19,30 @@
     "confirmPassword": "Confirm Password  ",
     "phoneNumber": "Phone Number",
     "address": "Address"
+  },
+  "client-signup": {
+    "title": "Client Sign Up",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "phone": "Phone Number",
+    "address": "Address",
+    "createAccount": "Create Account"
+  },
+  "massages": {
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Email is invalid",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Minimum 6 characters",
+    "passwordPattern": "Password must contain at least one uppercase letter, one lowercase letter, and one special character",
+    "confirmPasswordRequired": "Confirm Password is required",
+    "passwordsNotMatch": "Passwords do not match",
+    "phoneRequired": "Phone Number is required",
+    "phoneNumberPattern": "Phone Number must be exactly 10 digits",
+    "addressRequired": "Address is required",
+    "error": "Error",
+    "success": "Success"
   }
 }

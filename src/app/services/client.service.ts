@@ -8,7 +8,7 @@ import * as bcrypt from 'bcryptjs';
 })
 export class ClientService {
   private usersUrl = 'http://localhost:3000/users';
-  private customersUrl = 'http://localhost:3000/customers';
+  private clientsUrl = 'http://localhost:3000/clients';
 
   constructor(private http: HttpClient) {}
 
@@ -36,6 +36,6 @@ export class ClientService {
 
     return this.http
       .post(this.usersUrl, user)
-      .pipe(switchMap(() => this.http.post(this.customersUrl, customer)));
+      .pipe(switchMap(() => this.http.post(this.clientsUrl, customer)));
   }
 }
