@@ -13,13 +13,21 @@
       "userType": "customer"
     },
     {
-      "id": "bdfd",
+      "id": "7f64",
       "email": "client@client.com",
-      "password": "$2b$10$MkiAD6RYYHt7Zqr44x7XBeU0XFAVJPCs0m0F7RzzIKSL1cjLs0C0u",
+      "password": "$2b$10$hOexBLJPLQmhFixJRRGJS.GD.9ukmZcymcedjXBChJKx5.Ob0b5EG",
       "userType": "client"
     }
   ],
-  "clients": [],
+  "clients": [
+    {
+      "id": "8918",
+      "name": "Client",
+      "email": "client@client.com",
+      "phone": "07812345678",
+      "address": "test"
+    }
+  ],
   "customers": [
     {
       "id": "822b",
@@ -27,13 +35,6 @@
       "email": "customers@customers.com",
       "phone": "0782345678",
       "address": "testt"
-    },
-    {
-      "id": "2c57",
-      "name": "Client",
-      "email": "client@client.com",
-      "phone": "078235498",
-      "address": "testtt"
     }
   ],
   "drivers": [],

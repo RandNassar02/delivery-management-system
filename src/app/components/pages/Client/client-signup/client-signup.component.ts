@@ -14,7 +14,7 @@ import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-client-signup',
-  imports: [CommonModule, ReactiveFormsModule, ToastModule],
+  imports: [CommonModule, ReactiveFormsModule, ToastModule, TranslatePipe],
   templateUrl: './client-signup.component.html',
   styleUrl: './client-signup.component.scss',
   providers: [MessageService],
