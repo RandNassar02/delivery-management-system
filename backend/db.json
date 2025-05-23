@@ -2,25 +2,38 @@
   "users": [
     {
       "id": "1",
-      "email": "admin",
+      "email": "admin@Ghosn.com",
       "password": "1234",
       "userType": "admin"
     },
     {
-      "id": "97bb",
-      "email": "test@test.com",
-      "password": "$2b$10$9YkB.T.k1Nq.HbdKOmzs9uGluBGzNY.UQMOUDo5jO2KTnHKzuys2O",
+      "id": "822b",
+      "email": "customers@customers.com",
+      "password": "$2b$10$hCuVFDUQ5nGc8.VQ9jKsfuBm.cLx4x3hhj50K2zeo71QwJiMq0oym",
+      "userType": "customer"
+    },
+    {
+      "id": "bdfd",
+      "email": "client@client.com",
+      "password": "$2b$10$MkiAD6RYYHt7Zqr44x7XBeU0XFAVJPCs0m0F7RzzIKSL1cjLs0C0u",
       "userType": "client"
     }
   ],
   "clients": [],
   "customers": [
     {
-      "id": "d468",
-      "name": "test",
-      "email": "test@test.com",
-      "phone": "1122222234",
-      "address": "hbgvfcdxs"
+      "id": "822b",
+      "name": "customers",
+      "email": "customers@customers.com",
+      "phone": "0782345678",
+      "address": "testt"
+    },
+    {
+      "id": "2c57",
+      "name": "Client",
+      "email": "client@client.com",
+      "phone": "078235498",
+      "address": "testtt"
     }
   ],
   "drivers": [],
