@@ -30,6 +30,7 @@ import { AuthService } from '../../../../services/auth.service';
 export class CustomerSignUpComponent {
   form: FormGroup;
   showPassword = false;
+  showConfirmPassword = false;
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
@@ -69,18 +70,23 @@ export class CustomerSignUpComponent {
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
+
+  toggleConfirmPasswordVisibility() {
+    this.showConfirmPassword = !this.showConfirmPassword;
+  }
+
   showSuccess() {
     this.messageService.add({
       severity: 'success',
       summary: 'sucsses',
-      detail: 'Registration completed successfully',
+      detail: 'Creation Account Completed Successfully',
     });
   }
   showError() {
     this.messageService.add({
       severity: 'error',
       summary: 'error!',
-      detail: 'An error occurred during registration',
+      detail: 'Error Please Try Again',
     });
   }
 }

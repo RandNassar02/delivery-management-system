@@ -1,8 +1,9 @@
 <div class="auth-page">
   <div class="form-side">
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="sign-up-form">
-      <h2>Sign up</h2>
+      <h1>SignUp</h1>
 
+      <!-- الاسم -->
       <input
         type="text"
         formControlName="name"
@@ -19,6 +20,7 @@
         >
       </div>
 
+      <!-- الايميل -->
       <input
         type="email"
         formControlName="email"
@@ -34,6 +36,8 @@
           >Invalid email format</small
         >
       </div>
+
+      <!-- كلمة السر -->
       <div class="input-wrapper">
         <input
           [type]="showPassword ? 'text' : 'password'"
@@ -52,7 +56,6 @@
           (click)="togglePasswordVisibility()"
         ></i>
       </div>
-
       <div
         *ngIf="
           form.controls['password'].touched && form.controls['password'].invalid
@@ -64,31 +67,49 @@
         <small *ngIf="form.controls['password'].errors?.['minlength']"
           >Minimum 5 characters</small
         >
-        <small *ngIf="form.controls['password'].errors?.['pattern']"
-          >Must include uppercase, lowercase, and special character</small
-        >
+        <small *ngIf="form.controls['password'].errors?.['pattern']">
+          Must include uppercase, lowercase, and special character
+        </small>
       </div>
-      <input
-        type="password"
-        formControlName="confirmPassword"
-        [placeholder]="'custumer-signUp.confirmPassword' | translate"
-      />
+
+      <!-- تأكيد كلمة السر -->
+      <div class="input-wrapper">
+        <input
+          [type]="showConfirmPassword ? 'text' : 'password'"
+          formControlName="confirmPassword"
+          [placeholder]="'custumer-signUp.confirmPassword' | translate"
+          class="password-input"
+        />
+        <i
+          class="ri-eye-line toggle-icon"
+          *ngIf="!showConfirmPassword"
+          (click)="toggleConfirmPasswordVisibility()"
+        ></i>
+        <i
+          class="ri-eye-close-line toggle-icon"
+          *ngIf="showConfirmPassword"
+          (click)="toggleConfirmPasswordVisibility()"
+        ></i>
+      </div>
+
       <div
         *ngIf="
           form.get('confirmPassword')?.touched &&
           form.get('confirmPassword')?.invalid
         "
       >
-        <small *ngIf="form.get('confirmPassword')?.errors?.['required']"
-          >Confirmation is required</small
-        >
+        <small *ngIf="form.get('confirmPassword')?.errors?.['required']">
+          Confirmation is required
+        </small>
       </div>
+
       <div
         *ngIf="form.errors?.['passwordMismatch'] && form.get('confirmPassword')?.touched"
       >
         <small>Passwords do not match</small>
       </div>
 
+      <!-- الهاتف -->
       <input
         type="text"
         formControlName="phone"
@@ -105,6 +126,7 @@
         >
       </div>
 
+      <!-- العنوان -->
       <input
         type="text"
         formControlName="address"
@@ -128,7 +150,11 @@
   </div>
 
   <div class="info-side">
-    <img src="assets/leaves.png" alt="plant" />
+    <img
+      src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1747913484/elegant-eucalyptus-background_onswdp.jpg"
+      alt="plant"
+    />
   </div>
 </div>
+
 <p-toast></p-toast>
