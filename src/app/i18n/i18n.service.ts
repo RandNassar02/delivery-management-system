@@ -17,10 +17,19 @@ export class I18nService {
         this.http.get<Record<string, string>>(`assets/i18n/${lang}.json`)
       );
       this.translations = res;
-      this.currentLanguage = 'ar';
+      this.currentLanguage = lang;
 
-      localStorage.setItem('lang', lang);
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      if (
+        typeof window !== 'undefined' &&
+        typeof window.localStorage !== 'undefined'
+      ) {
+        localStorage.setItem('lang', lang);
+      }
+
+      if (typeof document !== 'undefined') {
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      }
+
       return true;
     } catch (err) {
       console.log('Error loading translations:', err);

@@ -22,6 +22,7 @@ export class HeaderComponent {
 
   checkLoginStatus() {
     this.isLoggedIn = this.authService.isLoggedIn();
+    debugger;
     if (this.isLoggedIn) {
       const user = JSON.parse(localStorage.getItem('currentUser')!);
       this.userType = user.userType;
