@@ -1,5 +1,5 @@
 .header {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: var(--background-color);
   position: sticky;
   top: 0;
@@ -29,12 +29,13 @@ nav {
 }
 
 .logo {
-  height: 85px;
+  height: 40px;
   width: auto;
   object-fit: contain;
 }
 
-.nav-items, .nav-links {
+.nav-items,
+.nav-links {
   display: flex;
   gap: 1.5rem;
 }
@@ -44,12 +45,12 @@ nav {
   color: var(--text-color);
   font-weight: 500;
   font-size: 1rem;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   transition: color 0.3s ease;
 }
 
 .nav-items a:hover {
-  color: #1a3a0c; 
+  color: #1a3a0c;
 }
 
 .nav-link-btn {
@@ -58,7 +59,7 @@ nav {
   text-decoration: none;
   padding-top: 0.5rem;
   padding-right: 0.8rem;
-  padding-bottom: 0.5rem;  
+  padding-bottom: 0.5rem;
   border-radius: 8px;
   font-size: 0.95rem;
   font-weight: 500;
@@ -66,14 +67,13 @@ nav {
 }
 
 .nav-link-btn:hover {
-  color: #3a6f2e; 
+  color: #3a6f2e;
   transform: translateY(-1px);
   text-decoration: underline;
 }
 
-
 .hamburger {
-  display: none; 
+  display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
@@ -92,7 +92,7 @@ nav {
   }
 
   .hamburger {
-    display: flex;  
+    display: flex;
   }
 
   .nav-items,
@@ -102,7 +102,7 @@ nav {
 
   .nav-items-container.open .nav-items,
   .nav-items-container.open .nav-links {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     width: 100%;
   }
@@ -110,6 +110,6 @@ nav {
   .nav-items a {
     padding: 10px;
     text-align: center;
-    width: 100%; 
+    width: 100%;
   }
 }
