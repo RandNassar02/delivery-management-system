@@ -28,6 +28,8 @@ export class AppComponent {
     this.i18nService.loadTranslations(this.i18nService.getLanguage());
 
     console.log('test');
+    console.log('test2');
+
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
