@@ -1,0 +1,249 @@
+<section class="container">
+  <div class="main-container">
+    <div class="signup">
+      <h2>{{ "client-signup.title" | translate }}</h2>
+      <div class="form-container inputbox">
+        <form [formGroup]="formClientSignup" (ngSubmit)="onSubmit()">
+          <div class="name">
+            <input
+              type="text"
+              formControlName="name"
+              placeholder="{{ 'client-signup.name' | translate }}"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formClientSignup.get('name')?.touched &&
+                formClientSignup.get('name')?.invalid
+              "
+            >
+              <samp *ngIf="formClientSignup.get('name')?.errors?.['required']">
+                {{ "massages.nameRequired" | translate }}
+              </samp>
+            </div>
+          </div>
+          <div class="email">
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="{{ 'client-signup.email' | translate }}"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formClientSignup.get('email')?.touched &&
+                formClientSignup.get('email')?.invalid
+              "
+            >
+              <samp *ngIf="formClientSignup.get('email')?.errors?.['required']">
+                {{ "massages.emailRequired" | translate }}
+              </samp>
+              <samp *ngIf="formClientSignup.get('email')?.errors?.['email']">
+                {{ "massages.emailInvalid" | translate }}
+              </samp>
+            </div>
+          </div>
+          <div class="password">
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="{{ 'client-signup.password' | translate }}"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formClientSignup.get('password')?.touched &&
+                formClientSignup.get('password')?.invalid
+              "
+            >
+              <samp
+                *ngIf="formClientSignup.get('password')?.errors?.['required']"
+              >
+                {{ "massages.passwordRequired" | translate }}
+              </samp>
+              <samp
+                *ngIf="formClientSignup.get('password')?.errors?.['minlength']"
+              >
+                {{ "massages.passwordMinLength" | translate }}
+              </samp>
+              <samp
+                *ngIf="
+                  formClientSignup.get('password')?.errors?.['pattern'] &&
+                  formClientSignup.get('password')?.touched
+                "
+              >
+                {{ "massages.passwordPattern" | translate }}
+              </samp>
+            </div>
+          </div>
+
+          <div class="confirm-password">
+            <input
+              type="password"
+              formControlName="confirmPassword"
+              placeholder="{{ 'client-signup.confirmPassword' | translate }}"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formClientSignup.get('confirmPassword')?.touched &&
+                formClientSignup.get('confirmPassword')?.invalid
+              "
+            >
+              <samp
+                *ngIf="
+                  formClientSignup.get('confirmPassword')?.errors?.['required']
+                "
+              >
+                {{ "massages.confirmPasswordRequired" | translate }}
+              </samp>
+            </div>
+            <div
+              class="errorMessage"
+              *ngIf="formClientSignup.errors?.['passwordMismatch']"
+            >
+              <samp>{{ "massages.passwordsNotMatch" | translate }}</samp>
+            </div>
+          </div>
+
+          <div class="phone">
+            <input
+              type="text"
+              formControlName="phone"
+              placeholder="{{ 'client-signup.phone' | translate }}"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formClientSignup.get('phone')?.touched &&
+                formClientSignup.get('phone')?.invalid
+              "
+            >
+              <samp *ngIf="formClientSignup.get('phone')?.errors?.['required']">
+                {{ "massages.phoneRequired" | translate }}
+              </samp>
+            </div>
+          </div>
+
+          <div class="bank-name">
+            <input
+              type="text"
+              formControlName="bankName"
+              placeholder="{{ 'client-signup.bankName' | translate }}"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formClientSignup.get('bankName')?.touched &&
+                formClientSignup.get('bankName')?.invalid
+              "
+            >
+              <samp
+                *ngIf="formClientSignup.get('bankName')?.errors?.['required']"
+              >
+                {{ "massages.bankNameRequired" | translate }}
+              </samp>
+            </div>
+          </div>
+
+          <div class="bank-account">
+            <input
+              type="text"
+              formControlName="bankAccount"
+              placeholder="{{ 'client-signup.bankAccount' | translate }}"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formClientSignup.get('bankAccount')?.touched &&
+                formClientSignup.get('bankAccount')?.invalid
+              "
+            >
+              <samp
+                *ngIf="formClientSignup.get('bankAccount')?.errors?.['required']"
+              >
+                {{ "massages.bankAccountRequired" | translate }}
+              </samp>
+            </div>
+          </div>
+
+          <div class="address">
+            <input
+              type="text"
+              formControlName="address"
+              placeholder="{{ 'client-signup.address' | translate }}"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formClientSignup.get('address')?.touched &&
+                formClientSignup.get('address')?.invalid
+              "
+            >
+              <samp
+                *ngIf="formClientSignup.get('address')?.errors?.['required']"
+              >
+                {{ "massages.addressRequired" | translate }}
+              </samp>
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="formClientSignup.invalid">
+            {{ "client-signup.createAccount" | translate }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="info-side">
+    <div class="logo">
+      <a routerLink="/">
+        <img src="assets/logo ghosn.png" alt="logo" class="logo" />
+      </a>
+    </div>
+    <div class="content welcome-message">
+      <h3>{{ "client-signup.welcomeTitle" | translate }}</h3>
+      <p class="highlighted-paragraph">
+        {{ "client-signup.welcomeParagraph1" | translate }}
+      </p>
+      <p>{{ "client-signup.welcomeParagraph2" | translate }}</p>
+      <p>{{ "client-signup.welcomeParagraph3" | translate }}</p>
+      <p class="highlighted-paragraph">
+        {{ "client-signup.welcomeParagraph4" | translate }}
+      </p>
+      <p>{{ "client-signup.welcomeParagraph5" | translate }}</p>
+    </div>
+
+    <!-- <div class="welcome-message">
+      <h2>Welcome to the <span>Ghosn family!</span></h2>
+      <p>
+        We are here to pave the way for you towards a
+        <strong>unique and exceptional experience.</strong>
+      </p>
+      <p>
+        Please fill in your details carefully, as each request is a step towards
+        building a <em>relationship of trust and respect.</em>
+      </p>
+      <p>
+        After submitting your request, our dedicated team will carefully review
+        it to ensure <strong>quality service.</strong>
+      </p>
+      <p>
+        We believe that every activated account is the beginning of a new
+        opportunity and <span class="highlight">mutual growth.</span>
+      </p>
+      <p>
+        For any inquiries or assistance, our team is ready to support you
+        anytime.
+      </p>
+    </div> -->
+
+    <!-- <div class="image">
+      <img
+        src="https://res.cloudinary.com/dblomu3ce/image/upload/v1748026783/pngwing.com_dhhlpv.png"
+        alt="plant"
+      />
+    </div> -->
+  </div>
+</section>
+<p-toast></p-toast>

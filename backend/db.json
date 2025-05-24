@@ -1,5 +1,59 @@
 {
-  "test": {
-    "test": "اختبار"
-  }
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@Ghosn.com",
+      "password": "1234",
+      "userType": "admin"
+    },
+    {
+      "id": "822b",
+      "email": "customers@customers.com",
+      "password": "$2b$10$hCuVFDUQ5nGc8.VQ9jKsfuBm.cLx4x3hhj50K2zeo71QwJiMq0oym",
+      "userType": "customer"
+    },
+    {
+      "id": "46d1",
+      "email": "client@client.jo",
+      "password": "$2b$10$Vabrm6LCI9SCGes1oxO6ZeoOf1jt5WL/L7bBbhslvuTvR1v.QHJYG",
+      "userType": "client"
+    },
+    {
+      "id": "6a05",
+      "email": "Client2@Client2.jo",
+      "password": "$2b$10$sDJrdcj4kvF3XtmjVXF2venFnxcNiO/9xBaNi.2l0C0gx48PrVhwy",
+      "userType": "client"
+    }
+  ],
+  "clients": [
+    {
+      "id": "46d1",
+      "userId": "46d1",
+      "name": "Client",
+      "email": "client@client.jo",
+      "phone": "078123456",
+      "address": "jordan",
+      "approvalStatus": "pending"
+    },
+    {
+      "id": "6a05",
+      "userId": "6a05",
+      "name": "Client2",
+      "email": "Client2@Client2.jo",
+      "phone": "07823456789",
+      "address": "jordan",
+      "approvalStatus": "approved"
+    }
+  ],
+  "customers": [
+    {
+      "id": "822b",
+      "name": "customers",
+      "email": "customers@customers.com",
+      "phone": "0782345678",
+      "address": "testt"
+    }
+  ],
+  "drivers": [],
+  "deliveryRequests": []
 }

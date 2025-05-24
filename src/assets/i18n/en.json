@@ -1,5 +1,61 @@
 {
-  "app": {
-    "name": "Test"
+  "img": {
+    "logo": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1747940982/ghosn_home_qurktu.png"
+  },
+  "signIn": {
+    "title": "Sign In",
+    "subtitle": "Welcome back! Please enter your details to continue your green journey.",
+    "email": "Email",
+    "password": "Password",
+    "emailRequired": "Email is required and must be valid",
+    "passwordRequired": "Password is required",
+    "dontHaveAccount": "Don't have an account yet? ",
+    "createAccount": "Create one now",
+    "welcomeText": "Start your green journey today",
+    "description": "Discover the joy of plants and create your own natural space."
+  },
+  "custumer-signUp": {
+    "name": "Name",
+
+    "email": "Email",
+    "password": "Password ",
+    "confirmPassword": "Confirm Password  ",
+    "phoneNumber": "Phone Number",
+    "address": "Address"
+  },
+  "client-signup": {
+    "title": "Client Sign Up",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "phone": "Phone Number",
+    "bankName": "Bank Name",
+    "bankAccount": "Bank Account",
+    "address": "Address",
+    "createAccount": "Create Account",
+    "welcomeTitle": "Welcome to the Ghosn family!",
+    "welcomeParagraph1": "We are here to pave the way for you towards a unique and exceptional experience.",
+    "welcomeParagraph2": "Please fill in your details carefully, as each request is a step towards building a relationship of trust and respect.",
+    "welcomeParagraph3": "After submitting your request, our dedicated team will carefully review it to ensure quality service.",
+    "welcomeParagraph4": "We believe that every activated account is the beginning of a new opportunity and mutual growth.",
+    "welcomeParagraph5": "For any inquiries or assistance, our team is ready to support you anytime."
+  },
+  "massages": {
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Email is invalid",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Minimum 6 characters",
+    "passwordPattern": "Password must contain at least one uppercase letter, one lowercase letter, and one special character",
+    "confirmPasswordRequired": "Confirm Password is required",
+    "passwordsNotMatch": "Passwords do not match",
+    "phoneRequired": "Phone Number is required",
+    "phoneNumberPattern": "Phone Number must be exactly 10 digits",
+    "addressRequired": "Address is required",
+    "error": "Error",
+    "success": "Success",
+    "bankNameRequired": "Bank Name is required",
+    "bankAccountRequired": "Bank Account is required"
   }
 }

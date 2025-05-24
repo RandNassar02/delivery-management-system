@@ -1,5 +1,20 @@
+<<<<<<< HEAD
 <h1>
   {{ "app.name" | translate }}
 </h1>
 <h2>Delivry manegment web</h2>
 <p>hello linda</p>
+=======
+<!-- <app-header *ngIf="showHeader"></app-header> -->
+<div class="header">
+  @if(showHeader){
+  <app-header></app-header>
+  }
+</div>
+<div class="page-container">
+  <router-outlet></router-outlet>
+</div>
+<div class="footer">
+  <app-footer></app-footer>
+</div>
+>>>>>>> f67b5bf322a1f183b06832d09cf60fde77331bd0
