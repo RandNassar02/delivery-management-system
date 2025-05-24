@@ -1,4 +1,7 @@
 {
+  "img": {
+    "logo": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748073639/ghosn_home_english_gzfjqr.png"
+  },
   "signIn": {
     "title": "تسجيل الدخول",
     "subtitle": "مرحبا بعودتك! يرجى إدخال بياناتك لمتابعة رحلتك الخضراء.",
@@ -26,8 +29,16 @@
     "password": "كلمة المرور",
     "confirmPassword": "تاكيد كلمة المرور",
     "phone": "رقم الهاتف",
+    "bankName": "اسم البنك",
+    "bankAccount": "رقم الحساب البنكي",
     "address": "العنوان",
-    "createAccount": "إنشاء حساب جديد"
+    "createAccount": "إنشاء حساب جديد",
+    "welcomeTitle": "أهلاً بك في عائلة غصن!",
+    "welcomeParagraph1": "نحن هنا لنمهد لك الطريق نحو تجربة مميزة وفريدة.",
+    "welcomeParagraph2": "يرجى تعبئة بياناتك بدقة، فكل طلب هو خطوة نحو بناء علاقة ثقة واحترام.",
+    "welcomeParagraph3": "بعد تقديم طلبك، سيقوم فريقنا المختص بمراجعته بعناية لضمان جودة الخدمة.",
+    "welcomeParagraph4": "نحن نؤمن بأن كل حساب يُفعّل هو بداية لفرصة جديدة ونمو مشترك.",
+    "welcomeParagraph5": "لأي استفسار أو مساعدة، فريقنا جاهز لدعمك في أي وقت."
   },
   "massages": {
     "nameRequired": "الاسم مطلوب",
@@ -42,6 +53,8 @@
     "phoneNumberPattern": "رقم الهاتف يجب أن يكون مكون من 10 أرقام",
     "addressRequired": "العنوان مطلوب",
     "error": "خطأ",
-    "success": "نجاح"
+    "success": "نجاح",
+    "bankNameRequired": "اسم البنك مطلوب",
+    "bankAccountRequired": "رقم حساب البنك مطلوب"
   }
 }

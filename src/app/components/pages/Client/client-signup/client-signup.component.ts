@@ -11,10 +11,17 @@ import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../../i18n/translate.pipe';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-client-signup',
-  imports: [CommonModule, ReactiveFormsModule, ToastModule, TranslatePipe],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ToastModule,
+    TranslatePipe,
+    RouterLink,
+  ],
   templateUrl: './client-signup.component.html',
   styleUrl: './client-signup.component.scss',
   providers: [MessageService],
@@ -43,6 +50,8 @@ export class ClientSignupComponent {
         ],
         confirmPassword: ['', [Validators.required]],
         phone: ['', [Validators.required]],
+        bankName: ['', [Validators.required]],
+        bankAccount: ['', [Validators.required]],
         address: ['', [Validators.required]],
       },
       { validators: this.passwordMatchValidator }
@@ -68,11 +77,20 @@ export class ClientSignupComponent {
         this.formClientSignup.reset();
       },
       error: (err) => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'error!',
-          detail: 'An error occurred during creation account',
-        });
+        if (err.message === 'This client name is already in use.') {
+          this.messageService.add({
+            severity: 'warn',
+            summary: 'Name Exists',
+            detail:
+              'This client name is already in use. Please choose another.',
+          });
+        } else {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'An error occurred during account creation.',
+          });
+        }
       },
     });
   }
