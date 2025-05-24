@@ -13,19 +13,36 @@
       "userType": "customer"
     },
     {
-      "id": "7f64",
-      "email": "client@client.com",
-      "password": "$2b$10$hOexBLJPLQmhFixJRRGJS.GD.9ukmZcymcedjXBChJKx5.Ob0b5EG",
+      "id": "46d1",
+      "email": "client@client.jo",
+      "password": "$2b$10$Vabrm6LCI9SCGes1oxO6ZeoOf1jt5WL/L7bBbhslvuTvR1v.QHJYG",
+      "userType": "client"
+    },
+    {
+      "id": "6a05",
+      "email": "Client2@Client2.jo",
+      "password": "$2b$10$sDJrdcj4kvF3XtmjVXF2venFnxcNiO/9xBaNi.2l0C0gx48PrVhwy",
       "userType": "client"
     }
   ],
   "clients": [
     {
-      "id": "8918",
+      "id": "46d1",
+      "userId": "46d1",
       "name": "Client",
-      "email": "client@client.com",
-      "phone": "07812345678",
-      "address": "test"
+      "email": "client@client.jo",
+      "phone": "078123456",
+      "address": "jordan",
+      "approvalStatus": "pending"
+    },
+    {
+      "id": "6a05",
+      "userId": "6a05",
+      "name": "Client2",
+      "email": "Client2@Client2.jo",
+      "phone": "07823456789",
+      "address": "jordan",
+      "approvalStatus": "approved"
     }
   ],
   "customers": [
