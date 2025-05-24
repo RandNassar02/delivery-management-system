@@ -19,7 +19,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'delivery-management-system';
+  title = 'delivery-management-system-version1';
+  title1 = 'Hello World';
   showHeader = true;
 
   constructor(private i18nService: I18nService, private router: Router) {}

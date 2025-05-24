@@ -2,7 +2,7 @@ export type ApprovalStatus = 'pending' | 'approved' | 'rejected';
 
 export interface Client {
   id: number;
-  name: string;
+  username: string;
   email: string;
   phone: string;
   bankName: string;
