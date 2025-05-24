@@ -17,6 +17,8 @@ export class ClientService {
     email: string;
     password: string;
     phone: string;
+    bankName: string;
+    bankAccount: string;
     address: string;
   }): Observable<any> {
     const hashedPassword = bcrypt.hashSync(formData.password, 10);
@@ -27,15 +29,38 @@ export class ClientService {
       userType: 'client',
     };
 
-    const customer = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      address: formData.address,
-    };
-
     return this.http
-      .post(this.usersUrl, user)
-      .pipe(switchMap(() => this.http.post(this.clientsUrl, customer)));
+      .get<any[]>(`${this.clientsUrl}?name=${formData.name}`)
+      .pipe(
+        switchMap((clientsWithSameName) => {
+          if (clientsWithSameName.length > 0) {
+            throw new Error('This client name is already in use.');
+          }
+
+          return this.http.post(this.usersUrl, user);
+        }),
+        switchMap((newUser: any) => {
+          const client = {
+            id: newUser.id,
+            userId: newUser.id,
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            bankName: formData.bankName,
+            bankAccount: formData.bankAccount,
+            address: formData.address,
+            approvalStatus: 'pending',
+          };
+          return this.http.post(this.clientsUrl, client);
+        })
+      );
+  }
+
+  getClientById(id: string): Observable<any> {
+    return this.http.get(`${this.clientsUrl}/${id}`);
+  }
+
+  updateClient(id: number, data: any): Observable<any> {
+    return this.http.put(`${this.clientsUrl}/${id}`, data);
   }
 }

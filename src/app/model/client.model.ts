@@ -1,7 +1,8 @@
 export type ApprovalStatus = 'pending' | 'approved' | 'rejected';
 
 export interface Client {
-  id: number;
+  id: string;
+  userId: number;
   username: string;
   email: string;
   phone: string;

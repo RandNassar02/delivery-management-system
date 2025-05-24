@@ -28,6 +28,7 @@ export class AppComponent {
   ngOnInit() {
     this.i18nService.loadTranslations(this.i18nService.getLanguage());
 
+    console.log('test');
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
