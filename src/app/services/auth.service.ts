@@ -52,7 +52,12 @@ export class AuthService {
           throw new Error('Invalid email or password');
         }
 
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        if (
+          typeof window !== 'undefined' &&
+          typeof window.localStorage !== 'undefined'
+        ) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+        }
         return user;
       }),
       catchError((err) => throwError(() => err))
@@ -60,15 +65,30 @@ export class AuthService {
   }
 
   getUserType(): UserType | null {
-    const user = JSON.parse(localStorage.getItem('currentUser') || 'null');
-    return user?.userType || null;
+    if (
+      typeof window !== 'undefined' &&
+      typeof window.localStorage !== 'undefined'
+    ) {
+      const user = JSON.parse(localStorage.getItem('currentUser') || 'null');
+      return user?.userType || null;
+    }
+    return null;
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('currentUser');
+    return (
+      typeof window !== 'undefined' &&
+      typeof window.localStorage !== 'undefined' &&
+      !!localStorage.getItem('currentUser')
+    );
   }
 
   logout() {
-    localStorage.removeItem('currentUser');
+    if (
+      typeof window !== 'undefined' &&
+      typeof window.localStorage !== 'undefined'
+    ) {
+      localStorage.removeItem('currentUser');
+    }
   }
 }
