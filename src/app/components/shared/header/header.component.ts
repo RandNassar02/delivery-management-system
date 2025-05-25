@@ -14,6 +14,7 @@ export class HeaderComponent {
   isMenuOpen = false;
   isLoggedIn = false;
   userType: string | null = null;
+  // dropdownOpen = false;
 
   constructor(private authService: AuthService, private router: Router) {}
   ngOnInit(): void {
@@ -51,4 +52,11 @@ export class HeaderComponent {
       navItemsContainer?.classList.remove('open');
     }
   }
+  // toggleDropdown() {
+  //   this.dropdownOpen = !this.dropdownOpen;
+  // }
+  // goToProfile() {
+  //   this.router.navigate(['/customer-dashboard']);
+  //   this.dropdownOpen = false;
+  // }
 }

@@ -1,9 +1,125 @@
 <div class="profile-container" *ngIf="Customer">
-  <h2>Welcome, {{ Customer.username }}</h2>
+  <div class="profile-picture">
+    <img
+      *ngIf="selectedImage; else defaultImage"
+      [src]="selectedImage"
+      alt="Profile Picture"
+    />
+    <ng-template #defaultImage>
+      <div class="placeholder-circle"></div>
+    </ng-template>
 
-  <div class="profile-details">
-    <p><strong>Email:</strong> {{ Customer.email }}</p>
-    <p><strong>Phone:</strong> {{ Customer.phone }}</p>
-    <p><strong>Address:</strong> {{ Customer.address }}</p>
+    <label class="edit-image-btn">
+      ✏️
+      <input
+        type="file"
+        hidden
+        (change)="onFileSelected($event)"
+        accept="image/*"
+      />
+    </label>
   </div>
+
+  <h2>{{ Customer.name }}</h2>
+  <div class="profile-details">
+    <p>{{ Customer.email }}</p>
+    <p>{{ Customer.phone }}</p>
+    <p>{{ Customer.address }}</p>
+  </div>
+  <div class="buttons-wrapper">
+    <button class="edit-btn" (click)="toggleEditSection()">Edit</button>
+
+    <button class="edit-btn">delivery request history</button>
+    <button class="edit-btn">edit password</button>
+  </div>
+</div>
+<div
+  class="overlay-background"
+  *ngIf="showEditSection"
+  (click)="cancelEdit()"
+></div>
+<!--edit section-->
+<div class="edit-section" *ngIf="showEditSection">
+  <h2>Edit Profile</h2>
+  <form [formGroup]="editForm" (ngSubmit)="saveChanges()">
+    <label>
+      Name:
+      <input type="text" formControlName="name" />
+      <small
+        *ngIf="
+          editForm.controls['name'].touched && editForm.controls['name'].invalid
+        "
+      >
+        <span *ngIf="editForm.controls['name'].errors?.['required']"
+          >Name is required</span
+        >
+        <span *ngIf="editForm.controls['name'].errors?.['minlength']"
+          >Minimum 5 characters</span
+        >
+      </small>
+    </label>
+
+    <label>
+      Email:
+      <input type="email" formControlName="email" />
+      <small
+        *ngIf="
+          editForm.controls['email'].touched &&
+          editForm.controls['email'].invalid
+        "
+      >
+        <span *ngIf="editForm.controls['email'].errors?.['required']"
+          >Email is required</span
+        >
+        <span *ngIf="editForm.controls['email'].errors?.['email']"
+          >Invalid email format</span
+        >
+      </small>
+    </label>
+
+    <label>
+      Phone:
+      <input type="text" formControlName="phone" />
+      <small
+        *ngIf="
+          editForm.controls['phone'].touched &&
+          editForm.controls['phone'].invalid
+        "
+      >
+        <span *ngIf="editForm.controls['phone'].errors?.['required']"
+          >Phone number is required</span
+        >
+        <span *ngIf="editForm.controls['phone'].errors?.['pattern']"
+          >Must be exactly 10 digits</span
+        >
+      </small>
+    </label>
+
+    <label>
+      Address:
+      <input type="text" formControlName="address" />
+      <small
+        *ngIf="
+          editForm.controls['address'].touched &&
+          editForm.controls['address'].invalid
+        "
+      >
+        <span *ngIf="editForm.controls['address'].errors?.['required']"
+          >Address is required</span
+        >
+        <span *ngIf="editForm.controls['address'].errors?.['minlength']"
+          >Minimum 5 characters</span
+        >
+      </small>
+    </label>
+
+    <div class="modal-buttons">
+      <button type="submit" class="save-btn" [disabled]="editForm.invalid">
+        Save
+      </button>
+      <button type="button" class="cancel-btn" (click)="cancelEdit()">
+        Cancel
+      </button>
+    </div>
+  </form>
 </div>
