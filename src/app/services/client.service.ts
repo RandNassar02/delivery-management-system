@@ -42,7 +42,6 @@ export class ClientService {
         switchMap((newUser: any) => {
           const client = {
             id: newUser.id,
-            userId: newUser.id,
             name: formData.name,
             email: formData.email,
             phone: formData.phone,

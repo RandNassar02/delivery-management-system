@@ -17,33 +17,42 @@ export class ClientProfileComponent {
   constructor(private clientService: ClientService, private router: Router) {}
 
   ngOnInit() {
-    const storedClient = localStorage.getItem('currentUser');
-    if (!storedClient) {
-      this.router.navigate(['/login']);
-      return;
-    }
+    if (
+      typeof window !== 'undefined' &&
+      typeof window.localStorage !== 'undefined'
+    ) {
+      const storedClient = localStorage.getItem('currentUser');
+      if (!storedClient) {
+        this.router.navigate(['/login']);
+        return;
+      }
 
-    const clientData: Client = JSON.parse(storedClient);
+      const clientData: Client = JSON.parse(storedClient);
 
-    this.clientService.getClientById(clientData.id).subscribe({
-      next: (freshClient) => {
-        this.client = freshClient;
+      this.clientService.getClientById(clientData.id).subscribe({
+        next: (freshClient) => {
+          this.client = freshClient;
 
-        if (freshClient.approvalStatus !== 'approved') {
-          if (freshClient.approvalStatus === 'pending') {
-            this.approvalMessage =
-              'Your account is pending approval from the admin.';
-          } else if (freshClient.approvalStatus === 'rejected') {
-            this.approvalMessage =
-              'Your account has been rejected. Please contact support.';
+          if (freshClient.approvalStatus !== 'approved') {
+            if (freshClient.approvalStatus === 'pending') {
+              this.approvalMessage =
+                'Your account is pending approval from the admin.';
+            } else if (freshClient.approvalStatus === 'rejected') {
+              this.approvalMessage =
+                'Your account has been rejected. Please contact support.';
+            }
+          } else {
+            this.approvalMessage = null;
           }
-        } else {
-          this.approvalMessage = null;
-        }
-      },
-      error: () => {
-        this.approvalMessage = 'Error loading profile information.';
-      },
-    });
+        },
+        error: () => {
+          this.approvalMessage = 'Error loading profile information.';
+        },
+      });
+    }
+  }
+
+  addPlant() {
+    this.router.navigate(['/client-addplant']);
   }
 }

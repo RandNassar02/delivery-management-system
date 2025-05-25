@@ -50,4 +50,8 @@ export class CustomerService {
       })
     );
   }
+
+  getCustomers(id: number): Observable<any> {
+    return this.http.get(`${this.customersUrl}/${id}`);
+  }
 }
