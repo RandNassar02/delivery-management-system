@@ -29,9 +29,27 @@
       "email": "ddddddddddd@ghhhhhhhhh",
       "password": "$2b$10$x2NnGkUcVw3y.tKFs.w86e.mUvBym6RcDIYW2JhnAVCw8FSeY7slC",
       "userType": "customer"
+    },
+    {
+      "id": "19ac",
+      "email": "client@client.jo",
+      "password": "$2b$10$RJHVCDl4gw/PnJ5vBGbgse3guLT8A2OTcPjV/OOEXn3DFbJ6HBkcm",
+      "userType": "client"
     }
   ],
-  "clients": [],
+  "clients": [
+    {
+      "id": "19ac",
+      "userId": "19ac",
+      "name": "Client",
+      "email": "client@client.jo",
+      "phone": "0789456123",
+      "bankName": "test",
+      "bankAccount": "test",
+      "address": "test",
+      "approvalStatus": "pending"
+    }
+  ],
   "customers": [
     {
       "id": "822b",

@@ -1,1 +1,9 @@
-<p>customer-profile works!</p>
+<div class="profile-container" *ngIf="Customer">
+  <h2>Welcome, {{ Customer.username }}</h2>
+
+  <div class="profile-details">
+    <p><strong>Email:</strong> {{ Customer.email }}</p>
+    <p><strong>Phone:</strong> {{ Customer.phone }}</p>
+    <p><strong>Address:</strong> {{ Customer.address }}</p>
+  </div>
+</div>

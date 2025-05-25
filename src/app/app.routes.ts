@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/pages/Admin/dashboard/dashboard
 import { ClientProfileComponent } from './components/pages/Client/client-profile/client-profile.component';
 import { CustomerProfileComponent } from './components/pages/Customer/customer-profile/customer-profile.component';
 import { DriverProfileComponent } from './components/pages/Driver/driver-profile/driver-profile.component';
+import { ClientAddplantComponent } from './components/pages/Client/client-addplant/client-addplant.component';
 
 export const routes: Routes = [
   {
@@ -45,6 +46,10 @@ export const routes: Routes = [
   {
     path: 'driver-dashboard',
     component: DriverProfileComponent,
+  },
+  {
+    path: 'client-addplant',
+    component: ClientAddplantComponent,
   },
   {
     path: '**',

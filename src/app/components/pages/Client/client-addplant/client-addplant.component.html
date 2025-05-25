@@ -1,1 +1,34 @@
-<p>client-addplant works!</p>
+<div class="add-plant-form">
+  <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
+    <h2>Add New Plant</h2>
+
+    <label>
+      Name:
+      <input formControlName="name" type="text" />
+    </label>
+
+    <label>
+      Category:
+      <select formControlName="category">
+        <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+      </select>
+    </label>
+
+    <label>
+      Price:
+      <input formControlName="price" type="number" />
+    </label>
+
+    <label>
+      Image URL:
+      <input formControlName="image" type="text" />
+    </label>
+
+    <label>
+      Description:
+      <textarea formControlName="description"></textarea>
+    </label>
+
+    <button type="submit" [disabled]="plantForm.invalid">Add Plant</button>
+  </form>
+</div>

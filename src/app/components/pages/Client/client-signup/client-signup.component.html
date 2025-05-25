@@ -13,11 +13,13 @@
             <div
               class="errorMessage"
               *ngIf="
-                formClientSignup.get('name')?.touched &&
-                formClientSignup.get('name')?.invalid
+                formClientSignup.controls['name']?.touched &&
+                formClientSignup.controls['name']?.invalid
               "
             >
-              <samp *ngIf="formClientSignup.get('name')?.errors?.['required']">
+              <samp
+                *ngIf="formClientSignup.controls['name']?.errors?.['required']"
+              >
                 {{ "massages.nameRequired" | translate }}
               </samp>
             </div>
@@ -31,14 +33,18 @@
             <div
               class="errorMessage"
               *ngIf="
-                formClientSignup.get('email')?.touched &&
-                formClientSignup.get('email')?.invalid
+                formClientSignup.controls['email']?.touched &&
+                formClientSignup.controls['email']?.invalid
               "
             >
-              <samp *ngIf="formClientSignup.get('email')?.errors?.['required']">
+              <samp
+                *ngIf="formClientSignup.controls['email']?.errors?.['required']"
+              >
                 {{ "massages.emailRequired" | translate }}
               </samp>
-              <samp *ngIf="formClientSignup.get('email')?.errors?.['email']">
+              <samp
+                *ngIf="formClientSignup.controls['email']?.errors?.['email']"
+              >
                 {{ "massages.emailInvalid" | translate }}
               </samp>
             </div>
@@ -52,24 +58,24 @@
             <div
               class="errorMessage"
               *ngIf="
-                formClientSignup.get('password')?.touched &&
-                formClientSignup.get('password')?.invalid
+                formClientSignup.controls['password']?.touched &&
+                formClientSignup.controls['password']?.invalid
               "
             >
               <samp
-                *ngIf="formClientSignup.get('password')?.errors?.['required']"
+                *ngIf="formClientSignup.controls['password']?.errors?.['required']"
               >
                 {{ "massages.passwordRequired" | translate }}
               </samp>
               <samp
-                *ngIf="formClientSignup.get('password')?.errors?.['minlength']"
+                *ngIf="formClientSignup.controls['password']?.errors?.['minlength']"
               >
                 {{ "massages.passwordMinLength" | translate }}
               </samp>
               <samp
                 *ngIf="
-                  formClientSignup.get('password')?.errors?.['pattern'] &&
-                  formClientSignup.get('password')?.touched
+                  formClientSignup.controls['password']?.errors?.['pattern'] &&
+                  formClientSignup.controls['password']?.touched
                 "
               >
                 {{ "massages.passwordPattern" | translate }}
@@ -86,13 +92,13 @@
             <div
               class="errorMessage"
               *ngIf="
-                formClientSignup.get('confirmPassword')?.touched &&
-                formClientSignup.get('confirmPassword')?.invalid
+                formClientSignup.controls['confirmPassword']?.touched &&
+                formClientSignup.controls['confirmPassword']?.invalid
               "
             >
               <samp
                 *ngIf="
-                  formClientSignup.get('confirmPassword')?.errors?.['required']
+                  formClientSignup.controls['confirmPassword']?.errors?.['required']
                 "
               >
                 {{ "massages.confirmPasswordRequired" | translate }}
@@ -115,11 +121,13 @@
             <div
               class="errorMessage"
               *ngIf="
-                formClientSignup.get('phone')?.touched &&
-                formClientSignup.get('phone')?.invalid
+                formClientSignup.controls['phone']?.touched &&
+                formClientSignup.controls['phone']?.invalid
               "
             >
-              <samp *ngIf="formClientSignup.get('phone')?.errors?.['required']">
+              <samp
+                *ngIf="formClientSignup.controls['phone']?.errors?.['required']"
+              >
                 {{ "massages.phoneRequired" | translate }}
               </samp>
             </div>
@@ -134,12 +142,12 @@
             <div
               class="errorMessage"
               *ngIf="
-                formClientSignup.get('bankName')?.touched &&
-                formClientSignup.get('bankName')?.invalid
+                formClientSignup.controls['bankName']?.touched &&
+                formClientSignup.controls['bankName']?.invalid
               "
             >
               <samp
-                *ngIf="formClientSignup.get('bankName')?.errors?.['required']"
+                *ngIf="formClientSignup.controls['bankName']?.errors?.['required']"
               >
                 {{ "massages.bankNameRequired" | translate }}
               </samp>
@@ -155,12 +163,12 @@
             <div
               class="errorMessage"
               *ngIf="
-                formClientSignup.get('bankAccount')?.touched &&
-                formClientSignup.get('bankAccount')?.invalid
+                formClientSignup.controls['bankAccount']?.touched &&
+                formClientSignup.controls['bankAccount']?.invalid
               "
             >
               <samp
-                *ngIf="formClientSignup.get('bankAccount')?.errors?.['required']"
+                *ngIf="formClientSignup.controls['bankAccount']?.errors?.['required']"
               >
                 {{ "massages.bankAccountRequired" | translate }}
               </samp>
@@ -176,12 +184,12 @@
             <div
               class="errorMessage"
               *ngIf="
-                formClientSignup.get('address')?.touched &&
-                formClientSignup.get('address')?.invalid
+                formClientSignup.controls['address']?.touched &&
+                formClientSignup.controls['address']?.invalid
               "
             >
               <samp
-                *ngIf="formClientSignup.get('address')?.errors?.['required']"
+                *ngIf="formClientSignup.controls['address']?.errors?.['required']"
               >
                 {{ "massages.addressRequired" | translate }}
               </samp>
@@ -213,37 +221,6 @@
       </p>
       <p>{{ "client-signup.welcomeParagraph5" | translate }}</p>
     </div>
-
-    <!-- <div class="welcome-message">
-      <h2>Welcome to the <span>Ghosn family!</span></h2>
-      <p>
-        We are here to pave the way for you towards a
-        <strong>unique and exceptional experience.</strong>
-      </p>
-      <p>
-        Please fill in your details carefully, as each request is a step towards
-        building a <em>relationship of trust and respect.</em>
-      </p>
-      <p>
-        After submitting your request, our dedicated team will carefully review
-        it to ensure <strong>quality service.</strong>
-      </p>
-      <p>
-        We believe that every activated account is the beginning of a new
-        opportunity and <span class="highlight">mutual growth.</span>
-      </p>
-      <p>
-        For any inquiries or assistance, our team is ready to support you
-        anytime.
-      </p>
-    </div> -->
-
-    <!-- <div class="image">
-      <img
-        src="https://res.cloudinary.com/dblomu3ce/image/upload/v1748026783/pngwing.com_dhhlpv.png"
-        alt="plant"
-      />
-    </div> -->
   </div>
 </section>
 <p-toast></p-toast>

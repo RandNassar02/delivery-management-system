@@ -1,4 +1,4 @@
-export type gategories =
+export type Categories =
   | 'Indoor Plants'
   | 'Outdoor Plants'
   | 'Edible Plants'
@@ -7,7 +7,7 @@ export type gategories =
 export interface Plants {
   id: number;
   name: string;
-  gategory: gategories;
+  gategory: Categories;
   price: number;
   image: string;
   description: string;
