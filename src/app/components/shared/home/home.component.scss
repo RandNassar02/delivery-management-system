@@ -55,7 +55,13 @@
 }
 
 .categories h2 span {
+  color: var(--text-color);
+  flex: 1;
   font-size: 2rem;
+  font-weight: 600;
+  max-width: 500px;
+  margin-bottom: 1rem;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -87,14 +93,13 @@
   margin-bottom: 0.5rem;
 }
 
-
 // about style
 .about-section {
   background-color: var(--background-img);
   padding: 2rem;
   border-radius: 20px;
 }
-.about-section-title{
+.about-section-title {
   color: var(--text-color);
   text-align: center;
   font-size: 2rem;
@@ -102,10 +107,10 @@
   margin-bottom: 1rem;
 }
 .all-about-box {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 .about-box {
   flex: 1;
@@ -124,14 +129,13 @@
 }
 .about-box .about-title {
   color: var(--text-color);
-   line-height: 1.4;
+  line-height: 1.4;
 }
 .about-box .about-text {
   color: var(--heading-color);
- }
+}
 
-
- // join us style
+// join us style
 .client-join,
 .driver-join {
   background-color: #d9f4dc;
@@ -158,5 +162,90 @@
   line-height: 1.4;
 }
 
+.categories {
+  padding: 60px 20px;
+  background-color: #eafaf4;
+  text-align: center;
+}
 
+.categories h2 {
+  color: var(--text-color);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
 
+.categories-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.category-card {
+  flex: 1 1 calc(25% - 20px);
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding-bottom: 20px;
+  position: relative;
+  transition: transform 0.3s ease;
+  min-width: 220px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-card:nth-child(odd) {
+  margin-top: 40px;
+}
+
+.category-card:nth-child(even) {
+  margin-bottom: 40px;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+}
+
+.category-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.category-card h3 {
+  font-size: 1.1rem;
+  color: #2e4a3c;
+  margin: 12px 0;
+}
+.shop-now-button {
+  display: inline-block;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.shop-now-button:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+}
+
+.shop-now-button:active {
+  transform: translateY(1px);
+  background-color: #2e7d32;
+}

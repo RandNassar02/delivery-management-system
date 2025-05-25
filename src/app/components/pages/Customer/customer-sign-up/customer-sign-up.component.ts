@@ -12,7 +12,9 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastModule } from 'primeng/toast';
-import { AuthService } from '../../../../services/auth.service';
+
+import { CustomerService } from '../../../../services/customer.service';
+import { I18nService } from '../../../../i18n/i18n.service';
 
 @Component({
   selector: 'app-customer-sign-up',
@@ -33,8 +35,9 @@ export class CustomerSignUpComponent {
   showConfirmPassword = false;
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService,
-    private messageService: MessageService
+    private authService: CustomerService,
+    private messageService: MessageService,
+    public i18nService: I18nService
   ) {
     this.form = this.fb.group(
       {
@@ -62,11 +65,17 @@ export class CustomerSignUpComponent {
   onSubmit() {
     if (this.form.valid) {
       this.authService.signUpCustomer(this.form.value).subscribe({
-        next: () => this.showSuccess(),
-        error: () => this.showError(),
+        next: () => {
+          this.showSuccess();
+          this.form.reset();
+        },
+        error: () => {
+          this.showError();
+        },
       });
     }
   }
+
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
@@ -85,8 +94,8 @@ export class CustomerSignUpComponent {
   showError() {
     this.messageService.add({
       severity: 'error',
-      summary: 'error!',
-      detail: 'Error Please Try Again',
+      summary: 'Error',
+      detail: 'Email Already Exists',
     });
   }
 }

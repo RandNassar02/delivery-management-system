@@ -11,6 +11,24 @@
       "email": "customers@customers.com",
       "password": "$2b$10$hCuVFDUQ5nGc8.VQ9jKsfuBm.cLx4x3hhj50K2zeo71QwJiMq0oym",
       "userType": "customer"
+    },
+    {
+      "id": "abc4",
+      "email": "kawthar@gmail.com",
+      "password": "$2b$10$8lQixqU6f7cu.XwKJP3BFeJPQE/xiaEw7Vgj9XXqAcf6Ycc/DRu.q",
+      "userType": "customer"
+    },
+    {
+      "id": "748f",
+      "email": "testreset@gmail.com",
+      "password": "$2b$10$sXTD5tyNvByhLasmv3Rr6enRlWI14TexjhzpLO87CMEloyj41sxV2",
+      "userType": "customer"
+    },
+    {
+      "id": "1c51",
+      "email": "ddddddddddd@ghhhhhhhhh",
+      "password": "$2b$10$x2NnGkUcVw3y.tKFs.w86e.mUvBym6RcDIYW2JhnAVCw8FSeY7slC",
+      "userType": "customer"
     }
   ],
   "clients": [],
@@ -21,6 +39,27 @@
       "email": "customers@customers.com",
       "phone": "0782345678",
       "address": "testt"
+    },
+    {
+      "id": "abc4",
+      "name": "kawthar",
+      "email": "kawthar@gmail.com",
+      "phone": "1234567891",
+      "address": "qwertyui"
+    },
+    {
+      "id": "748f",
+      "name": "test12",
+      "email": "testreset@gmail.com",
+      "phone": "1234567891",
+      "address": "qwertyuiokhgvvv"
+    },
+    {
+      "id": "1c51",
+      "name": "edsssssss",
+      "email": "ddddddddddd@ghhhhhhhhh",
+      "phone": "1234567891",
+      "address": "sdftgyhghhh"
     }
   ],
   "drivers": [],
