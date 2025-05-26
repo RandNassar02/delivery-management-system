@@ -14,7 +14,7 @@ export class HeaderComponent {
   isMenuOpen = false;
   isLoggedIn = false;
   userType: string | null = null;
-  // dropdownOpen = false;
+  cartCount = 0;
 
   constructor(private authService: AuthService, private router: Router) {}
   ngOnInit(): void {
@@ -42,6 +42,9 @@ export class HeaderComponent {
     this.userType = null;
     this.router.navigate(['/']);
   }
+  goToCart() {
+    this.router.navigate(['/cart']);
+  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -52,11 +55,4 @@ export class HeaderComponent {
       navItemsContainer?.classList.remove('open');
     }
   }
-  // toggleDropdown() {
-  //   this.dropdownOpen = !this.dropdownOpen;
-  // }
-  // goToProfile() {
-  //   this.router.navigate(['/customer-dashboard']);
-  //   this.dropdownOpen = false;
-  // }
 }

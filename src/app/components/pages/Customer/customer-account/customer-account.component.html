@@ -1,0 +1,40 @@
+<!-- <p>Name: {{ Customer?.name }}</p>
+
+<button (click)="logout()">Logout</button> -->
+<!-- customer-account.component.html -->
+<div class="account-container">
+  <div class="account-header">
+    <img
+      src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
+      alt="User Icon"
+      class="user-icon"
+    />
+    <p class="user-name">{{ Customer?.name }}</p>
+  </div>
+
+  <div class="account-options">
+    <div class="account-item" (click)="goToProfile()">
+      <img
+        src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
+        alt="Profile"
+      />
+      <span>My Profile</span>
+    </div>
+
+    <div class="account-item" (click)="goToOrders()">
+      <img
+        src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283786/package_pcmiw3.png"
+        alt="Orders"
+      />
+      <span>My Orders</span>
+    </div>
+
+    <div class="account-item logout" (click)="logout()">
+      <img
+        src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283954/logout_15604119_fwruyw.png"
+        alt="Logout"
+      />
+      <span class="logout">Logout</span>
+    </div>
+  </div>
+</div>

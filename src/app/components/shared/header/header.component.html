@@ -16,21 +16,19 @@
         <a routerLink="/signup" class="nav-link-btn nav-link-signup">SIGNUP</a>
       </div>
 
-      <div class="nav-links" *ngIf="isLoggedIn">
+      <!-- <div class="nav-links" *ngIf="isLoggedIn">
         <span>Welcome, {{ userType }}</span>
         <button (click)="logout()" class="nav-link-btn nav-link-logout">
           Logout
         </button>
+      </div> -->
+      <div class="nav-links" *ngIf="isLoggedIn && userType === 'customer'">
+        <h class="nav-link-btn" routerLink="/customer-account">My Account</h>
+        <a (click)="goToCart()">
+          🛒
+          <span>{{ cartCount }}</span>
+        </a>
       </div>
-      <!-- <div class="nav-links" *ngIf="isLoggedIn && userType === 'Customer'">
-  <div class="user-dropdown" (click)="toggleDropdown()">
-    <i class="ri-user-3-fill user-icon"></i>
-    <div class="dropdown-menu" *ngIf="dropdownOpen">
-      <button class="dropdown-item" (click)="goToProfile()">👤 Profile</button>
-      <button class="dropdown-item" (click)="logout()">🚪 Logout</button>
-    </div>
-  </div>
-</div> -->
 
       <div class="hamburger" (click)="toggleMenu()">
         <span></span>

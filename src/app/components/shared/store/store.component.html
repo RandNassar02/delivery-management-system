@@ -1,0 +1,11 @@
+<div class="container">
+  <nav class="nav-tabs">
+    <button
+      *ngFor="let category of categories"
+      (click)="selectCategory(category)"
+      [class.active]="category === activeCategory"
+    >
+      {{ category }}
+    </button>
+  </nav>
+</div>
