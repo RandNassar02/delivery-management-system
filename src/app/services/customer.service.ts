@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import bcrypt from 'bcryptjs';
 
 import { Observable, switchMap, throwError } from 'rxjs';
+import { Customer } from '../model/customer.model';
 
 @Injectable({
   providedIn: 'root',
@@ -26,14 +27,12 @@ export class CustomerService {
       userType: 'customer',
     };
 
-    // تحقق أولاً إذا الإيميل موجود
     return this.http.get<any[]>(`${this.usersUrl}?email=${data.email}`).pipe(
       switchMap((users) => {
         if (users.length > 0) {
           return throwError(() => new Error('Email already exists'));
         }
 
-        // إذا مش موجود، كمل التسجيل
         return this.http.post<any>(this.usersUrl, userPayload).pipe(
           switchMap((user) => {
             const customerPayload = {
@@ -54,4 +53,16 @@ export class CustomerService {
   getCustomers(id: number): Observable<any> {
     return this.http.get(`${this.customersUrl}/${id}`);
   }
+  updateCustomer(id: string, data: any): Observable<any> {
+    return this.http.put(`${this.customersUrl}/${id}`, data);
+  }
+  // changePassword(userId: string, currentPassword: string, newPassword: string) {
+  //   return this.http.put(
+  //     `http://localhost:3000/users/${userId}/change-password`,
+  //     {
+  //       currentPassword,
+  //       newPassword,
+  //     }
+  //   );
+  // }
 }

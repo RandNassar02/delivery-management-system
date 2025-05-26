@@ -9,6 +9,9 @@ import { ClientProfileComponent } from './components/pages/Client/client-profile
 import { CustomerProfileComponent } from './components/pages/Customer/customer-profile/customer-profile.component';
 import { DriverProfileComponent } from './components/pages/Driver/driver-profile/driver-profile.component';
 import { ClientAddplantComponent } from './components/pages/Client/client-addplant/client-addplant.component';
+import { StoreComponent } from './components/shared/store/store.component';
+import { CustomerAccountComponent } from './components/pages/Customer/customer-account/customer-account.component';
+import { CustomerEditAccountComponent } from './components/pages/Customer/customer-edit-account/customer-edit-account.component';
 
 export const routes: Routes = [
   {
@@ -41,7 +44,7 @@ export const routes: Routes = [
   },
   {
     path: 'customer-dashboard',
-    component: CustomerProfileComponent,
+    component: StoreComponent,
   },
   {
     path: 'driver-dashboard',
@@ -51,6 +54,9 @@ export const routes: Routes = [
     path: 'client-addplant',
     component: ClientAddplantComponent,
   },
+  { path: 'store', component: StoreComponent },
+  { path: 'customer-account', component: CustomerAccountComponent },
+  { path: 'customer-edit-account', component: CustomerEditAccountComponent },
   {
     path: '**',
     component: NotFoundComponent,

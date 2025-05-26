@@ -16,11 +16,18 @@
         <a routerLink="/signup" class="nav-link-btn nav-link-signup">SIGNUP</a>
       </div>
 
-      <div class="nav-links" *ngIf="isLoggedIn">
+      <!-- <div class="nav-links" *ngIf="isLoggedIn">
         <span>Welcome, {{ userType }}</span>
         <button (click)="logout()" class="nav-link-btn nav-link-logout">
           Logout
         </button>
+      </div> -->
+      <div class="nav-links" *ngIf="isLoggedIn && userType === 'customer'">
+        <h class="nav-link-btn" routerLink="/customer-account">My Account</h>
+        <a (click)="goToCart()">
+          🛒
+          <span>{{ cartCount }}</span>
+        </a>
       </div>
 
       <div class="hamburger" (click)="toggleMenu()">

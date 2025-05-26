@@ -14,6 +14,7 @@ export class HeaderComponent {
   isMenuOpen = false;
   isLoggedIn = false;
   userType: string | null = null;
+  cartCount = 0;
 
   constructor(private authService: AuthService, private router: Router) {}
   ngOnInit(): void {
@@ -40,6 +41,9 @@ export class HeaderComponent {
     this.isLoggedIn = false;
     this.userType = null;
     this.router.navigate(['/']);
+  }
+  goToCart() {
+    this.router.navigate(['/cart']);
   }
 
   toggleMenu() {
