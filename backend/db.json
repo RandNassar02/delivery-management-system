@@ -82,5 +82,150 @@
   ],
   "drivers": [],
   "deliveryRequests": [],
-  "plants": []
+  "plants": [
+    {
+      "id": 1,
+      "name": "Snake Plant",
+      "category": "Indoor Plants",
+      "price": 15,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491891/bloomscape_sansevieria_xs_charcoal-768x921_swbuxe.jpg",
+      "description": "Low-maintenance plant that purifies the air."
+    },
+    {
+      "id": 2,
+      "name": "Monstera Deliciosa",
+      "category": "Indoor Plants",
+      "price": 25,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491946/bloomscape_monstera_alt_clay-450x550_cpgwca.jpg",
+      "description": "Large, beautiful leaves with natural splits. Loves indirect light."
+    },
+    {
+      "id": 3,
+      "name": "Peace Lily",
+      "category": "Indoor Plants",
+      "price": 18,
+      "image": "https://bloomscape.com/wp-content/uploads/2022/10/bloomscape_peace-lily6_md_charcoal-768x922.jpg?ver=955366",
+      "description": "Elegant white blooms and glossy leaves. Great for shaded areas."
+    },
+    {
+      "id": 4,
+      "name": "ZZ Plant",
+      "category": "Indoor Plants",
+      "price": 22,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491779/bloomscape_zz-plant_clay_dlsmix.jpg",
+      "description": "Tolerates low light and dry air. Perfect for beginners."
+    },
+    {
+      "id": 5,
+      "name": "Spider Plant",
+      "category": "Indoor Plants",
+      "price": 12,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492144/bloomscape_spider-plant_medium_stone-768x922_okbhmt.jpg",
+      "description": "Fast-growing with baby offshoots. Air-purifying and resilient."
+    },
+    {
+      "id": 6,
+      "name": "Pothos",
+      "category": "Indoor Plants",
+      "price": 14,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492228/bloomscape_silver-satin-pothos_alt-3_charcoal-768x922_ngaeve.jpg",
+      "description": "Trailing vine with heart-shaped leaves. Low maintenance."
+    },
+    {
+      "id": 7,
+      "name": "Lavender",
+      "category": "Outdoor Plants",
+      "price": 18,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492399/begqpergt0ro8rqyj4ug_820x820_crop_center.jpg_ixjufe.jpg",
+      "description": "Aromatic plant with purple flowers. Loves full sun."
+    },
+    {
+      "id": 8,
+      "name": "Rose Bush",
+      "category": "Outdoor Plants",
+      "price": 30,
+      "image": "https://images.unsplash.com/photo-1594824476967-daa6c1ee6c1d",
+      "description": "Classic flowering shrub. Needs regular pruning and sunlight."
+    },
+    {
+      "id": 9,
+      "name": "Bamboo Palm",
+      "category": "Outdoor Plants",
+      "price": 25,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492661/pfcuutakror8ylszzuu3_820x820_crop_center.jpg_acpzc7.jpg",
+      "description": "Tropical look with low maintenance. Can grow tall outdoors."
+    },
+    {
+      "id": 10,
+      "name": "Lemon",
+      "category": "Edible Plants",
+      "price": 8,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748493035/zcf65g0nk2zdf4mqdz9x_820x820_crop_center.jpg_tisnkc.jpg",
+      "description": "Lemon is a citrus plant known for its bright yellow fruit with a tangy flavor. Commonly used in cooking, drinks, and natural remedies. Requires full sun, well-drained soil, and regular watering."
+    },
+    {
+      "id": 11,
+      "name": "Tomato Plant",
+      "category": "Edible Plants",
+      "price": 12,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748493975/723_nejolq.jpg",
+      "description": "Produces juicy tomatoes. Requires sun and staking support."
+    },
+    {
+      "id": 12,
+      "name": "Mint",
+      "category": "Edible Plants",
+      "price": 7,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748493469/65076_uqvptq.jpg",
+      "description": "Fragrant herb used in drinks and dishes. Spreads quickly."
+    },
+    {
+      "id": 13,
+      "name": "Garden Trowel",
+      "category": "Gardening Tools",
+      "price": 10,
+      "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748494911/2148224056_vp9bfw.jpg",
+      "description": "Small hand tool for digging and planting."
+    },
+    {
+      "id": 14,
+      "name": "Watering Can",
+      "category": "Gardening Tools",
+      "price": 15,
+      "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748494993/2148128722_asgsrw.jpg",
+      "description": "Essential tool for watering indoor and outdoor plants."
+    },
+    {
+      "id": 15,
+      "name": "Pruning Shears",
+      "category": "Gardening Tools",
+      "price": 18,
+      "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748495066/2148826126_wwgxfi.jpg",
+      "description": "Used for cutting branches and stems cleanly."
+    },
+    {
+      "id": 16,
+      "name": "Gardening Gloves",
+      "category": "Gardening Tools",
+      "price": 12,
+      "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748495951/2147844289_zbweog.jpg",
+      "description": "Protective gloves for handling gardening tools."
+    },
+    {
+      "id": 17,
+      "name": "Garden Rake",
+      "category": "Gardening Tools",
+      "price": 14,
+      "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748496662/2148224033_pkr6vh.jpg",
+      "description": "Used to level soil, remove debris, and spread mulch in garden beds."
+    },
+    {
+      "id": 18,
+      "name": "Hoe",
+      "category": "Gardening Tools",
+      "price": 16,
+      "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748496810/web_09519371_01_hpv5zm.jpg",
+      "description": "Ideal for weeding and breaking up soil before planting."
+    }
+  ]
 }

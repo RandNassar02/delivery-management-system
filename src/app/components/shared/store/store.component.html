@@ -2,10 +2,26 @@
   <nav class="nav-tabs">
     <button
       *ngFor="let category of categories"
-      (click)="selectCategory(category)"
+      (click)="navigateToCategory(category)"
       [class.active]="category === activeCategory"
     >
       {{ category }}
     </button>
   </nav>
+
+  <div class="plant-grid">
+    <ng-container *ngIf="filteredPlants.length > 0; else noPlants">
+      <div *ngFor="let plant of filteredPlants" class="plant-card">
+        <img [src]="plant.image" [alt]="plant.name" />
+        <h3>{{ plant.name }}</h3>
+        <p>{{ plant.description }}</p>
+        <span class="price">{{ plant.price }} JD</span>
+        <button (click)="addToCart(plant)">Add to Cart</button>
+      </div>
+    </ng-container>
+
+    <ng-template #noPlants>
+      <p class="no-results">No plants available in this category.</p>
+    </ng-template>
+  </div>
 </div>

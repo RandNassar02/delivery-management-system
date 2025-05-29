@@ -29,7 +29,7 @@ nav {
 }
 
 .logo {
-  height: 35px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   padding-bottom: 7px;
@@ -63,14 +63,20 @@ nav {
   padding-bottom: 0.5rem;
   border-radius: 8px;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 400;
   transition: color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .nav-link-btn:hover {
   color: #3a6f2e;
   transform: translateY(-1px);
-  text-decoration: underline;
+  text-decoration: none;
+  font-weight: 700;
+}
+img {
+  width: 20px;
+  height: 20px;
 }
 
 .hamburger {
@@ -113,4 +119,38 @@ nav {
     text-align: center;
     width: 100%;
   }
+}
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 400px;
+  height: 100%;
+  background: #fff;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.close-btn {
+  float: right;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }

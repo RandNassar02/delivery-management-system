@@ -19,7 +19,9 @@ export class CustomerAccountComponent {
     this.router.navigate(['/customer-edit-account']);
   }
 
-  goToOrders() {}
+  goToOrders() {
+    this.router.navigate(['/customer-account/orders']);
+  }
   logout() {
     this.authService.logout();
     this.isLoggedIn = false;

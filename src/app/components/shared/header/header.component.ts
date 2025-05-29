@@ -3,10 +3,12 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { UserType } from '../../../model/user.model';
+import { I18nService } from '../../../i18n/i18n.service';
+import { CartComponent } from '../../pages/Customer/cart/cart.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, CartComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -14,7 +16,6 @@ export class HeaderComponent {
   isMenuOpen = false;
   isLoggedIn = false;
   userType: string | null = null;
-  cartCount = 0;
 
   constructor(private authService: AuthService, private router: Router) {}
   ngOnInit(): void {
@@ -42,9 +43,6 @@ export class HeaderComponent {
     this.userType = null;
     this.router.navigate(['/']);
   }
-  goToCart() {
-    this.router.navigate(['/cart']);
-  }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -54,5 +52,15 @@ export class HeaderComponent {
     } else {
       navItemsContainer?.classList.remove('open');
     }
+  }
+
+  isDrawerOpen = false;
+
+  openDrawer() {
+    this.isDrawerOpen = true;
+  }
+
+  closeDrawer() {
+    this.isDrawerOpen = false;
   }
 }
