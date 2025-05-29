@@ -1,0 +1,26 @@
+<div class="cart-container" *ngIf="cartItems.length > 0; else emptyCart">
+  <div class="cart-item" *ngFor="let item of cartItems">
+    <img [src]="item.image" [alt]="item.name" class="item-image" />
+    <div class="item-info">
+      <p class="item-name">{{ item.name }}</p>
+      <p class="item-price">
+        {{ item.quantity }} × {{ item.price | number : "1.2-2" }}
+      </p>
+    </div>
+    <button class="delete-btn" (click)="removeItem(item)">🗑️</button>
+  </div>
+
+  <div class="cart-summary">
+    <p>
+      Subtotal: <span class="total">{{ getTotal() | number : "1.2-2" }}</span>
+    </p>
+  </div>
+
+  <button class="view-cart-btn">View cart</button>
+</div>
+
+<ng-template #emptyCart>
+  <div class="empty-cart">
+    <p>No products in the cart.</p>
+  </div>
+</ng-template>

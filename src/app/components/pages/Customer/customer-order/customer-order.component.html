@@ -1,0 +1,36 @@
+<div class="orders-wrapper">
+  <div class="tabs">
+    <button
+      [class.active]="selectedTab === 'processing'"
+      (click)="selectTab('processing')"
+    >
+      Processing
+    </button>
+    <button
+      [class.active]="selectedTab === 'completed'"
+      (click)="selectTab('completed')"
+    >
+      Completed
+    </button>
+    <button
+      [class.active]="selectedTab === 'cancelled'"
+      (click)="selectTab('cancelled')"
+    >
+      Cancelled
+    </button>
+  </div>
+
+  <div class="content">
+    <ng-container *ngIf="orders.length > 0; else noOrders">
+      <!--رح تتغير حسب شو المحتوى الي رح ينحط بال order وبدي اعرضه -->
+      <div *ngFor="let order of orders">Order ID: {{ order.id }}</div>
+    </ng-container>
+    <!-- هذا بيتعرض فقط لما orders.length == 0 -->
+    <ng-template #noOrders>
+      <p>No order has been made yet.</p>
+      <button class="browse-btn" (click)="browseProducts()">
+        Browse products
+      </button>
+    </ng-template>
+  </div>
+</div>

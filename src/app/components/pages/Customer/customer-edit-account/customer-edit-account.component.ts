@@ -10,7 +10,7 @@ import { CustomerService } from '../../../../services/customer.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MessageService } from 'primeng/api';
+
 @Component({
   selector: 'app-customer-edit-account',
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
@@ -26,8 +26,7 @@ export class CustomerEditAccountComponent {
   constructor(
     private customerService: CustomerService,
     private router: Router,
-    private fb: FormBuilder,
-    private messageService: MessageService
+    private fb: FormBuilder
   ) {}
 
   ngOnInit() {
@@ -75,11 +74,11 @@ export class CustomerEditAccountComponent {
       address: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
-  showSuccess() {
-    this.messageService.add({
-      severity: 'success',
-      summary: 'sucsses',
-      detail: 'Edit Account Completed Successfully',
-    });
-  }
+  // showSuccess() {
+  //   this.messageService.add({
+  //     severity: 'success',
+  //     summary: 'sucsses',
+  //     detail: 'Edit Account Completed Successfully',
+  //   });
+  // }
 }

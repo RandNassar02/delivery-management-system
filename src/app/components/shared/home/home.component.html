@@ -1,6 +1,6 @@
 <div class="home-container">
   <div class="welcome-home">
-    <div>
+    <div class="welcome-home-text-section">
       <h1 class="welcome-home-text">
         <samp> Every plant tells a story.. </samp>
         Let's plant beauty in the corners of your home
@@ -11,36 +11,26 @@
   </div>
 
   <div class="categories">
-    <h2><span>Explore Our Plant Picks</span></h2>
+    <div class="scroll-gallery-container">
+      <div
+        class="scroll-gallery"
+        #scrollGallery
+        (scroll)="onScroll(scrollGallery)"
+      >
+        <div class="scroll-item" *ngFor="let image of images">
+          <a [routerLink]="image.link">
+            <img [src]="image.src" [alt]="image.alt" />
+            <div class="caption">{{ image.alt }}</div>
+          </a>
+        </div>
+      </div>
 
-    <div class="categories-container">
-      <div class="category-card">
-        <img
-          src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748093775/indoor-plants-studio_2_qzbuko.jpg"
-          alt="Indoor Plants"
-        />
-        <h3>Indoor Plants</h3>
-      </div>
-      <div class="category-card">
-        <img
-          src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748093608/indoor-plants-studio_1_tdby3h.jpg"
-          alt="Outdoor Plants"
-        />
-        <h3>Outdoor Plants</h3>
-      </div>
-      <div class="category-card">
-        <img
-          src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748094722/close-up-orange-tree-with-many-leaves_n6cmld.jpg"
-          alt="Edible Plants"
-        />
-        <h3>Edible Plants</h3>
-      </div>
-      <div class="category-card">
-        <img
-          src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748081318/plants-pot-with-watering-can_p7fwzs.jpg"
-          alt="Gardening Tools"
-        />
-        <h3>Gardening Tools</h3>
+      <div class="scroll-indicators">
+        <span
+          class="dot"
+          *ngFor="let image of images; let i = index"
+          [class.active]="i === activeIndex"
+        ></span>
       </div>
     </div>
   </div>
@@ -77,23 +67,38 @@
       </div>
     </div>
   </div>
-
-  <div class="client-join">
-    <img src="assets/leaves.png" alt="plant" />
-    <h2>
-      Don't just be a shopper...be part of the Ghosn community and cultivate
-      your passion with us!
-    </h2>
-    <button routerLink="/signup-client">join us</button>
+  <!-- Section 1: Client -->
+  <div class="join-section">
+    <div class="join-text">
+      <h2>
+        Don't just be a shopper...be part of the Ghosn community and cultivate
+        your passion with us!
+      </h2>
+      <button routerLink="/signup-client">Join Us</button>
+    </div>
+    <div class="join-img">
+      <img
+        src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748386589/t_ftewud.jpg"
+        alt="plant"
+      />
+    </div>
   </div>
 
-  <div class="driver-join">
-    <h2>
-      Become a Ghosn Plant Ambassador - join us as a driver and make a
-      difference with every delivery!
-    </h2>
-    <button routerLink="/signup-driver">join us</button>
-    <img src="assets/leaves.png" alt="plant" />
+  <!-- Section 2: Driver -->
+  <div class="join-section">
+    <div class="join-text">
+      <h2>
+        Become a Ghosn Plant Ambassador - join us as a driver and make a
+        difference with every delivery!
+      </h2>
+      <button routerLink="/signup-driver">Join Us</button>
+    </div>
+    <div class="join-img">
+      <img
+        src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748356864/ghosn_home_Recovered_lgwohy.jpg"
+        alt="plant"
+      />
+    </div>
   </div>
   <div class="contact"></div>
 </div>

@@ -12,6 +12,7 @@ import { ClientAddplantComponent } from './components/pages/Client/client-addpla
 import { StoreComponent } from './components/shared/store/store.component';
 import { CustomerAccountComponent } from './components/pages/Customer/customer-account/customer-account.component';
 import { CustomerEditAccountComponent } from './components/pages/Customer/customer-edit-account/customer-edit-account.component';
+import { CustomerOrderComponent } from './components/pages/Customer/customer-order/customer-order.component';
 
 export const routes: Routes = [
   {
@@ -55,8 +56,10 @@ export const routes: Routes = [
     component: ClientAddplantComponent,
   },
   { path: 'store', component: StoreComponent },
+  { path: 'store/:category', component: StoreComponent },
   { path: 'customer-account', component: CustomerAccountComponent },
   { path: 'customer-edit-account', component: CustomerEditAccountComponent },
+  { path: 'customer-account/orders', component: CustomerOrderComponent },
   {
     path: '**',
     component: NotFoundComponent,

@@ -7,7 +7,7 @@ export type Categories =
 export interface Plants {
   id: number;
   name: string;
-  gategory: Categories;
+  category: Categories;
   price: number;
   image: string;
   description: string;
