@@ -1,0 +1,37 @@
+<div class="cart-container" *ngIf="cartItems.length > 0; else emptyCart">
+  <div class="cart-items-scroll">
+    <div class="cart-item" *ngFor="let item of cartItems">
+      <img [src]="item.image" class="item-image" />
+      <div class="item-info">
+        <p class="item-name">{{ item.name }}</p>
+        <p class="item-price">
+          {{ item.quantity }} × {{ item.price | number : "1.2-2" }}
+        </p>
+      </div>
+      <button class="delete-btn" (click)="removeItem(item)">
+        <img
+          src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748687128/recycle-bin_g5dy2o.png"
+        />
+      </button>
+    </div>
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-summary">
+      <p>
+        Subtotal: <span class="total">{{ getTotal() | number : "1.2-2" }}</span>
+      </p>
+    </div>
+    <button class="view-cart-btn" (click)="goToCart()">View cart</button>
+  </div>
+</div>
+
+<ng-template #emptyCart>
+  <div class="empty-cart">
+    <p>No Item in the cart</p>
+    <img
+      src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748620413/emp_s7lwqw.png"
+    />
+    <button class="view-cart-btn" (click)="gotostore()">Shop Now</button>
+  </div>
+</ng-template>

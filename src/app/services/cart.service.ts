@@ -16,8 +16,15 @@ export class CartService {
   constructor() {}
 
   private loadCart(): any[] {
-    const stored = localStorage.getItem(CART_KEY);
-    return stored ? JSON.parse(stored) : [];
+    if (
+      typeof window !== 'undefined' &&
+      typeof window.localStorage !== 'undefined'
+    ) {
+      const stored = localStorage.getItem(CART_KEY);
+      return stored ? JSON.parse(stored) : [];
+    }
+
+    return [];
   }
 
   private saveCart(items: any[]) {

@@ -19,10 +19,10 @@ import { CommonModule } from '@angular/common';
 export class ClientAddplantComponent {
   plantForm: FormGroup;
   categories: Categories[] = [
-    'Indoor Plants',
-    'Outdoor Plants',
-    'Edible Plants',
-    'Gardening Tools',
+    'Indoor-Plants',
+    'Outdoor-Plants',
+    'Edible-Plants',
+    'Gardening-Tools',
   ];
 
   constructor(
