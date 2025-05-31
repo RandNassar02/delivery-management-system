@@ -13,6 +13,7 @@ import { StoreComponent } from './components/shared/store/store.component';
 import { CustomerAccountComponent } from './components/pages/Customer/customer-account/customer-account.component';
 import { CustomerEditAccountComponent } from './components/pages/Customer/customer-edit-account/customer-edit-account.component';
 import { CustomerOrderComponent } from './components/pages/Customer/customer-order/customer-order.component';
+import { CartComponent } from './components/pages/Customer/cart/cart.component';
 
 export const routes: Routes = [
   {
@@ -60,6 +61,7 @@ export const routes: Routes = [
   { path: 'customer-account', component: CustomerAccountComponent },
   { path: 'customer-edit-account', component: CustomerEditAccountComponent },
   { path: 'customer-account/orders', component: CustomerOrderComponent },
+  { path: 'cart', component: CartComponent },
   {
     path: '**',
     component: NotFoundComponent,

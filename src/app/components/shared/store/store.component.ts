@@ -14,10 +14,10 @@ import { CartService } from '../../../services/cart.service';
 })
 export class StoreComponent {
   categories: Categories[] = [
-    'Indoor Plants',
-    'Outdoor Plants',
-    'Edible Plants',
-    'Gardening Tools',
+    'Indoor-Plants',
+    'Outdoor-Plants',
+    'Edible-Plants',
+    'Gardening-Tools',
   ];
   activeCategory: string = '';
   allPlants: Plants[] = [];
@@ -26,7 +26,7 @@ export class StoreComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private http: HttpClient,
+
     private plantservice: PlantService,
     private cartService: CartService
   ) {}
@@ -54,8 +54,9 @@ export class StoreComponent {
   }
 
   filterByCategory() {
+    const readableCategory = this.slugToName(this.activeCategory);
     this.filteredPlants = this.allPlants.filter(
-      (plant) => plant.category === this.activeCategory
+      (plant) => plant.category === readableCategory
     );
   }
   addToCart(plant: Plants) {
@@ -66,5 +67,8 @@ export class StoreComponent {
       quantity: 1,
       image: plant.image,
     });
+  }
+  slugToName(slug: string): string {
+    return slug.replace(/-/g, ' ');
   }
 }
