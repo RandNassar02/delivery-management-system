@@ -1,26 +1,78 @@
-<div class="cart-container" *ngIf="cartItems.length > 0; else emptyCart">
-  <div class="cart-item" *ngFor="let item of cartItems">
-    <img [src]="item.image" [alt]="item.name" class="item-image" />
-    <div class="item-info">
-      <p class="item-name">{{ item.name }}</p>
-      <p class="item-price">
-        {{ item.quantity }} × {{ item.price | number : "1.2-2" }}
-      </p>
+<div class="cart-page" *ngIf="cartItems.length > 0; else emptyCart">
+  <div class="cart-container">
+    <div class="items-list">
+      <h2>Items</h2>
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <img [src]="item.image" alt="{{ item.name }}" class="item-img" />
+        <div class="item-details">
+          <h4>{{ item.name }}</h4>
+          <p>{{ item.price | number : "1.2-2" }} JD</p>
+        </div>
+        <div class="quantity-control">
+          <button (click)="decreaseQuantity(item)">−</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="increaseQuantity(item)">+</button>
+        </div>
+      </div>
     </div>
-    <button class="delete-btn" (click)="removeItem(item)">🗑️</button>
-  </div>
 
-  <div class="cart-summary">
-    <p>
-      Subtotal: <span class="total">{{ getTotal() | number : "1.2-2" }}</span>
-    </p>
-  </div>
+    <!-- 🔲 Summary Section -->
+    <div class="summary-box">
+      <h3>Summary</h3>
 
-  <button class="view-cart-btn">View cart</button>
+      <div class="summary-line">
+        <span>Subtotal</span>
+        <span>{{ getSubtotal() | number : "1.2-2" }} JD</span>
+      </div>
+
+      <div class="summary-line">
+        <span>Delivery Fees</span>
+        <span>Delivery fee: {{ deliveryFee | number : "1.2-2" }} JD</span>
+      </div>
+
+      <hr />
+
+      <div class="summary-total">
+        <strong>Total</strong>
+        <strong>{{ getTotal() | number : "1.2-2" }} JD</strong>
+      </div>
+
+      <!-- 💳 Payment Section -->
+      <div class="payment-methods">
+        <h4>Select Payment Method</h4>
+
+        <div class="payment-option">
+          <input type="radio" name="payment" id="cod" value="cod" checked />
+          <label for="cod">💵 Cash on Delivery</label>
+        </div>
+
+        <div class="payment-option">
+          <input type="radio" name="payment" id="card" value="card" />
+          <label for="card">💳 Credit/Debit Card</label>
+        </div>
+
+        <div class="payment-option">
+          <input type="radio" name="payment" id="zaincash" value="zaincash" />
+          <label for="zaincash">📱 ZainCash</label>
+        </div>
+
+        <div class="payment-option">
+          <input type="radio" name="payment" id="efawateer" value="efawateer" />
+          <label for="efawateer">💻 eFAWATEERcom</label>
+        </div>
+      </div>
+
+      <button class="checkout-btn">Buy Now</button>
+    </div>
+  </div>
 </div>
 
 <ng-template #emptyCart>
   <div class="empty-cart">
-    <p>No products in the cart.</p>
+    <p>No Item in the cart</p>
+    <img
+      src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748620413/emp_s7lwqw.png"
+    />
+    <button class="view-cart-btn" (click)="gotostore()">Shop Now</button>
   </div>
 </ng-template>

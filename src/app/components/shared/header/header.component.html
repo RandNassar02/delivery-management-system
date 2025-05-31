@@ -33,7 +33,16 @@
           />
           My Account</a
         >
-        <a (click)="openDrawer()" class="nav-link-btn"> Cart </a>
+        <a (click)="openDrawer()" class="nav-link-btn cart-icon-wrapper">
+          <img
+            src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748688485/shopping-cart_6644958_sm92gj.png"
+            alt="cart"
+            class="cart-icon-img"
+          />
+          <span class="cart-count-badge">{{
+            cartService.cartCount$ | async
+          }}</span>
+        </a>
         <!-- <div class="nav-link-btn" (click)="logout()">
           <img
             src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283954/logout_15604119_fwruyw.png"
@@ -51,9 +60,13 @@
     </div>
   </nav>
 </header>
+
 <div class="drawer" [class.open]="isDrawerOpen">
-  <button class="close-btn" (click)="closeDrawer()">X</button>
-  <app-cart></app-cart>
+  <div class="cart-header">
+    <h3>Cart</h3>
+    <button class="close-btn" (click)="closeDrawer()">⨉</button>
+  </div>
+  <app-drawer-content (closeDrawer)="closeDrawer()"></app-drawer-content>
 </div>
 
 <div class="backdrop" *ngIf="isDrawerOpen" (click)="closeDrawer()"></div>
