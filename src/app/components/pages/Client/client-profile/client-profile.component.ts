@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-client-profile',
+  standalone: true,
+
   imports: [CommonModule, FormsModule],
   templateUrl: './client-profile.component.html',
   styleUrl: './client-profile.component.scss',
@@ -64,9 +66,9 @@ export class ClientProfileComponent {
     })
       .then((res) => res.json())
       .then((data) => {
-        this.client!.imageProfile = data.secure_url;
-        console.log(this.client!.imageProfile);
-        this.clientService.updateClient(this.client!).subscribe({
+        if (!this.client) return;
+        this.client.imageProfile = data.secure_url;
+        this.clientService.updateClient(this.client).subscribe({
           next: () => {
             console.log('Profile image updated successfully.');
           },

@@ -35,6 +35,12 @@
       "email": "client@client.jo",
       "password": "$2b$10$RJHVCDl4gw/PnJ5vBGbgse3guLT8A2OTcPjV/OOEXn3DFbJ6HBkcm",
       "userType": "client"
+    },
+    {
+      "id": "5f30",
+      "email": "test@test.com",
+      "password": "$2b$10$z1qyVruObYaupvebVOE1e.uh58KqAuG.rN8O4Rgof2haA8ksZ1ue6",
+      "userType": "client"
     }
   ],
   "clients": [
@@ -48,6 +54,17 @@
       "bankAccount": "test",
       "address": "test",
       "approvalStatus": "pending"
+    },
+    {
+      "id": "5f30",
+      "name": "test",
+      "email": "test@test.com",
+      "phone": "0789456123",
+      "bankName": "egadarf",
+      "bankAccount": "srbwtf",
+      "address": "jo",
+      "approvalStatus": "approved",
+      "imageProfile": "https://res.cloudinary.com/dblomu3ce/image/upload/v1748800978/bu4eeh93wdoykxq8duot.png"
     }
   ],
   "customers": [
@@ -226,6 +243,15 @@
       "price": 16,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748496810/web_09519371_01_hpv5zm.jpg",
       "description": "Ideal for weeding and breaking up soil before planting."
+    },
+    {
+      "id": "0e40",
+      "name": "tt",
+      "category": "Outdoor-Plants",
+      "price": 0,
+      "description": "",
+      "image": "",
+      "idClient": "5f30"
     }
   ]
 }

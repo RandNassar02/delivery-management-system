@@ -51,7 +51,7 @@ export class SignInComponent {
             this.router.navigate(['/admin-dashboard']);
             break;
           case 'client':
-            this.router.navigate(['/client-dashboard']);
+            this.router.navigate(['/client-account']);
             break;
           case 'customer':
             this.router.navigate(['/customer-dashboard']);
