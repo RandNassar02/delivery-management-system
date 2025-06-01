@@ -1,0 +1,79 @@
+.status-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.status-box {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.status-box.pending {
+  background-color: #fff3cd;
+  color: #856404;
+  border-color: #ffeeba;
+}
+
+.status-box.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.status-box.approved {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.message {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout {
+  background-color: #dc3545;
+  color: white;
+}
+
+.logout:hover {
+  background-color: #c82333;
+}
+
+button:not(.logout) {
+  background-color: #28a745;
+  color: white;
+}
+
+button:not(.logout):hover {
+  background-color: #218838;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}

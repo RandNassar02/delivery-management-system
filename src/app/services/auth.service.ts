@@ -51,6 +51,13 @@ export class AuthService {
       !!localStorage.getItem('currentUser')
     );
   }
+  getUserID(): string | null {
+    const userString = localStorage.getItem('currentUser');
+    if (!userString) return null;
+
+    const user = JSON.parse(userString);
+    return user?.id || null;
+  }
 
   logout() {
     if (

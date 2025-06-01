@@ -1,0 +1,37 @@
+<div class="status-container" *ngIf="client">
+  <h2>مرحبًا {{ client.name }}</h2>
+
+  <div class="status-box" [ngClass]="client.approvalStatus">
+    <div class="icon">
+      <ng-container [ngSwitch]="client.approvalStatus">
+        <span *ngSwitchCase="'pending'">⏳</span>
+        <span *ngSwitchCase="'rejected'">❌</span>
+        <span *ngSwitchCase="'approved'">✅</span>
+      </ng-container>
+    </div>
+
+    <p class="message">
+      <ng-container [ngSwitch]="client.approvalStatus">
+        <span *ngSwitchCase="'pending'"
+          >حسابك قيد المراجعة من قبل الإدارة.</span
+        >
+        <span *ngSwitchCase="'rejected'"
+          >تم رفض حسابك. يرجى التواصل مع الدعم.</span
+        >
+        <span *ngSwitchCase="'approved'"
+          >تمت الموافقة على حسابك! يمكنك الآن الدخول لصفحتك.</span
+        >
+      </ng-container>
+    </p>
+
+    <div class="buttons">
+      <button
+        *ngIf="client.approvalStatus === 'approved'"
+        (click)="goToProfile()"
+      >
+        👤 عرض صفحتي
+      </button>
+      <button class="logout" (click)="logout()">🚪 تسجيل الخروج</button>
+    </div>
+  </div>
+</div>

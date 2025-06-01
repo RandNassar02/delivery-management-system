@@ -9,6 +9,7 @@ import { ClientProfileComponent } from './components/pages/Client/client-profile
 import { CustomerProfileComponent } from './components/pages/Customer/customer-profile/customer-profile.component';
 import { DriverProfileComponent } from './components/pages/Driver/driver-profile/driver-profile.component';
 import { ClientAddplantComponent } from './components/pages/Client/client-addplant/client-addplant.component';
+import { ClientAllPlantsComponent } from './components/pages/Client/client-all-plants/client-all-plants.component';
 
 export const routes: Routes = [
   {
@@ -54,5 +55,9 @@ export const routes: Routes = [
   {
     path: '**',
     component: NotFoundComponent,
+  },
+  {
+    path: 'all-plants',
+    component: ClientAllPlantsComponent,
   },
 ];

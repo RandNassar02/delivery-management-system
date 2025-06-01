@@ -1,20 +1,55 @@
 <div class="profile-container" *ngIf="client">
-  <h2>Welcome, {{ client.name }}</h2>
-
-  <div *ngIf="approvalMessage" class="approval-message">
-    {{ approvalMessage }}
-  </div>
-
   <div *ngIf="client.approvalStatus === 'approved'">
-    <div class="profile-details">
-      <p><strong>Email:</strong> {{ client.email }}</p>
-      <p><strong>Phone:</strong> {{ client.phone }}</p>
-      <p><strong>Bank Name:</strong> {{ client.bankName }}</p>
-      <p><strong>Bank Account:</strong> {{ client.bankAccount }}</p>
-      <p><strong>Address:</strong> {{ client.address }}</p>
+    <div class="profile-details" *ngIf="!editMode">
+      <div class="image-upload">
+        <div class="profile-image-wrapper">
+          <img
+            [src]="client.imageProfile || defaultProfileImage"
+            alt="Profile Picture"
+            class="profile-image"
+          />
+          <label
+            for="profileImageInput"
+            class="edit-icon"
+            title="Edit Profile Picture"
+            >✏️</label
+          >
+          <input
+            id="profileImageInput"
+            type="file"
+            (change)="onProfileImageSelected($event)"
+            hidden
+            accept="image/*"
+          />
+        </div>
+      </div>
+      <div class="details">
+        <p><strong>Name:</strong> {{ client.name }}</p>
+        <p><strong>Email:</strong> {{ client.email }}</p>
+        <p><strong>Phone:</strong> {{ client.phone }}</p>
+        <p><strong>Bank Name:</strong> {{ client.bankName }}</p>
+        <p><strong>Bank Account:</strong> {{ client.bankAccount }}</p>
+        <p><strong>Address:</strong> {{ client.address }}</p>
+      </div>
+      <div class="edit-button">
+        <button (click)="editProfile()">Edit</button>
+      </div>
+    </div>
+
+    <div class="edit-form" *ngIf="editMode">
+      <label>Name: <input [(ngModel)]="editForm.name" /></label><br />
+      <label>Email: <input [(ngModel)]="editForm.email" /></label><br />
+      <label>Phone: <input [(ngModel)]="editForm.phone" /></label><br />
+      <label>Bank Name: <input [(ngModel)]="editForm.bankName" /></label><br />
+      <label>Bank Account: <input [(ngModel)]="editForm.bankAccount" /></label
+      ><br />
+      <label>Address: <input [(ngModel)]="editForm.address" /></label><br />
+
+      <button (click)="saveProfileChanges()">Save</button>
+      <button (click)="cancelEdit()">Cancel</button>
     </div>
   </div>
   <div>
-    <button (click)="addPlant()">Add plant</button>
+    <button (click)="addPlant()">add plant</button>
   </div>
 </div>

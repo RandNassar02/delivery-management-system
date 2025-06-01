@@ -1,34 +1,74 @@
-<div class="add-plant-form">
+<div class="form-container">
+  <h2>{{ "add-plant.title" | translate }}</h2>
+  <a routerLink="/all-plants">{{ "add-plant.allPlants" | translate }}</a>
   <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
-    <h2>Add New Plant</h2>
+    <div>
+      <label>{{ "add-plant.name" | translate }}:</label>
+      <input formControlName="name" />
+      <div
+        class="errorMessage"
+        *ngIf="
+          plantForm.controls['name']?.touched &&
+          plantForm.controls['name']?.invalid
+        "
+      >
+        <samp *ngIf="plantForm.controls['name']?.errors?.['required']">
+          {{ "massages.nameRequired" | translate }}
+        </samp>
+      </div>
+    </div>
 
-    <label>
-      Name:
-      <input formControlName="name" type="text" />
-    </label>
-
-    <label>
-      Category:
+    <div>
+      <label>{{ "add-plant.category" | translate }}:</label>
       <select formControlName="category">
-        <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
       </select>
-    </label>
+      <div
+        class="errorMessage"
+        *ngIf="
+          plantForm.controls['category']?.touched &&
+          plantForm.controls['category']?.invalid
+        "
+      >
+        <samp *ngIf="plantForm.controls['category']?.errors?.['required']">
+          {{ "massages.categoryRequired" | translate }}
+        </samp>
+      </div>
+    </div>
 
-    <label>
-      Price:
-      <input formControlName="price" type="number" />
-    </label>
+    <div>
+      <label>{{ "add-plant.price" | translate }}:</label>
+      <input type="number" formControlName="price" />
+      <div
+        class="errorMessage"
+        *ngIf="
+          plantForm.controls['price']?.touched &&
+          plantForm.controls['price']?.invalid
+        "
+      >
+        <samp *ngIf="plantForm.controls['price']?.errors?.['required']">
+          {{ "massages.priceRequired" | translate }}
+        </samp>
+      </div>
+    </div>
 
-    <label>
-      Image URL:
-      <input formControlName="image" type="text" />
-    </label>
-
-    <label>
-      Description:
+    <div>
+      <label>{{ "add-plant.description" | translate }}:</label>
       <textarea formControlName="description"></textarea>
-    </label>
+    </div>
 
-    <button type="submit" [disabled]="plantForm.invalid">Add Plant</button>
+    <div>
+      <label>{{ "add-plant.image" | translate }}:</label>
+      <input type="file" (change)="onImageSelected($event)" />
+    </div>
+
+    <button type="submit" [disabled]="plantForm.invalid || uploading">
+      {{
+        uploading
+          ? ("add-plant.uploading" | translate)
+          : ("add-plant.addPlant" | translate)
+      }}
+    </button>
   </form>
 </div>
+<p-toast></p-toast>

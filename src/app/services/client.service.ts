@@ -49,6 +49,7 @@ export class ClientService {
             bankAccount: formData.bankAccount,
             address: formData.address,
             approvalStatus: 'pending',
+            imageProfile: '',
           };
           return this.http.post(this.clientsUrl, client);
         })
@@ -59,7 +60,7 @@ export class ClientService {
     return this.http.get(`${this.clientsUrl}/${id}`);
   }
 
-  updateClient(id: number, data: any): Observable<any> {
-    return this.http.put(`${this.clientsUrl}/${id}`, data);
+  updateClient(client: any): Observable<any> {
+    return this.http.put(`${this.clientsUrl}/${client.id}`, client);
   }
 }

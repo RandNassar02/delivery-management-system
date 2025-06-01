@@ -41,6 +41,14 @@
     "welcomeParagraph4": "We believe that every activated account is the beginning of a new opportunity and mutual growth.",
     "welcomeParagraph5": "For any inquiries or assistance, our team is ready to support you anytime."
   },
+  "add-plant": {
+    "title": "Add New Plant",
+    "name": "Name",
+    "price": "Price",
+    "category": "Category",
+    "description": "Description",
+    "image": "Image"
+  },
   "massages": {
     "nameRequired": "Name is required",
     "emailRequired": "Email is required",
@@ -56,6 +64,8 @@
     "error": "Error",
     "success": "Success",
     "bankNameRequired": "Bank Name is required",
-    "bankAccountRequired": "Bank Account is required"
+    "bankAccountRequired": "Bank Account is required",
+    "categoryRequired": "Category is required",
+    "priceRequired": "Price is required"
   }
 }
