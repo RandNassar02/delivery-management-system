@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, map, Observable, throwError } from 'rxjs';
 import * as bcrypt from 'bcryptjs';
 import { User, UserType } from '../model/user.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ import { User, UserType } from '../model/user.model';
 export class AuthService {
   private usersUrl = 'http://localhost:3000/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(email: string, password: string): Observable<User> {
     return this.http.get<User[]>(`${this.usersUrl}?email=${email}`).pipe(
@@ -58,6 +59,13 @@ export class AuthService {
       !!localStorage.getItem('currentUser')
     );
   }
+  getUserID(): string | null {
+    const userString = localStorage.getItem('currentUser');
+    if (!userString) return null;
+
+    const user = JSON.parse(userString);
+    return user?.id || null;
+  }
 
   logout() {
     if (
@@ -66,5 +74,6 @@ export class AuthService {
     ) {
       localStorage.removeItem('currentUser');
     }
+    this.router.navigate(['/']);
   }
 }
