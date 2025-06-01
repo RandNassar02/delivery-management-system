@@ -6,17 +6,17 @@
           <img src="assets/image/ghosn home-01.png" class="logo" alt="logo" />
         </a>
         <div class="nav-items" *ngIf="!isLoggedIn">
-          <a routerLink="/home">HOME</a>
-          <a routerLink="/about">ABOUT</a>
-          <a routerLink="/contact">CONTACT</a>
-          <div class="nav-links">
-            <a routerLink="/signin" class="nav-link-btn nav-link-signin"
-              >SIGN IN</a
-            >
-            <a routerLink="/signup" class="nav-link-btn nav-link-signup"
-              >SIGNUP</a
-            >
-          </div>
+          <a routerLink="/">HOME</a>
+          <a [routerLink]="['/']" fragment="about">ABOUT</a>
+          <a [routerLink]="['/']" fragment="join">CONTACT</a>
+        </div>
+        <div class="nav-links">
+          <a routerLink="/signin" class="nav-link-btn nav-link-signin"
+            >SIGN IN</a
+          >
+          <a routerLink="/signup" class="nav-link-btn nav-link-signup"
+            >SIGNUP</a
+          >
         </div>
       </div>
 
