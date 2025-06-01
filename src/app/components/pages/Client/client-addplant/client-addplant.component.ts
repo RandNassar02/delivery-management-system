@@ -36,10 +36,10 @@ export class ClientAddplantComponent {
   uploading = false;
 
   categories: Categories[] = [
-    'Indoor Plants',
-    'Outdoor Plants',
-    'Edible Plants',
-    'Gardening Tools',
+    'Indoor-Plants',
+    'Outdoor-Plants',
+    'Edible-Plants',
+    'Gardening-Tools',
   ];
 
   constructor(

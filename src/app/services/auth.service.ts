@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, switchMap, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import * as bcrypt from 'bcryptjs';
 import { User, UserType } from '../model/user.model';
 
@@ -17,8 +17,15 @@ export class AuthService {
       map((users) => {
         const user = users[0];
 
-        if (!user || !bcrypt.compareSync(password, user.password)) {
-          throw new Error('Invalid email or password');
+        if (user.userType === 'admin') {
+          if (user.password !== password) {
+            throw new Error('Invalid email or password');
+          }
+        } else {
+          // باقي المستخدمين: نقارن باستخدام bcrypt
+          if (!bcrypt.compareSync(password, user.password)) {
+            throw new Error('Invalid email or password');
+          }
         }
 
         if (

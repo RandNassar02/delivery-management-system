@@ -1,13 +1,13 @@
 export type Categories =
-  | 'Indoor Plants'
-  | 'Outdoor Plants'
-  | 'Edible Plants'
-  | 'Gardening Tools';
+  | 'Indoor-Plants'
+  | 'Outdoor-Plants'
+  | 'Edible-Plants'
+  | 'Gardening-Tools';
 
 export interface Plants {
   id: number;
   name: string;
-  gategory: Categories;
+  category: Categories;
   price: number;
   image: string;
   description: string;

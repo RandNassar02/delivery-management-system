@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@use './assets/styles/colors' as *;
- 
- html, body {
+@use "./assets/styles/colors" as *;
+
+html,
+body {
   height: 100%;
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
+}
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }

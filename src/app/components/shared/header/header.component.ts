@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { CommonModule } from '@angular/common';
-import { UserType } from '../../../model/user.model';
+
+import { DrawerContentComponent } from '../../pages/Customer/drawer-content/drawer-content.component';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, DrawerContentComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -15,7 +17,11 @@ export class HeaderComponent {
   isLoggedIn = false;
   userType: string | null = null;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    public cartService: CartService
+  ) {}
   ngOnInit(): void {
     this.checkLoginStatus();
   }
@@ -50,5 +56,17 @@ export class HeaderComponent {
     } else {
       navItemsContainer?.classList.remove('open');
     }
+  }
+
+  isDrawerOpen = false;
+
+  openDrawer() {
+    this.isDrawerOpen = true;
+    document.body.classList.add('no-scroll');
+  }
+
+  closeDrawer() {
+    this.isDrawerOpen = false;
+    document.body.classList.remove('no-scroll');
   }
 }

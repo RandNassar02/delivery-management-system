@@ -5,10 +5,10 @@
         <a routerLink="/">
           <img src="assets/image/ghosn home-01.png" class="logo" alt="logo" />
         </a>
-        <div class="nav-items">
+        <div class="nav-items" *ngIf="userType !== 'customer'">
           <a routerLink="/home">HOME</a>
           <a routerLink="/about">ABOUT</a>
-          <a routerLink="/contact">CONTATCT</a>
+          <a routerLink="/contact">CONTACT</a>
         </div>
       </div>
       <div class="nav-links" *ngIf="!isLoggedIn">
@@ -16,11 +16,40 @@
         <a routerLink="/signup" class="nav-link-btn nav-link-signup">SIGNUP</a>
       </div>
 
-      <div class="nav-links" *ngIf="isLoggedIn">
+      <!-- <div class="nav-links" *ngIf="isLoggedIn">
         <span>Welcome, {{ userType }}</span>
         <button (click)="logout()" class="nav-link-btn nav-link-logout">
           Logout
         </button>
+      </div> -->
+      <div
+        class="nav-links customer-nav"
+        *ngIf="isLoggedIn && userType === 'customer'"
+      >
+        <a routerLink="/customer-account" class="nav-link-btn">
+          <img
+            src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
+            alt="Profile"
+          />
+          My Account</a
+        >
+        <a (click)="openDrawer()" class="nav-link-btn cart-icon-wrapper">
+          <img
+            src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748688485/shopping-cart_6644958_sm92gj.png"
+            alt="cart"
+            class="cart-icon-img"
+          />
+          <span class="cart-count-badge">{{
+            cartService.cartCount$ | async
+          }}</span>
+        </a>
+        <!-- <div class="nav-link-btn" (click)="logout()">
+          <img
+            src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283954/logout_15604119_fwruyw.png"
+            alt="Logout"
+          />
+          <span class="logout">Logout</span>
+        </div> -->
       </div>
 
       <div class="hamburger" (click)="toggleMenu()">
@@ -31,3 +60,13 @@
     </div>
   </nav>
 </header>
+
+<div class="drawer" [class.open]="isDrawerOpen">
+  <div class="cart-header">
+    <h3>Cart</h3>
+    <button class="close-btn" (click)="closeDrawer()">⨉</button>
+  </div>
+  <app-drawer-content (closeDrawer)="closeDrawer()"></app-drawer-content>
+</div>
+
+<div class="backdrop" *ngIf="isDrawerOpen" (click)="closeDrawer()"></div>

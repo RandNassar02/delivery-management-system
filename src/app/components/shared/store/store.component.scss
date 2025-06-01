@@ -1,0 +1,140 @@
+.container {
+  padding: 0 20px 20px;
+  margin: auto;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px auto;
+  padding: 8px;
+  border-radius: 999px;
+  background-color: var(--primary-color);
+  width: fit-content;
+}
+
+.nav-tabs button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 999px;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-tabs button.active {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.plant-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover {
+  transform: translateY(-5px);
+}
+
+.plant-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.plant-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.25rem;
+  color: var(--primary-color);
+}
+
+.plant-card p {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.add-btn {
+  background-color: var(--secondary-color);
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: var(--primary-color);
+}
+.custom-button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.main-btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.main-btn:hover {
+  background-color: #b9e8a3;
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+  background-color: #e8f8ee;
+}
+
+.icon-btn img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0%;
+}
