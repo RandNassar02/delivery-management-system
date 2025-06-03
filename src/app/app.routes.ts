@@ -51,3 +51,6 @@ export const routes: Routes = [
     component: NotFoundComponent,
   },
 ];
+const routes: Routes = [
+  { path: 'driver', component: DriverComponent },
+];

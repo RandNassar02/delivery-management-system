@@ -1,8 +1,13 @@
-export type VehicleType = 'Car' | 'Motorcycle';
-
 export interface Driver {
   id: number;
   name: string;
-  vehicleType: VehicleType;
-  modelName: string;
+  licenseNumber: string;
+  phoneNumber: string;
+  email?: string;
+  vehicleId?: number;
+  isActive: boolean;
+  createdAt: Date;
+  updatedAt: Date;
 }
+
+

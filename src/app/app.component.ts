@@ -40,3 +40,42 @@ export class AppComponent {
       });
   }
 }
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  drivers = [
+    { id: 1, name: 'سامي', car: 'Toyota' },
+    { id: 2, name: 'نادر', car: 'BMW' },
+    { id: 3, name: 'علي', car: 'Tesla' },
+  ];
+
+  searchText: string = '';
+
+  newDriver = {
+    name: '',
+    car: ''
+  };
+
+  filteredDrivers() {
+    return this.drivers.filter(driver =>
+      driver.name?.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+  }
+
+  deleteDriver(index: number) {
+    this.drivers.splice(index, 1);
+  }
+
+  addDriver() {
+    if (this.newDriver.name && this.newDriver.car) {
+      this.drivers.push({ ...this.newDriver });
+      this.newDriver = { name: '', car: '' };
+    }
+  }
+}
+

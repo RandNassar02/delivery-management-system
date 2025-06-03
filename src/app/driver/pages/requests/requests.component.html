@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <h2>الطلبات المخصصة</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>رقم الطلب</th>
+        <th>العميل</th>
+        <th>الحالة</th>
+        <th>التاريخ</th>
+        <th>الإجراءات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of requests">
+        <td>{{ request.id }}</td>
+        <td>{{ request.clientName }}</td>
+        <td>{{ request.deliveryStatus }}</td>
+        <td>{{ request.date | date:'short' }}</td>
+        <td>
+          <a [routerLink]="['/driver/requests', request.id]" class="btn btn-info btn-sm">عرض التفاصيل</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

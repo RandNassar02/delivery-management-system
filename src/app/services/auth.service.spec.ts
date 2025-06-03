@@ -14,3 +14,12 @@ describe('AuthService', () => {
     expect(service).toBeTruthy();
   });
 });
+// driver-login.component.ts
+constructor(private authService: AuthService) {}
+
+onLogin() {
+  const { email, password } = this.loginForm.value;
+  this.authService.login(email, password).subscribe(user => {
+    console.log('تم تسجيل الدخول بنجاح!', user);
+  });
+}
