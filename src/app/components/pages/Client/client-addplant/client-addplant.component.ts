@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -19,18 +25,17 @@ import { AuthService } from '../../../../services/auth.service';
 @Component({
   selector: 'app-client-addplant',
   standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    ToastModule,
-    TranslatePipe,
-    RouterLink,
-  ],
+  imports: [CommonModule, ReactiveFormsModule, ToastModule, TranslatePipe],
   templateUrl: './client-addplant.component.html',
   styleUrls: ['./client-addplant.component.scss'],
   providers: [MessageService],
 })
 export class ClientAddplantComponent {
+  @Input() plantToEdit: Plants | null = null;
+  @Output() plantAdded = new EventEmitter<void>();
+  @Output() saveEdit = new EventEmitter<Plants>();
+  @Output() cancelEdit = new EventEmitter<void>();
+
   plantForm: FormGroup;
   selectedImage: File | null = null;
   uploading = false;
@@ -58,10 +63,21 @@ export class ClientAddplantComponent {
     });
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['plantToEdit']) {
+      if (this.plantToEdit) {
+        this.plantForm.patchValue(this.plantToEdit);
+        this.selectedImage = null;
+      } else {
+        this.plantForm.reset();
+      }
+    }
+  }
+
   onImageSelected(event: Event): void {
-    const fileInput = event.target as HTMLInputElement;
-    if (fileInput.files && fileInput.files.length > 0) {
-      this.selectedImage = fileInput.files[0];
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedImage = input.files[0];
     }
   }
 
@@ -77,29 +93,55 @@ export class ClientAddplantComponent {
   }
 
   async onSubmit(): Promise<void> {
-    if (this.plantForm.valid) {
-      this.uploading = true;
-      try {
-        let imageUrl = '';
-        if (this.selectedImage) {
-          imageUrl = await this.uploadImageToCloudinary(this.selectedImage);
-        }
+    if (this.plantForm.invalid) return;
 
-        const plant: Omit<Plants, 'id'> = {
-          ...this.plantForm.value,
-          image: imageUrl,
-          idClient: this.authService.getUserID(),
-        };
+    this.uploading = true;
 
-        this.plantService.addPlant(plant).subscribe({
+    try {
+      let imageUrl = this.plantForm.value.image || '';
+
+      if (this.selectedImage) {
+        imageUrl = await this.uploadImageToCloudinary(this.selectedImage);
+      }
+
+      const plantData: Plants = {
+        ...this.plantForm.value,
+        image: imageUrl,
+        idClient: this.authService.getUserID(),
+        id: this.plantToEdit ? this.plantToEdit.id : undefined,
+      };
+
+      if (this.plantToEdit) {
+        // تحديث نبات
+        this.plantService.updatePlant(plantData).subscribe({
+          next: () => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Success',
+              detail: 'Plant updated successfully',
+            });
+            this.saveEdit.emit(plantData);
+            this.resetForm();
+          },
+          error: () => {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'Failed to update plant',
+            });
+          },
+        });
+      } else {
+        // إضافة نبات جديد
+        this.plantService.addPlant(plantData).subscribe({
           next: () => {
             this.messageService.add({
               severity: 'success',
               summary: 'Success',
               detail: 'Plant added successfully',
             });
-            this.plantForm.reset();
-            this.selectedImage = null;
+            this.plantAdded.emit();
+            this.resetForm();
           },
           error: () => {
             this.messageService.add({
@@ -109,15 +151,26 @@ export class ClientAddplantComponent {
             });
           },
         });
-      } catch {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: 'Image upload failed.',
-        });
-      } finally {
-        this.uploading = false;
       }
+    } catch (error) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Image upload failed',
+      });
+    } finally {
+      this.uploading = false;
     }
+  }
+
+  resetForm() {
+    this.plantForm.reset();
+    this.selectedImage = null;
+    this.plantToEdit = null;
+  }
+
+  onCancel() {
+    this.cancelEdit.emit();
+    this.resetForm();
   }
 }

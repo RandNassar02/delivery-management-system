@@ -19,7 +19,7 @@ export class ClientProfileComponent {
   editForm: Partial<Client> = {};
 
   defaultProfileImage: string =
-    'https://res.cloudinary.com/dblomu3ce/image/upload/v1748284579/pngwing.com_2_xwl4gt.png';
+    'https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png';
 
   constructor(private clientService: ClientService, private router: Router) {}
 
