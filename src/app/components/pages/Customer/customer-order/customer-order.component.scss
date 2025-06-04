@@ -16,7 +16,7 @@
   button {
     padding: 10px 20px;
     border: none;
-    background-color: var(--secondary-color); /* لون خلفية التاب */
+    background-color: var(--secondary-color);
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -24,12 +24,12 @@
     transition: background-color 0.3s;
 
     &.active {
-      background-color: var(--primary-color); /* التاب النشط */
+      background-color: var(--primary-color);
       color: white;
     }
 
     &:hover:not(.active) {
-      background-color: #c2e2ae; /* لون خفيف عند التحويم */
+      background-color: #c2e2ae;
     }
   }
 }

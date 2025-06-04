@@ -16,7 +16,6 @@
       </div>
     </div>
 
-    <!-- 🔲 Summary Section -->
     <div class="summary-box">
       <h3>Summary</h3>
 
@@ -37,7 +36,6 @@
         <strong>{{ getTotal() | number : "1.2-2" }} JD</strong>
       </div>
 
-      <!-- 💳 Payment Section -->
       <div class="payment-methods">
         <h4>Select Payment Method</h4>
 
@@ -69,10 +67,10 @@
 
 <ng-template #emptyCart>
   <div class="empty-cart">
-    <p>No Item in the cart</p>
-    <img
-      src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748620413/emp_s7lwqw.png"
-    />
+    <p>Your cart is empty 🌿 Find the plant that matches your soul</p>
     <button class="view-cart-btn" (click)="gotostore()">Shop Now</button>
+    <img
+      src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748706445/cart_emp_lpzk1b.png"
+    />
   </div>
 </ng-template>
