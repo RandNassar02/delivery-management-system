@@ -68,7 +68,7 @@ export class AuthService {
     return this.hasToken();
   }
 
-  getUserType(): User | null {
+  getUserType(): string | null {
     const user = JSON.parse(localStorage.getItem('currentUser') || 'null');
     return user?.userType || null;
   }
