@@ -1,0 +1,8 @@
+<h2>Pending Client Accounts</h2>
+
+<div *ngFor="let client of clients" class="client-card">
+  <p><strong>Name:</strong> {{ client.fullName }}</p>
+  <p><strong>Email:</strong> {{ client.email }}</p>
+  <button (click)="approve(client.id)">Approve</button>
+  <button (click)="reject(client.id)">Reject</button>
+</div>

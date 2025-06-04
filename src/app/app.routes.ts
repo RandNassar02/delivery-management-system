@@ -14,6 +14,10 @@ import { CustomerAccountComponent } from './components/pages/Customer/customer-a
 import { CustomerEditAccountComponent } from './components/pages/Customer/customer-edit-account/customer-edit-account.component';
 import { CustomerOrderComponent } from './components/pages/Customer/customer-order/customer-order.component';
 import { CartComponent } from './components/pages/Customer/cart/cart.component';
+import { ClientsManagementComponent } from './components/pages/Admin/clients-management/clients-management.component';
+import { CustomersManagementComponent } from './components/pages/Admin/customers-management/customers-management.component';
+import { DriversManagementComponent } from './components/pages/Admin/drivers-management/drivers-management.component';
+
 
 export const routes: Routes = [
   {
@@ -62,6 +66,12 @@ export const routes: Routes = [
   { path: 'customer-edit-account', component: CustomerEditAccountComponent },
   { path: 'customer-account/orders', component: CustomerOrderComponent },
   { path: 'cart', component: CartComponent },
+
+//Admin Pages (Linda)
+  {path:'admin/clients', component:ClientsManagementComponent},
+  {path:'admin/customers', component:CustomersManagementComponent},
+  {path:'admin/drivers' , component:DriversManagementComponent},
+
   {
     path: '**',
     component: NotFoundComponent,

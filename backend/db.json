@@ -227,5 +227,37 @@
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748496810/web_09519371_01_hpv5zm.jpg",
       "description": "Ideal for weeding and breaking up soil before planting."
     }
+  ],
+
+
+  "clientsManag": [
+    {
+      "id": 1,
+      "fullName": "Ahmad Saleh",
+      "email": "ahmad@example.com",
+      "status": "approved"
+    },
+    {
+      "id": 2,
+      "fullName": "Lina Zayed",
+      "email": "lina@example.com",
+      "status": "pending"
+    }
+  ],
+  "requests": [
+    {
+      "id": 101,
+      "clientId": 1,
+      "title": "طلب اشتراك",
+      "description": "تفاصيل طلب الاشتراك",
+      "createdAt": "2025-05-30T08:00:00"
+    },
+    {
+      "id": 102,
+      "clientId": 1,
+      "title": "طلب دعم",
+      "description": "تفاصيل طلب الدعم",
+      "createdAt": "2025-05-31T10:15:00"
+    }
   ]
 }
