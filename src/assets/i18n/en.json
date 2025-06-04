@@ -109,8 +109,7 @@
     "email": "Email",
     "phone": "Phone",
     "address": "Address",
-    "Button": "Save Changes"
-
+    "Button": "Save Changes",
     "bankAccountRequired": "Bank Account is required",
     "categoryRequired": "Category is required",
     "priceRequired": "Price is required"

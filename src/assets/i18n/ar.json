@@ -105,8 +105,7 @@
     "email": "البريد الالكتروني",
     "phone": "  رقم الهاتف",
     "address": " العنوان",
-    "Button": "حفظ التغييرات"
-
+    "Button": "حفظ التغييرات",
     "bankAccountRequired": "رقم حساب البنك مطلوب",
     "categoryRequired": "القسم مطلوب",
     "priceRequired": "السعر مطلوب"
