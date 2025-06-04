@@ -5,15 +5,19 @@
         <a routerLink="/">
           <img src="assets/image/ghosn home-01.png" class="logo" alt="logo" />
         </a>
-        <div class="nav-items" *ngIf="userType !== 'customer'">
-          <a routerLink="/home">HOME</a>
-          <a routerLink="/about">ABOUT</a>
-          <a routerLink="/contact">CONTACT</a>
+        <div class="nav-items" *ngIf="!isLoggedIn">
+          <a routerLink="/">HOME</a>
+          <a [routerLink]="['/']" fragment="about">ABOUT</a>
+          <a [routerLink]="['/']" fragment="join">CONTACT</a>
         </div>
-      </div>
-      <div class="nav-links" *ngIf="!isLoggedIn">
-        <a routerLink="/signin" class="nav-link-btn nav-link-signin">SIGN IN</a>
-        <a routerLink="/signup" class="nav-link-btn nav-link-signup">SIGNUP</a>
+        <div class="nav-links">
+          <a routerLink="/signin" class="nav-link-btn nav-link-signin"
+            >SIGN IN</a
+          >
+          <a routerLink="/signup" class="nav-link-btn nav-link-signup"
+            >SIGNUP</a
+          >
+        </div>
       </div>
 
       <!-- <div class="nav-links" *ngIf="isLoggedIn">
@@ -43,13 +47,19 @@
             cartService.cartCount$ | async
           }}</span>
         </a>
-        <!-- <div class="nav-link-btn" (click)="logout()">
+      </div>
+
+      <div
+        class="nav-links customer-nav"
+        *ngIf="isLoggedIn && userType === 'client'"
+      >
+        <a routerLink="/client-account" class="nav-link-btn">
           <img
-            src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283954/logout_15604119_fwruyw.png"
-            alt="Logout"
+            src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
+            alt="Profile"
           />
-          <span class="logout">Logout</span>
-        </div> -->
+          My Account</a
+        >
       </div>
 
       <div class="hamburger" (click)="toggleMenu()">

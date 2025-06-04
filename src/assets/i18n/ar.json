@@ -40,6 +40,14 @@
     "welcomeParagraph4": "نحن نؤمن بأن كل حساب يُفعّل هو بداية لفرصة جديدة ونمو مشترك.",
     "welcomeParagraph5": "لأي استفسار أو مساعدة، فريقنا جاهز لدعمك في أي وقت."
   },
+  "add-plant": {
+    "title": "إضافة نبتة جديدة",
+    "name": "الاسم",
+    "price": "السعر",
+    "category": "الفئة",
+    "description": "الوصف",
+    "image": "الصورة"
+  },
   "massages": {
     "nameRequired": "الاسم مطلوب",
     "emailRequired": "البريد الالكتروني مطلوب",
@@ -55,6 +63,7 @@
     "error": "خطأ",
     "success": "نجاح",
     "bankNameRequired": "اسم البنك مطلوب",
+
     "bankAccountRequired": "رقم حساب البنك مطلوب"
   },
   "header": {
@@ -97,5 +106,10 @@
     "phone": "  رقم الهاتف",
     "address": " العنوان",
     "Button": "حفظ التغييرات"
+
+    "bankAccountRequired": "رقم حساب البنك مطلوب",
+    "categoryRequired": "القسم مطلوب",
+    "priceRequired": "السعر مطلوب"
+
   }
 }

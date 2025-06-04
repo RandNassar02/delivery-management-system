@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
@@ -20,7 +20,8 @@ export class HeaderComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-    public cartService: CartService
+    public cartService: CartService,
+    private route: ActivatedRoute
   ) {}
   ngOnInit(): void {
     this.checkLoginStatus();
@@ -68,5 +69,17 @@ export class HeaderComponent {
   closeDrawer() {
     this.isDrawerOpen = false;
     document.body.classList.remove('no-scroll');
+  }
+
+  ngAfterViewInit() {
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment) {
+        // Scroll to the element after the view is initialized
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
   }
 }
