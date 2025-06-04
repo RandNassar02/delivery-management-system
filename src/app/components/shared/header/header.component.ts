@@ -23,23 +23,17 @@ export class HeaderComponent {
     public cartService: CartService,
     private route: ActivatedRoute
   ) {}
+  
   ngOnInit(): void {
-    this.checkLoginStatus();
-  }
-
-  checkLoginStatus() {
-    this.isLoggedIn = this.authService.isLoggedIn();
-    if (this.isLoggedIn) {
-      if (
-        typeof window !== 'undefined' &&
-        typeof window.localStorage !== 'undefined'
-      ) {
+    this.authService.loggedIn$.subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
+      if (loggedIn) {
         const user = JSON.parse(localStorage.getItem('currentUser')!);
         this.userType = user.userType;
+      } else {
+        this.userType = null;
       }
-    } else {
-      this.userType = null;
-    }
+    });
   }
 
   logout() {
