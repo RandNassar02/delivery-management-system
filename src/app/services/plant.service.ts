@@ -17,4 +17,16 @@ export class PlantService {
   addPlant(data: any) {
     return this.http.post(this.plantsUrl, data);
   }
+
+  getPlantsByClientId(clientId: string): Observable<Plants[]> {
+    return this.http.get<Plants[]>(`${this.plantsUrl}?idClient=${clientId}`);
+  }
+
+  updatePlant(plant: Plants) {
+    return this.http.put(`${this.plantsUrl}/${plant.id}`, plant);
+  }
+
+  deletePlant(id: number) {
+    return this.http.delete(`${this.plantsUrl}/${id}`);
+  }
 }

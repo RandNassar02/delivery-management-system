@@ -1,0 +1,13 @@
+.sidebar {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.plants-list {
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding-left: 15px;
+}

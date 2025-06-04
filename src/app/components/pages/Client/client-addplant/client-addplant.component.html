@@ -1,6 +1,5 @@
 <div class="form-container">
   <h2>{{ "add-plant.title" | translate }}</h2>
-  <a routerLink="/all-plants">{{ "add-plant.allPlants" | translate }}</a>
   <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
     <div>
       <label>{{ "add-plant.name" | translate }}:</label>
@@ -61,14 +60,33 @@
       <label>{{ "add-plant.image" | translate }}:</label>
       <input type="file" (change)="onImageSelected($event)" />
     </div>
+    <div *ngIf="!plantToEdit">
+      <button type="submit" [disabled]="plantForm.invalid || uploading">
+        {{
+          uploading
+            ? ("add-plant.uploading" | translate)
+            : ("add-plant.addPlant" | translate)
+        }}
+      </button>
+    </div>
 
-    <button type="submit" [disabled]="plantForm.invalid || uploading">
-      {{
-        uploading
-          ? ("add-plant.uploading" | translate)
-          : ("add-plant.addPlant" | translate)
-      }}
-    </button>
+    <div *ngIf="plantToEdit">
+      <button
+        type="submit"
+        class="btn btn-success w-100"
+        [disabled]="plantForm.invalid || uploading"
+      >
+        {{ "add-plant.save" | translate }}
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-secondary mt-2 w-100"
+        (click)="cancelEdit.emit()"
+      >
+        {{ "add-plant.cancel" | translate }}
+      </button>
+    </div>
   </form>
 </div>
 <p-toast></p-toast>
