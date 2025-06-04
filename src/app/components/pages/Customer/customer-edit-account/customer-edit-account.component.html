@@ -1,9 +1,9 @@
 <div class="edit-account-container">
   <form [formGroup]="editForm" (ngSubmit)="saveChanges()" class="edit-form">
-    <h2>Edit Profile</h2>
+    <h2>{{ "editprofile.Edit Profile" | translate }}</h2>
 
     <div class="form-group">
-      <label>Name *</label>
+      <label>{{ "editprofile.name" | translate }} *</label>
       <input type="text" formControlName="name" placeholder="Full Name" />
       <div
         class="error"
@@ -11,18 +11,18 @@
           editForm.controls['name'].touched && editForm.controls['name'].invalid
         "
       >
-        <small *ngIf="editForm.controls['name'].errors?.['required']"
-          >Name is required</small
-        >
-        <small *ngIf="editForm.controls['name'].errors?.['minlength']"
-          >Minimum 5 characters</small
-        >
+        <small *ngIf="editForm.controls['name'].errors?.['required']">{{
+          "editprofile.nameRequired" | translate
+        }}</small>
+        <small *ngIf="editForm.controls['name'].errors?.['minlength']">{{
+          "editprofile.Edit Profile" | translate
+        }}</small>
       </div>
     </div>
 
     <div class="form-group">
-      <label>Email *</label>
-      <input type="email" formControlName="email" placeholder="Email" />
+      <label>{{ "editprofile.email" | translate }} *</label>
+      <input type="email" formControlName="email" />
       <div
         class="error"
         *ngIf="

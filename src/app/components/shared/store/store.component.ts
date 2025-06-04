@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Categories, Plants } from '../../../model/plant.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+
 import { PlantService } from '../../../services/plant.service';
 import { CartService } from '../../../services/cart.service';
 

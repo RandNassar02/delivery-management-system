@@ -1,7 +1,3 @@
-<!-- <p>Name: {{ Customer?.name }}</p>
-
-<button (click)="logout()">Logout</button> -->
-<!-- customer-account.component.html -->
 <div class="account-container">
   <div class="account-header">
     <img
@@ -18,7 +14,7 @@
         src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
         alt="Profile"
       />
-      <span>My Profile</span>
+      <span> {{ "myAccount.My Profile" | translate }}</span>
     </div>
 
     <div class="account-item" (click)="goToOrders()">
@@ -26,7 +22,7 @@
         src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283786/package_pcmiw3.png"
         alt="Orders"
       />
-      <span>My Orders</span>
+      <span>{{ "myAccount.My Orders" | translate }}</span>
     </div>
 
     <div class="account-item logout" (click)="logout()">
@@ -34,7 +30,7 @@
         src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283954/logout_15604119_fwruyw.png"
         alt="Logout"
       />
-      <span class="logout">Logout</span>
+      <span class="logout">{{ "myAccount.Logout" | translate }}</span>
     </div>
   </div>
 </div>
