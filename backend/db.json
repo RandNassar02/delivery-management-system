@@ -31,18 +31,6 @@
       "userType": "customer"
     },
     {
-      "id": "19ac",
-      "email": "client@client.jo",
-      "password": "$2b$10$RJHVCDl4gw/PnJ5vBGbgse3guLT8A2OTcPjV/OOEXn3DFbJ6HBkcm",
-      "userType": "client"
-    },
-    {
-      "id": "5f30",
-      "email": "test@test.com",
-      "password": "$2b$10$z1qyVruObYaupvebVOE1e.uh58KqAuG.rN8O4Rgof2haA8ksZ1ue6",
-      "userType": "client"
-    },
-    {
       "id": "f434",
       "email": "kawthar@kawthar.com",
       "password": "$2b$10$46gYD81LhuVHyAzdFUkv3OZ3tJg7K6cZ3J3fJvIMGmNERGk4cSaI.",
@@ -53,6 +41,12 @@
       "email": "nabataty@nabataty.com",
       "password": "$2b$10$u7F1323mgy4IH2CSZxMeVur0d2PYZdNXwpWEQ3si2eG5iJywlbl.6",
       "userType": "client"
+    },
+    {
+      "id": "4d26",
+      "email": "Driver@Driver.com",
+      "password": "$2b$10$VCYgPKNTLLtlYAYlgT6sH..2s2Bl7BzL3hjZSqJ84/1kJOif5TB3i",
+      "userType": "driver"
     }
   ],
   "clients": [
@@ -109,7 +103,15 @@
       "address": "sdftgyhghhh"
     }
   ],
-  "drivers": [],
+  "drivers": [
+    {
+      "id": "4d26",
+      "name": "Driver",
+      "email": "Driver@Driver.com",
+      "vehicleType": "Car",
+      "modelName": "test"
+    }
+  ],
   "deliveryRequests": [],
   "plants": [
     {
