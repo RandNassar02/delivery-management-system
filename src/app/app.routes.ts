@@ -15,6 +15,7 @@ import { CustomerOrderComponent } from './components/pages/Customer/customer-ord
 import { CartComponent } from './components/pages/Customer/cart/cart.component';
 import { ClientAllPlantsComponent } from './components/pages/Client/client-all-plants/client-all-plants.component';
 import { ClientAccountComponent } from './components/pages/Client/client-account/client-account.component';
+import { DriverSignupComponent } from './components/pages/Driver/driver-signup/driver-signup.component';
 
 export const routes: Routes = [
   {
@@ -35,7 +36,7 @@ export const routes: Routes = [
   },
   {
     path: 'signup-driver',
-    component: HomeComponent, //mest add the driver sign up component
+    component: DriverSignupComponent, //mest add the driver sign up component
   },
   {
     path: 'admin-dashboard',

@@ -1,0 +1,160 @@
+<section class="container">
+  <div class="main-container">
+    <div class="signup">
+      <div class="form-container inputbox">
+        <form [formGroup]="formDriverSignup" (ngSubmit)="onSubmit()">
+          <div class="name">
+            <input type="text" formControlName="name" placeholder="Full Name" />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formDriverSignup.get('name')?.touched &&
+                formDriverSignup.get('name')?.invalid
+              "
+            >
+              <samp>Name is required.</samp>
+            </div>
+          </div>
+
+          <div class="email">
+            <input type="email" formControlName="email" placeholder="Email" />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formDriverSignup.get('email')?.touched &&
+                formDriverSignup.get('email')?.invalid
+              "
+            >
+              <samp *ngIf="formDriverSignup.get('email')?.errors?.['required']"
+                >Email is required.</samp
+              >
+              <samp *ngIf="formDriverSignup.get('email')?.errors?.['email']"
+                >Invalid email format.</samp
+              >
+            </div>
+          </div>
+
+          <div class="password">
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formDriverSignup.get('password')?.touched &&
+                formDriverSignup.get('password')?.invalid
+              "
+            >
+              <samp
+                *ngIf="formDriverSignup.get('password')?.errors?.['required']"
+                >Password is required.</samp
+              >
+              <samp
+                *ngIf="formDriverSignup.get('password')?.errors?.['minlength']"
+                >At least 6 characters.</samp
+              >
+              <samp
+                *ngIf="formDriverSignup.get('password')?.errors?.['pattern']"
+                >Must include upper, lower, special char.</samp
+              >
+            </div>
+          </div>
+
+          <div class="confirm-password">
+            <input
+              type="password"
+              formControlName="confirmPassword"
+              placeholder="Confirm Password"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formDriverSignup.get('confirmPassword')?.touched &&
+                formDriverSignup.get('confirmPassword')?.invalid
+              "
+            >
+              <samp>Confirm password is required.</samp>
+            </div>
+            <div
+              class="errorMessage"
+              *ngIf="formDriverSignup.errors?.['passwordMismatch']"
+            >
+              <samp>Passwords do not match.</samp>
+            </div>
+          </div>
+
+          <div class="vehicle-type">
+            <select formControlName="vehicleType">
+              <option value="" disabled>Select Vehicle Type</option>
+              <option value="Car">Car</option>
+              <option value="Motorcycle">Motorcycle</option>
+            </select>
+            <div
+              class="errorMessage"
+              *ngIf="
+                formDriverSignup.get('vehicleType')?.touched &&
+                formDriverSignup.get('vehicleType')?.invalid
+              "
+            >
+              <samp>Vehicle type is required.</samp>
+            </div>
+          </div>
+
+          <div class="model-name">
+            <input
+              type="text"
+              formControlName="modelName"
+              placeholder="Vehicle Model Name"
+            />
+            <div
+              class="errorMessage"
+              *ngIf="
+                formDriverSignup.get('modelName')?.touched &&
+                formDriverSignup.get('modelName')?.invalid
+              "
+            >
+              <samp>Model name is required.</samp>
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="formDriverSignup.invalid">
+            Create Account
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-side">
+    <div class="logo">
+      <a routerLink="/">
+        <img src="assets/image/ghosn home-01.png" alt="logo" class="logo" />
+      </a>
+    </div>
+    <div class="content welcome-message">
+      <h3>Welcome to the Ghosn Driver community!</h3>
+      <p>
+        Join us and start your journey towards a rewarding and flexible career.
+      </p>
+      <p>
+        Please provide accurate vehicle and model information. Your details help
+        us maintain safety and service excellence.
+      </p>
+      <p>
+        After submitting your application, our dedicated team will carefully
+        review it to ensure you meet our standards.
+      </p>
+      <p>
+        We believe every new driver is an important partner in delivering
+        outstanding service and shared success.
+      </p>
+      <p>
+        For any questions or support, our team is ready to assist you anytime.
+      </p>
+    </div>
+  </div>
+</section>
+
+<p-toast></p-toast>
