@@ -47,6 +47,12 @@
       "email": "Driver@Driver.com",
       "password": "$2b$10$VCYgPKNTLLtlYAYlgT6sH..2s2Bl7BzL3hjZSqJ84/1kJOif5TB3i",
       "userType": "driver"
+    },
+    {
+      "id": "3487",
+      "email": "Driver2@Driver.com",
+      "password": "$2b$10$Jik6F6Ji55etrUQykO3Gguh0zYT7RkXEG4.tIjIC6LVc7xC9OKdOK",
+      "userType": "driver"
     }
   ],
   "clients": [
@@ -109,7 +115,16 @@
       "name": "Driver",
       "email": "Driver@Driver.com",
       "vehicleType": "Car",
-      "modelName": "test"
+      "modelName": "test",
+      "approvalStatus": "pending"
+    },
+    {
+      "id": "3487",
+      "name": "Driver2",
+      "email": "Driver2@Driver.com",
+      "vehicleType": "Car",
+      "modelName": "test",
+      "approvalStatus": "pending"
     }
   ],
   "deliveryRequests": [],
