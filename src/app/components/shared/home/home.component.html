@@ -2,10 +2,12 @@
   <div class="welcome-home">
     <div class="welcome-home-text-section">
       <h1 class="welcome-home-text">
-        <samp> Every plant tells a story.. </samp>
-        Let's plant beauty in the corners of your home
+        <samp>{{ "homepage.title1" | translate }} </samp>
+        {{ "homepage.title2" | translate }}
       </h1>
-      <button routerLink="/store" class="welcome-home-button">Shop Now</button>
+      <button routerLink="/store" class="welcome-home-button">
+        {{ "homepage.button" | translate }}
+      </button>
     </div>
     <img src="{{ 'img.logo' | translate }}" alt="plant" class="imgWelcome" />
   </div>
@@ -36,7 +38,7 @@
   </div>
 
   <div class="about-section" id="about">
-    <h2 class="about-section-title">About Us</h2>
+    <h2 class="about-section-title">{{ "homepage.about" | translate }}</h2>
     <div class="all-about-box">
       <div class="about-box">
         <i class="ri-leaf-line icon"></i>

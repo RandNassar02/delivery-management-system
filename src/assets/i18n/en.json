@@ -76,14 +76,25 @@
     "SIGNIN": "SIGNIN",
     "My Account": "My Account"
   },
+  "FOOTER": {
+    "SLOGAN": "Bringing nature to your doorstep.",
+    "CONTACT": "Contact Us",
+    "FOLLOW": "Follow Us",
+    "RIGHTS": "All rights reserved."
+  },
   "homepage": {
     "title": "Every plant tells a story.. Let's plant beauty in the corners of your home",
     "ؤ": "Shop Now",
+
+    "title1": "Every plant tells a story..",
+    "title2": "Let's plant beauty in the corners of your home",
+    "button": "Shop Now",
+
     "category": "Outdoor Plants",
     "category2": "Indoor Plants",
     "category3": "Edible Plants",
     "category4": "Gardening Tools",
-    "About Us": "About Us",
+    "about": "About Us",
     "Who We Are": "Who We Are",
     "Who We Are title": "At Ghosn, we believe every plant brings life and beauty to any space. We're more than a plant store — we're a green passion and a growing community of nature lovers.",
     "What We Offer": "What We Offer",
@@ -133,6 +144,10 @@
     "emptyCart": "Your cart is empty"
   },
   "store": {
-    "addTocart": "Add to cart"
+    "addTocart": "Add to cart",
+    "Button": "Save Changes",
+    "bankAccountRequired": "Bank Account is required",
+    "categoryRequired": "Category is required",
+    "priceRequired": "Price is required"
   }
 }

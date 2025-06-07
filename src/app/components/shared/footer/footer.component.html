@@ -1,8 +1,78 @@
-<footer class="app-footer">
+<!-- <footer class="app-footer">
   <div class="footer-content">
     <div class="lang-switch">
       <a (click)="switchToArabic()">عربي</a> |
       <a (click)="switchToEnglish()">English</a>
+    </div>
+  </div>
+</footer> -->
+<footer class="app-footer">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-start">
+      <div
+        class="col-md-4 mb-3 d-flex flex-column align-items-center align-items-md-start"
+      >
+        <img
+          src="assets/image/ghosn home-01.png"
+          alt="Ghossn logo"
+          class="footer-logo mb-2"
+        />
+        <p class="slogan">{{ "FOOTER.SLOGAN" | translate }}</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h6 class="heading">{{ "FOOTER.CONTACT" | translate }}</h6>
+        <ul class="list-unstyled contact">
+          <li>
+            <i class="bi bi-envelope-fill me-1"></i>
+            ghossn.support&#64;gmail.com
+          </li>
+
+          <li><i class="bi bi-telephone-fill me-1"></i> 0789456123</li>
+          <li><i class="bi bi-geo-alt-fill me-1"></i> Amman, Jordan</li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <h6 class="heading">{{ "FOOTER.FOLLOW" | translate }}</h6>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook" class="text-white me-2"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a href="#" aria-label="Instagram" class="text-white me-2"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="#" aria-label="WhatsApp" class="text-white me-2"
+            ><i class="bi bi-whatsapp"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between align-items-center"
+    >
+      <small>&copy; 2025 غُصن — {{ "FOOTER.RIGHTS" | translate }}</small>
+
+      <div class="lang-switch">
+        <button
+          class="btn-switch"
+          (click)="switchToArabic()"
+          [attr.aria-pressed]="language === 'ar'"
+        >
+          عربي
+        </button>
+        |
+        <button
+          class="btn-switch"
+          (click)="switchToEnglish()"
+          [attr.aria-pressed]="language === 'en'"
+        >
+          English
+        </button>
+      </div>
     </div>
   </div>
 </footer>
