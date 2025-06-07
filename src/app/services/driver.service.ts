@@ -18,6 +18,7 @@ export class DriverService {
     password: string;
     vehicleType: string;
     modelName: string;
+    approvalStatus: string;
   }): Observable<any> {
     const hashedPassword = bcrypt.hashSync(formData.password, 10);
 
@@ -41,6 +42,7 @@ export class DriverService {
               email: formData.email,
               vehicleType: formData.vehicleType,
               modelName: formData.modelName,
+              approvalStatus: 'pending',
             };
 
             return this.http.post(this.driversUrl, driver);

@@ -43,12 +43,12 @@ export class ClientAccountComponent {
     this.router.navigate(['/client-profile']);
   }
 
-  goToAddPlant(): void {
-    this.router.navigate(['/client-addplant']);
-  }
-
   goToPlants(): void {
     this.router.navigate(['/client-plants']);
+  }
+
+  goToOrders(): void {
+    this.router.navigate(['/client-orders']);
   }
 
   logout(): void {

@@ -16,6 +16,7 @@ import { CartComponent } from './components/pages/Customer/cart/cart.component';
 import { ClientAllPlantsComponent } from './components/pages/Client/client-all-plants/client-all-plants.component';
 import { ClientAccountComponent } from './components/pages/Client/client-account/client-account.component';
 import { DriverSignupComponent } from './components/pages/Driver/driver-signup/driver-signup.component';
+import { ClientOrdersComponent } from './components/pages/Client/client-orders/client-orders.component';
 
 export const routes: Routes = [
   {
@@ -36,7 +37,7 @@ export const routes: Routes = [
   },
   {
     path: 'signup-driver',
-    component: DriverSignupComponent, //mest add the driver sign up component
+    component: DriverSignupComponent,
   },
   {
     path: 'admin-dashboard',
@@ -55,16 +56,16 @@ export const routes: Routes = [
     component: ClientProfileComponent,
   },
   {
-    path: 'client-addplant',
-    component: ClientAddplantComponent,
-  },
-  {
     path: 'client-plants',
     component: ClientAllPlantsComponent,
   },
   {
     path: 'client-account',
     component: ClientAccountComponent,
+  },
+  {
+    path: 'client-orders',
+    component: ClientOrdersComponent,
   },
   { path: 'store', component: StoreComponent },
   { path: 'store/:category', component: StoreComponent },
