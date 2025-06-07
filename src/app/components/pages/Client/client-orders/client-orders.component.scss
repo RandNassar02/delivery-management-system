@@ -1,0 +1,86 @@
+.container {
+  margin: 0 auto;
+}
+
+h2 {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-left: 5px solid var(--primary-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h5 {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.card p {
+  margin: 0.2rem 0;
+  color: var(--text-color);
+}
+
+h6 {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-select {
+  //   padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--heading-color);
+}
+
+img {
+  margin-right: 10px;
+  border-radius: 4px;
+}
+.delivery-status-badge {
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: inline-block;
+}
+// .payment-badge {
+//   padding: 0.4rem 0.65rem;
+//   border-radius: 0.35rem;
+//   font-size: 0.85rem;
+//   font-weight: 500;
+// }
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .form-select {
+    width: 100%;
+  }
+
+  ul li {
+    font-size: 0.9rem;
+  }
+
+  img {
+    width: 60px;
+  }
+}

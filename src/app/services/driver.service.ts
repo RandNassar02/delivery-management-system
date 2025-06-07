@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, switchMap } from 'rxjs';
 import * as bcrypt from 'bcryptjs';
 import { AnyARecord } from 'dns';
+import { Driver } from '../model/driver.model';
 
 @Injectable({
   providedIn: 'root',
@@ -52,7 +53,10 @@ export class DriverService {
     );
   }
 
-  getDrivers(id: number): Observable<any> {
+  getDriverById(id: number): Observable<any> {
     return this.http.get(`${this.driversUrl}/${id}`);
+  }
+  getAllDrivers(): Observable<Driver[]> {
+    return this.http.get<Driver[]>(this.driversUrl);
   }
 }
