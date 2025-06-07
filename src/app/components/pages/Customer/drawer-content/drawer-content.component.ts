@@ -32,12 +32,10 @@ export class DrawerContentComponent {
     this.cartService.removeFromCart(itemToRemove.id);
   }
   goToCart() {
-    console.log('Emit closeDrawer');
     this.closeDrawer.emit();
     this.router.navigate(['/cart']);
   }
   gotostore() {
-    console.log('Emit closeDrawer');
     this.closeDrawer.emit();
     this.router.navigate(['/store']);
   }

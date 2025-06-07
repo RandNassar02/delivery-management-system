@@ -23,7 +23,7 @@ export class HeaderComponent {
     public cartService: CartService,
     private route: ActivatedRoute
   ) {}
-  
+
   ngOnInit(): void {
     this.authService.loggedIn$.subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn;

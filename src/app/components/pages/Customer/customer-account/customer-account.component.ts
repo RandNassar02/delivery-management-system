@@ -42,8 +42,5 @@ export class CustomerAccountComponent {
   }
   logout() {
     this.authService.logout();
-    this.isLoggedIn = false;
-    this.userType = null;
-    this.router.navigate(['/']);
   }
 }

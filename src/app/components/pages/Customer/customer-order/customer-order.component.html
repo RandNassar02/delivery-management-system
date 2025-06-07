@@ -4,19 +4,19 @@
       [class.active]="selectedTab === 'processing'"
       (click)="selectTab('processing')"
     >
-      Processing
+      {{ "orders.processing" | translate }}
     </button>
     <button
       [class.active]="selectedTab === 'completed'"
       (click)="selectTab('completed')"
     >
-      Completed
+      {{ "orders.completed" | translate }}
     </button>
     <button
       [class.active]="selectedTab === 'cancelled'"
       (click)="selectTab('cancelled')"
     >
-      Cancelled
+      {{ "orders.cancelled" | translate }}
     </button>
   </div>
 
@@ -26,9 +26,9 @@
     </ng-container>
 
     <ng-template #noOrders>
-      <p>No order has been made yet.</p>
+      <p>{{ "orders.NoOrders" | translate }}</p>
       <button class="browse-btn" (click)="browseProducts()">
-        Browse products
+        {{ "orders.button" | translate }}
       </button>
     </ng-template>
   </div>

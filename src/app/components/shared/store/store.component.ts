@@ -54,7 +54,7 @@ export class StoreComponent {
   }
 
   filterByCategory() {
-    const readableCategory = this.slugToName(this.activeCategory);
+    const readableCategory = this.activeCategory;
     this.filteredPlants = this.allPlants.filter(
       (plant) => plant.category === readableCategory
     );
@@ -66,9 +66,7 @@ export class StoreComponent {
       price: plant.price,
       quantity: 1,
       image: plant.image,
+      idClient: plant.idClient,
     });
-  }
-  slugToName(slug: string): string {
-    return slug.replace(/-/g, ' ');
   }
 }

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslatePipe } from '../../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-customer-order',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './customer-order.component.html',
   styleUrl: './customer-order.component.scss',
 })
