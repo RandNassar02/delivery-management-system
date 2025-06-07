@@ -22,7 +22,6 @@ export class ClientAccountComponent {
 
   ngOnInit(): void {
     const userId = this.authService.getUserID();
-    console.log('User ID from localStorage:', userId);
 
     if (userId) {
       this.clientService.getClientById(userId).subscribe({

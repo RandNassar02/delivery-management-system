@@ -56,4 +56,8 @@ export class CustomerService {
   updateCustomer(id: string, data: any): Observable<any> {
     return this.http.put(`${this.customersUrl}/${id}`, data);
   }
+
+  getAllCustomers(): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.customersUrl);
+  }
 }

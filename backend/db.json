@@ -19,18 +19,6 @@
       "userType": "customer"
     },
     {
-      "id": "748f",
-      "email": "testreset@gmail.com",
-      "password": "$2b$10$sXTD5tyNvByhLasmv3Rr6enRlWI14TexjhzpLO87CMEloyj41sxV2",
-      "userType": "customer"
-    },
-    {
-      "id": "1c51",
-      "email": "ddddddddddd@ghhhhhhhhh",
-      "password": "$2b$10$x2NnGkUcVw3y.tKFs.w86e.mUvBym6RcDIYW2JhnAVCw8FSeY7slC",
-      "userType": "customer"
-    },
-    {
       "id": "f434",
       "email": "kawthar@kawthar.com",
       "password": "$2b$10$46gYD81LhuVHyAzdFUkv3OZ3tJg7K6cZ3J3fJvIMGmNERGk4cSaI.",
@@ -93,20 +81,6 @@
       "email": "kawthar@gmail.com",
       "phone": "782442297",
       "address": "amman"
-    },
-    {
-      "id": "748f",
-      "name": "test12",
-      "email": "testreset@gmail.com",
-      "phone": "1234567891",
-      "address": "qwertyuiokhgvvv"
-    },
-    {
-      "id": "1c51",
-      "name": "edsssssss",
-      "email": "ddddddddddd@ghhhhhhhhh",
-      "phone": "1234567891",
-      "address": "sdftgyhghhh"
     }
   ],
   "drivers": [
@@ -127,11 +101,60 @@
       "approvalStatus": "pending"
     }
   ],
-  "deliveryRequests": [],
+  "deliveryRequests": [
+    {
+      "id": "52391",
+      "deliveryDetails": "amman",
+      "date": "2025-06-07T16:49:33.225Z",
+      "customerId": "abc4",
+      "deliveryStatus": "pending",
+      "driverId": "4d26",
+      "paymentStatus": "unpaid",
+      "paymentAmount": 272.25,
+      "plant": [
+        {
+          "id": "2",
+          "name": "Monstera Deliciosa",
+          "price": 255,
+          "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491946/bloomscape_monstera_alt_clay-450x550_cpgwca.jpg",
+          "idClient": "f434",
+          "quantity": 1
+        },
+        {
+          "id": "8aab",
+          "name": " Cactus Plant",
+          "price": 17.25,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073152/mw4coccuxrisf08wosp8.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "88251",
+      "deliveryDetails": "amman",
+      "date": "2025-06-07T16:52:12.329Z",
+      "customerId": "abc4",
+      "deliveryStatus": "in_progress",
+      "driverId": 0,
+      "paymentStatus": "paid",
+      "paymentAmount": 10.35,
+      "plant": [
+        {
+          "id": "cf76",
+          "name": "Crassula Plant",
+          "price": 10.35,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073219/mdhemw9teb9cddurbnkl.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
   "plants": [
     {
       "name": "Snake Plant",
-      "category": "Indoor Plants",
+      "category": "Indoor-Plants",
       "price": 15444,
       "description": "Low-maintenance plant that purifies the air.",
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491891/bloomscape_sansevieria_xs_charcoal-768x921_swbuxe.jpg",
@@ -150,7 +173,7 @@
     {
       "id": "3",
       "name": "Peace Lily",
-      "category": "Indoor Plants",
+      "category": "Indoor-Plants",
       "price": 18,
       "image": "https://bloomscape.com/wp-content/uploads/2022/10/bloomscape_peace-lily6_md_charcoal-768x922.jpg?ver=955366",
       "description": "Elegant white blooms and glossy leaves. Great for shaded areas.",
@@ -159,7 +182,7 @@
     {
       "id": "4",
       "name": "ZZ Plant",
-      "category": "Indoor Plants",
+      "category": "Indoor-Plants",
       "price": 22,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491779/bloomscape_zz-plant_clay_dlsmix.jpg",
       "description": "Tolerates low light and dry air. Perfect for beginners.",
@@ -168,7 +191,7 @@
     {
       "id": "5",
       "name": "Spider Plant",
-      "category": "Indoor Plants",
+      "category": "Indoor-Plants",
       "price": 12,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492144/bloomscape_spider-plant_medium_stone-768x922_okbhmt.jpg",
       "description": "Fast-growing with baby offshoots. Air-purifying and resilient.",
@@ -177,7 +200,7 @@
     {
       "id": "6",
       "name": "Pothos",
-      "category": "Indoor Plants",
+      "category": "Indoor-Plants",
       "price": 14,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492228/bloomscape_silver-satin-pothos_alt-3_charcoal-768x922_ngaeve.jpg",
       "description": "Trailing vine with heart-shaped leaves. Low maintenance.",
@@ -186,7 +209,7 @@
     {
       "id": "7",
       "name": "Lavender",
-      "category": "Outdoor Plants",
+      "category": "Outdoor-Plants",
       "price": 18,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492399/begqpergt0ro8rqyj4ug_820x820_crop_center.jpg_ixjufe.jpg",
       "description": "Aromatic plant with purple flowers. Loves full sun.",
@@ -194,7 +217,7 @@
     },
     {
       "name": "Rose Bush",
-      "category": "Outdoor Plants",
+      "category": "Outdoor-Plants",
       "price": 30,
       "description": "Classic flowering shrub. Needs regular pruning and sunlight.",
       "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749065699/ehcspsyu3almpio8pozz.jpg",
@@ -204,7 +227,7 @@
     {
       "id": "9",
       "name": "Bamboo Palm",
-      "category": "Outdoor Plants",
+      "category": "Outdoor-Plants",
       "price": 25,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492661/pfcuutakror8ylszzuu3_820x820_crop_center.jpg_acpzc7.jpg",
       "description": "Tropical look with low maintenance. Can grow tall outdoors.",
@@ -213,7 +236,7 @@
     {
       "id": "10",
       "name": "Lemon",
-      "category": "Edible Plants",
+      "category": "Edible-Plants",
       "price": 8,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748493035/zcf65g0nk2zdf4mqdz9x_820x820_crop_center.jpg_tisnkc.jpg",
       "description": "Lemon is a citrus plant known for its bright yellow fruit with a tangy flavor. Commonly used in cooking, drinks, and natural remedies. Requires full sun, well-drained soil, and regular watering.",
@@ -222,7 +245,7 @@
     {
       "id": "11",
       "name": "Tomato Plant",
-      "category": "Edible Plants",
+      "category": "Edible-Plants",
       "price": 12,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748493975/723_nejolq.jpg",
       "description": "Produces juicy tomatoes. Requires sun and staking support.",
@@ -231,7 +254,7 @@
     {
       "id": "12",
       "name": "Mint",
-      "category": "Edible Plants",
+      "category": "Edible-Plants",
       "price": 7,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748493469/65076_uqvptq.jpg",
       "description": "Fragrant herb used in drinks and dishes. Spreads quickly.",
@@ -240,7 +263,7 @@
     {
       "id": "13",
       "name": "Garden Trowel",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 10,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748494911/2148224056_vp9bfw.jpg",
       "description": "Small hand tool for digging and planting.",
@@ -249,7 +272,7 @@
     {
       "id": "14",
       "name": "Watering Can",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 15,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748494993/2148128722_asgsrw.jpg",
       "description": "Essential tool for watering indoor and outdoor plants.",
@@ -258,7 +281,7 @@
     {
       "id": "15",
       "name": "Pruning Shears",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 18,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748495066/2148826126_wwgxfi.jpg",
       "description": "Used for cutting branches and stems cleanly.",
@@ -267,7 +290,7 @@
     {
       "id": "16",
       "name": "Gardening Gloves",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 12,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748495951/2147844289_zbweog.jpg",
       "description": "Protective gloves for handling gardening tools.",
@@ -276,7 +299,7 @@
     {
       "id": "17",
       "name": "Garden Rake",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 14,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748496662/2148224033_pkr6vh.jpg",
       "description": "Used to level soil, remove debris, and spread mulch in garden beds.",
@@ -285,7 +308,7 @@
     {
       "id": "18",
       "name": "Hoe",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 16,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748496810/web_09519371_01_hpv5zm.jpg",
       "description": "Ideal for weeding and breaking up soil before planting.",
@@ -294,7 +317,7 @@
     {
       "id": "1b56",
       "name": "Large Aloe Vera",
-      "category": "Outdoor Plants",
+      "category": "Outdoor-Plants",
       "price": 46,
       "description": "Under natural conditions, aloe vera requires bright light. However, it can grow in dim light and can withstand extreme temperatures. Aloe vera is a fast-growing plant. Water only after the soil has dried out, as overwatering is often the cause of aloe vera problems.",
       "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749072797/lgsgkds7cnmm7nll82hh.jpg",
