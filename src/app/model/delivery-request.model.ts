@@ -1,3 +1,5 @@
+import { Plants } from './plant.model';
+
 export type DeliveryStatus =
   | 'pending'
   | 'in_progress'
@@ -9,10 +11,10 @@ export interface DeliveryRequest {
   id: number;
   deliveryDetails: string;
   date: string;
-  clientId: number;
   customerId: number;
   deliveryStatus: DeliveryStatus;
   driverId: number;
   paymentStatus: PaymentStatus;
   paymentAmount: number;
+  plant: Plants[];
 }

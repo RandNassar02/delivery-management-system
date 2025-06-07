@@ -56,13 +56,4 @@ export class CustomerService {
   updateCustomer(id: string, data: any): Observable<any> {
     return this.http.put(`${this.customersUrl}/${id}`, data);
   }
-  // changePassword(userId: string, currentPassword: string, newPassword: string) {
-  //   return this.http.put(
-  //     `http://localhost:3000/users/${userId}/change-password`,
-  //     {
-  //       currentPassword,
-  //       newPassword,
-  //     }
-  //   );
-  // }
 }

@@ -44,7 +44,11 @@ export class CartService {
     if (index > -1) {
       current[index].quantity += item.quantity || 1;
     } else {
-      current.push({ ...item, quantity: item.quantity || 1 });
+      current.push({
+        ...item,
+        quantity: item.quantity || 1,
+        idClient: item.idClient,
+      });
     }
 
     this.saveCart(current);

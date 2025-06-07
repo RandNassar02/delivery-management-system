@@ -12,4 +12,5 @@ export interface Plants {
   image: string;
   description: string;
   idClient: string;
+  quantity: number;
 }

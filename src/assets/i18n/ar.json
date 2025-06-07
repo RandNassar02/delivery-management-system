@@ -15,12 +15,14 @@
     "description": "اكتشف متعة النباتات واصنع لنفسك مساحة طبيعية تنبض بالحياة"
   },
   "custumer-signUp": {
+    "title": "انشاء حساب جديد",
     "name": "الاسم",
     "email": "البريد الالكتروني",
     "password": "كلمة المرور",
     "confirmPassword": "تاكيد كلمة المرور",
     "phoneNumber": "رقم الهاتف",
-    "address": "العنوان"
+    "address": "العنوان",
+    "createAccount": "انشاء حساب"
   },
   "client-signup": {
     "title": "تسجيل العميل",
@@ -63,7 +65,6 @@
     "error": "خطأ",
     "success": "نجاح",
     "bankNameRequired": "اسم البنك مطلوب",
-
     "bankAccountRequired": "رقم حساب البنك مطلوب"
   },
   "header": {
@@ -104,8 +105,42 @@
     "My Orders": "طلباتي",
     "Logout": "تسجيل خروج"
   },
-  "editprofile": {
+  "editprofileCustomer": {
     "Edit Profile": "تعديل الملف الشخصي",
+
+    "name": "الاسم",
+    "Full Name": "الاسم الكامل",
+    "Minimum 5 characters": "الحد الأدنى 5 أحرف",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "priceRequired": "السعر مطلوب",
+    "Phone number is required": "رقم الهاتف مطلوب",
+    "Must be 9 digits": "يجب أن يكون 9 أرقام",
+    "save change": "حفظ التغييرات"
+  },
+  "orders": {
+    "processing": "قيد المعالجة",
+    "completed": "مكتملة",
+    "cancelled": "ملغاة",
+    "NoOrders": "لا يوجد طلبات",
+    "button": "تسوق الآن"
+  },
+  "category": {
+    "indoor": "نباتات داخلية",
+    "outdoor": "نباتات خارجية",
+    "edible": "نباتات صالحة للأكل",
+    "tools": "ادوات"
+  },
+  "drawer": {
+    "cart": "السلة",
+    "Subtotal": "المجموع الفرعي",
+    "button": "عرض السلة",
+    "emptyCart": "السلة فارغة"
+  },
+  "store": {
+    "addTocart": "اضافة الى السلة",
+
     "name": " الاسم",
     "Full Name": "  الاسم الكامل",
     "nameRequired": " الاسم مطلوب",
