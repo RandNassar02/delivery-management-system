@@ -5,10 +5,11 @@ import { CommonModule } from '@angular/common';
 
 import { DrawerContentComponent } from '../../pages/Customer/drawer-content/drawer-content.component';
 import { CartService } from '../../../services/cart.service';
+import { TranslatePipe } from '../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, CommonModule, DrawerContentComponent],
+  imports: [RouterLink, CommonModule, DrawerContentComponent, TranslatePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

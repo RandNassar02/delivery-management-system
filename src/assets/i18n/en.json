@@ -15,14 +15,16 @@
     "description": "Discover the joy of plants and create your own natural space."
   },
   "custumer-signUp": {
-    "title": "Sign Up",
+    "title": "SignUp",
     "name": "Name",
     "email": "Email",
     "password": "Password ",
     "confirmPassword": "Confirm Password  ",
     "phoneNumber": "Phone Number",
     "address": "Address",
-    "createAccount": "Create Account"
+    "createAccount": "Create Account",
+    "welcomeTitle": "Welcome to the Ghosn family!",
+    "welcomeParagraph1": "Find the plant that matches your soul — and let your space bloom with life and peace"
   },
   "client-signup": {
     "title": "Client Sign Up",
@@ -128,13 +130,17 @@
     "completed": "Completed",
     "cancelled": "Cancelled",
     "NoOrders": "No order has been made yet",
-    "button": "  Browse products"
+    "button": "  Browse products",
+    "pending": "Pending",
+    "Jd": "JD",
+    "total": "Total",
+    "order": "Order"
   },
   "category": {
-    "indoor": "Indoor Plants",
-    "outdoor": "Outdoor Plants",
-    "edible": "Edible Plants",
-    "tools": "Gardening Tools"
+    "Indoor-Plants": "Indoor Plants",
+    "Outdoor-Plants": "Outdoor Plants",
+    "Edible-Plants": "Edible Plants",
+    "Gardening-Tools": "Gardening Tools"
   },
   "drawer": {
     "cart": "Cart",
@@ -143,10 +149,19 @@
     "emptyCart": "Your cart is empty"
   },
   "store": {
-    "addTocart": "Add to cart",
-    "Button": "Save Changes",
-    "bankAccountRequired": "Bank Account is required",
-    "categoryRequired": "Category is required",
-    "priceRequired": "Price is required"
+    "addTocart": "Add to cart"
+  },
+  "cart": {
+    "item": "Items",
+    "button": "Buy Now",
+    "summry": "Summary",
+    "delivery fee": "Delivery fees",
+    "payment method": "Select Payment Method",
+    "Cash on Delivery": "Cash on Delivery",
+    "Credit/Debit Card": "Credit/Debit Card",
+    "ZainCash": "ZainCash",
+    "eFAWATEERcom": "eFAWATEERcom",
+    "emptyCart": "Your cart is empty 🌿 Find the plant that matches your soul",
+    "shop now": "Shop Now"
   }
 }

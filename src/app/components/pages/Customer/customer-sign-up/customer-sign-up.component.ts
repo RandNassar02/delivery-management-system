@@ -15,6 +15,7 @@ import { ToastModule } from 'primeng/toast';
 
 import { CustomerService } from '../../../../services/customer.service';
 import { I18nService } from '../../../../i18n/i18n.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-customer-sign-up',
@@ -24,6 +25,7 @@ import { I18nService } from '../../../../i18n/i18n.service';
     FormsModule,
     CommonModule,
     ToastModule,
+    RouterLink,
   ],
   templateUrl: './customer-sign-up.component.html',
   styleUrl: './customer-sign-up.component.scss',

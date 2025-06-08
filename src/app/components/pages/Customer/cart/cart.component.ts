@@ -11,9 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { Customer } from '../../../../model/customer.model';
 import { CustomerService } from '../../../../services/customer.service';
 import { Plants } from '../../../../model/plant.model';
+import { TranslatePipe } from '../../../../i18n/translate.pipe';
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslatePipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })

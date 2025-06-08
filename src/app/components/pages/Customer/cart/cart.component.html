@@ -1,12 +1,14 @@
 <div class="cart-page" *ngIf="cartItems.length > 0; else emptyCart">
   <div class="cart-container">
     <div class="items-list">
-      <h2>Items</h2>
+      <h3>{{ "cart.item" | translate }}</h3>
       <div *ngFor="let item of cartItems" class="cart-item">
         <img [src]="item.image" alt="{{ item.name }}" class="item-img" />
         <div class="item-details">
           <h4>{{ item.name }}</h4>
-          <p>{{ item.price | number : "1.2-2" }} JD</p>
+          <p>
+            {{ item.price | number : "1.2-2" }} {{ "orders.Jd" | translate }}
+          </p>
         </div>
         <div class="quantity-control">
           <button (click)="decreaseQuantity(item)">−</button>
@@ -17,27 +19,36 @@
     </div>
 
     <div class="summary-box">
-      <h3>Summary</h3>
+      <h3>{{ "cart.summry" | translate }}</h3>
 
       <div class="summary-line">
-        <span>Subtotal</span>
-        <span>{{ getSubtotal() | number : "1.2-2" }} JD</span>
+        <span>{{ "drawer.Subtotal" | translate }}:</span>
+        <span
+          >{{ getSubtotal() | number : "1.2-2" }}
+          {{ "orders.Jd" | translate }}</span
+        >
       </div>
 
       <div class="summary-line">
-        <span>Delivery Fees</span>
-        <span>Delivery fee: {{ deliveryFee | number : "1.2-2" }} JD</span>
+        <span>{{ "cart.delivery fee" | translate }}:</span>
+        <span
+          >{{ deliveryFee | number : "1.2-2" }}
+          {{ "orders.Jd" | translate }}</span
+        >
       </div>
 
       <hr />
 
       <div class="summary-total">
-        <strong>Total</strong>
-        <strong>{{ getTotal() | number : "1.2-2" }} JD</strong>
+        <strong>{{ "orders.total" | translate }}</strong>
+        <strong
+          >{{ getTotal() | number : "1.2-2" }}
+          {{ "orders.Jd" | translate }}</strong
+        >
       </div>
 
       <div class="payment-methods">
-        <h4>Select Payment Method</h4>
+        <h4>{{ "cart.payment method" | translate }}</h4>
 
         <div class="payment-option">
           <input
@@ -47,7 +58,7 @@
             value="cod"
             [(ngModel)]="selectedPaymentMethod"
           />
-          <label for="cod">💵 Cash on Delivery</label>
+          <label for="cod">💵 {{ "cart.Cash on Delivery" | translate }}</label>
         </div>
 
         <div class="payment-option">
@@ -58,7 +69,9 @@
             value="card"
             [(ngModel)]="selectedPaymentMethod"
           />
-          <label for="card">💳 Credit/Debit Card</label>
+          <label for="card"
+            >💳 {{ "cart.Credit/Debit Card" | translate }}</label
+          >
         </div>
 
         <div class="payment-option">
@@ -69,7 +82,7 @@
             value="zaincash"
             [(ngModel)]="selectedPaymentMethod"
           />
-          <label for="zaincash">📱 ZainCash</label>
+          <label for="zaincash">📱 {{ "cart.ZainCash" | translate }}</label>
         </div>
 
         <div class="payment-option">
@@ -80,19 +93,25 @@
             value="efawateer"
             [(ngModel)]="selectedPaymentMethod"
           />
-          <label for="efawateer">💻 eFAWATEERcom</label>
+          <label for="efawateer"
+            >💻 {{ "cart.eFAWATEERcom" | translate }}</label
+          >
         </div>
       </div>
 
-      <button class="checkout-btn" (click)="submitOrder()">Buy Now</button>
+      <button class="checkout-btn" (click)="submitOrder()">
+        {{ "cart.button" | translate }}
+      </button>
     </div>
   </div>
 </div>
 
 <ng-template #emptyCart>
   <div class="empty-cart">
-    <p>Your cart is empty 🌿 Find the plant that matches your soul</p>
-    <button class="view-cart-btn" (click)="gotostore()">Shop Now</button>
+    <p>{{ "cart.emptyCart" | translate }}</p>
+    <button class="view-cart-btn" (click)="gotostore()">
+      {{ "cart.button" | translate }}
+    </button>
     <img
       src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748706445/cart_emp_lpzk1b.png"
     />

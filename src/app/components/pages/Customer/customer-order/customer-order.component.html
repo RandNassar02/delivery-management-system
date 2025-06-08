@@ -1,8 +1,8 @@
 <div class="orders-wrapper">
   <div class="tabs">
     <button
-      [class.active]="selectedTab === 'processing'"
-      (click)="selectTab('processing')"
+      [class.active]="selectedTab === 'in_progress'"
+      (click)="selectTab('in_progress')"
     >
       {{ "orders.processing" | translate }}
     </button>
@@ -21,9 +21,32 @@
   </div>
 
   <div class="content">
-    <ng-container *ngIf="orders.length > 0; else noOrders">
-      <div *ngFor="let order of orders">Order ID: {{ order.id }}</div>
-    </ng-container>
+    <div class="orders-container">
+      <div *ngFor="let order of orders" class="order-card">
+        <div class="order-header">
+          <span class="order-id"
+            >{{ "orders.order" | translate }} #{{ order.id }}</span
+          >
+          <span class="order-date">{{ order.date | date : "mediumDate" }}</span>
+        </div>
+
+        <div class="plants-grid">
+          <div *ngFor="let plant of order.plant" class="plant-card">
+            <img [src]="plant.image" alt="{{ plant.name }}" />
+            <div class="plant-info">
+              <h4>{{ plant.name }}</h4>
+              <p>{{ plant.price }} {{ "orders.Jd" | translate }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="total-section">
+          <strong>{{ "orders.total" | translate }} : </strong>
+          {{ order.paymentAmount }}
+          {{ "orders.Jd" | translate }}
+        </div>
+      </div>
+    </div>
 
     <ng-template #noOrders>
       <p>{{ "orders.NoOrders" | translate }}</p>
