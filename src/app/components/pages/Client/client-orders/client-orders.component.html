@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <h2 class="mb-4">🛒 Orders</h2>
+  <h2 class="mb-4">🛒 {{ "orders-client.title" | translate }}</h2>
 
   <div
     *ngFor="let order of filteredOrders"
@@ -9,7 +9,9 @@
       class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2"
     >
       <div>
-        <h5 class="mb-1">📦 Order #{{ order.id }}</h5>
+        <h5 class="mb-1">
+          📦 {{ "orders-client.order" | translate }} #{{ order.id }}
+        </h5>
         <small class="text-muted"
           >🗓️ {{ order.date | date : "mediumDate" }}</small
         >
@@ -17,7 +19,8 @@
       <div class="d-flex align-items-center gap-2">
         <span class="badge bg-secondary">
           <span *ngIf="order.driverId === 0">
-            <i class="fas fa-user-slash"></i> No Driver Assigned</span
+            <i class="fas fa-user-slash"></i>
+            {{ "orders-client.noDriver" | translate }}</span
           >
           <span *ngIf="order.driverId !== 0"
             ><i class="fas fa-user-check"></i>
@@ -27,10 +30,12 @@
 
         <span class="badge bg-secondary">
           <span *ngIf="order.paymentStatus === 'paid'">
-            <i class="fas fa-check-circle"></i> Paid</span
+            <i class="fas fa-check-circle"></i>
+            {{ "orders-client.paid" | translate }}</span
           >
           <span *ngIf="order.paymentStatus === 'unpaid'"
-            ><i class="fas fa-hourglass-half"></i> Unpaid</span
+            ><i class="fas fa-hourglass-half"></i>
+            {{ "orders-client.unpaid" | translate }}</span
           >
         </span>
 
@@ -44,15 +49,31 @@
     </div>
 
     <div *ngIf="getCustomerById(order.customerId) as customer" class="mb-3">
-      <h6>👤 Customer Info</h6>
-      <p class="mb-1"><strong>Name:</strong> {{ customer.name }}</p>
-      <p class="mb-1"><strong>Email:</strong> {{ customer.email }}</p>
-      <p class="mb-1"><strong>Phone:</strong> {{ customer.phone }}</p>
-      <p class="mb-0"><strong>Address:</strong> {{ customer.address }}</p>
+      <h6>👤 {{ "orders-client.customerInfo" | translate }}</h6>
+      <p class="mb-1">
+        <strong>{{ "orders-client.name" | translate }}:</strong>
+        {{ customer.name }}
+      </p>
+      <p class="mb-1">
+        <strong>{{ "orders-client.email" | translate }}:</strong>
+        {{ customer.email }}
+      </p>
+      <p class="mb-1">
+        <strong>{{ "orders-client.phone" | translate }}:</strong>
+        {{ customer.phone }}
+      </p>
+      <p class="mb-0">
+        <strong>{{ "orders-client.address" | translate }}:</strong>
+        {{ customer.address }}
+      </p>
     </div>
 
     <div class="mb-3">
-      <label><strong>Update Delivery Status:</strong></label>
+      <label
+        ><strong
+          >{{ "orders-client.deliveryStatus" | translate }}:</strong
+        ></label
+      >
       <select
         class="form-select w-auto d-inline-block ms-2"
         [(ngModel)]="order.deliveryStatus"
@@ -65,14 +86,18 @@
     </div>
 
     <div class="mb-3">
-      <label><strong>Assign Driver:</strong></label>
+      <label
+        ><strong>{{ "orders-client.assignDriver" | translate }}:</strong></label
+      >
       <select
         id="driverSelect{{ order.id }}"
         class="form-select w-auto d-inline-block ms-2"
         [(ngModel)]="order.driverId"
         (change)="updateDeliveryStatus(order)"
       >
-        <option [value]="0">-- Select Driver --</option>
+        <option [value]="0">
+          -- {{ "orders-client.selectDriver" | translate }} --
+        </option>
 
         <option *ngFor="let driver of drivers" [value]="driver.id">
           {{ driver.name }} ({{ driver.vehicleType }})
@@ -80,8 +105,10 @@
       </select>
 
       <small class="d-block mt-1"
-        >Current Driver:
-        <span *ngIf="order.driverId === 0">Unknown driver</span>
+        >{{ "orders-client.currentDriver" | translate }}:
+        <span *ngIf="order.driverId === 0">{{
+          "orders-client.unknownDriver" | translate
+        }}</span>
         <samp *ngIf="order.driverId !== 0">
           {{ getDriverById(order.driverId)?.name }} ({{
             getDriverById(order.driverId)?.vehicleType
@@ -91,7 +118,7 @@
     </div>
 
     <div>
-      <h6>🌿 Ordered Plants</h6>
+      <h6>🌿 {{ "orders-client.orderedPlants" | translate }}</h6>
       <div class="row">
         <div
           *ngFor="let plant of order.plant"
@@ -109,16 +136,20 @@
               <strong>{{ plant.name }}</strong>
             </p>
             <span>
-              {{ plant.price }} JD × {{ plant.quantity }} =
-              <strong>{{ plant.price * plant.quantity }} JD</strong>
+              {{ plant.price }} {{ "orders-client.Jd" | translate }} ×
+              {{ plant.quantity }} =
+              <strong
+                >{{ plant.price * plant.quantity }}
+                {{ "orders-client.Jd" | translate }}</strong
+              >
             </span>
           </div>
         </div>
       </div>
 
       <div class="mt-2 text-end">
-        <strong>💰 Total for this order:</strong>
-        {{ getTotalAmount(order) }} JD
+        <strong>💰 {{ "orders-client.total" | translate }}:</strong>
+        {{ getTotalAmount(order) }} {{ "orders-client.Jd" | translate }}
       </div>
     </div>
   </div>

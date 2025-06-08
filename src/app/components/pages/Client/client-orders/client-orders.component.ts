@@ -12,9 +12,10 @@ import { Customer } from '../../../../model/customer.model';
 import { CustomerService } from '../../../../services/customer.service';
 import { Driver } from '../../../../model/driver.model';
 import { DriverService } from '../../../../services/driver.service';
+import { TranslatePipe } from '../../../../i18n/translate.pipe';
 @Component({
   selector: 'app-client-orders',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslatePipe],
   templateUrl: './client-orders.component.html',
   styleUrl: './client-orders.component.scss',
 })

@@ -3,27 +3,46 @@ import { Client } from '../../../../model/client.model';
 import { ClientService } from '../../../../services/client.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { MessageService } from 'primeng/api';
+import { TranslatePipe } from '../../../../i18n/translate.pipe';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-client-profile',
   standalone: true,
-
-  imports: [CommonModule, FormsModule],
+  providers: [MessageService],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastModule,
+    TranslatePipe,
+  ],
   templateUrl: './client-profile.component.html',
   styleUrl: './client-profile.component.scss',
 })
 export class ClientProfileComponent {
   client: Client | null = null;
-  editMode = false;
-  editForm: Partial<Client> = {};
+  editFormClient: Partial<Client> = {};
+  editForm!: FormGroup;
 
-  defaultProfileImage: string =
-    'https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png';
-
-  constructor(private clientService: ClientService, private router: Router) {}
+  constructor(
+    private clientService: ClientService,
+    private router: Router,
+    private messageService: MessageService,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit() {
+    this.initForm();
+
     if (
       typeof window !== 'undefined' &&
       typeof window.localStorage !== 'undefined'
@@ -39,14 +58,22 @@ export class ClientProfileComponent {
       this.clientService.getClientById(clientData.id).subscribe({
         next: (freshClient) => {
           this.client = freshClient;
+          this.editForm.patchValue({
+            name: freshClient.name,
+            email: freshClient.email,
+            phone: freshClient.phone,
+            bankName: freshClient.bankName,
+            bankAccount: freshClient.bankAccount,
+            address: freshClient.address,
+          });
+          this.editForm.markAsPristine();
+          this.editForm.markAsUntouched();
         },
-        error: () => {},
+        error: () => {
+          this.router.navigate(['/login']);
+        },
       });
     }
-  }
-
-  addPlant() {
-    this.router.navigate(['/client-addplant']);
   }
 
   onProfileImageSelected(event: Event) {
@@ -82,44 +109,41 @@ export class ClientProfileComponent {
       });
   }
 
-  editProfile() {
-    if (!this.client) return;
-
-    this.editMode = true;
-
-    this.editForm = {
-      name: this.client.name,
-      email: this.client.email,
-      phone: this.client.phone,
-      bankName: this.client.bankName,
-      bankAccount: this.client.bankAccount,
-      address: this.client.address,
-    };
-  }
-
   saveProfileChanges() {
     if (!this.client) return;
 
     const updatedClient = {
       ...this.client,
-      ...this.editForm,
+      ...this.editForm.value,
     };
 
     this.clientService.updateClient(updatedClient).subscribe({
       next: (res) => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'sucsses',
+          detail: 'creation account completed successfully',
+        });
         this.client = res;
-        this.editMode = false;
-        alert('تم تحديث البيانات بنجاح ✅');
       },
       error: (err) => {
-        console.error('فشل تحديث البيانات:', err);
-        alert('حدث خطأ أثناء التحديث ❌');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'An error occurred during account creation.',
+        });
       },
     });
   }
 
-  cancelEdit() {
-    this.editMode = false;
-    this.editForm = {};
+  initForm() {
+    this.editForm = this.fb.group({
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      bankName: ['', [Validators.required, Validators.minLength(5)]],
+      bankAccount: ['', [Validators.required, Validators.minLength(5)]],
+      address: ['', [Validators.required, Validators.minLength(5)]],
+    });
   }
 }

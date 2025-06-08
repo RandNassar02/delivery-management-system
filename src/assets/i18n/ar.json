@@ -44,14 +44,6 @@
     "welcomeParagraph4": "نحن نؤمن بأن كل حساب يُفعّل هو بداية لفرصة جديدة ونمو مشترك.",
     "welcomeParagraph5": "لأي استفسار أو مساعدة، فريقنا جاهز لدعمك في أي وقت."
   },
-  "add-plant": {
-    "title": "إضافة نبتة جديدة",
-    "name": "الاسم",
-    "price": "السعر",
-    "category": "الفئة",
-    "description": "الوصف",
-    "image": "الصورة"
-  },
   "massages": {
     "nameRequired": "الاسم مطلوب",
     "emailRequired": "البريد الالكتروني مطلوب",
@@ -67,7 +59,9 @@
     "error": "خطأ",
     "success": "نجاح",
     "bankNameRequired": "اسم البنك مطلوب",
-    "bankAccountRequired": "رقم حساب البنك مطلوب"
+    "bankAccountRequired": "رقم حساب البنك مطلوب",
+    "priceRequired": "السعر مطلوب",
+    "categoryRequired": "القسم مطلوب"
   },
   "header": {
     "HOME": "الرئيسية",
@@ -106,7 +100,54 @@
   "myAccount": {
     "My Profile": "الملف الشخصي",
     "My Orders": "طلباتي",
-    "Logout": "تسجيل خروج"
+    "My Plants": "نباتاتي",
+    "Logout": "تسجيل خروج",
+    "Pending": "⏳ حسابك قيد المراجعة من قبل الادارة.",
+    "Rejected": " ❌ حسابك تم رفضه. يرجى الاتصال بالدعم."
+  },
+  "profile": {
+    "name": "الاسم",
+    "email": "البريد الالكتروني",
+    "phone": "رقم الهاتف",
+    "bankName": "اسم البنك",
+    "bankAccount": "رقم الحساب",
+    "address": "العنوان",
+    "saveChange": "حفظ التغييرات"
+  },
+  "plant": {
+    "AddPlant": "إضافة نبات",
+    "name": "الاسم",
+    "price": "السعر",
+    "description": "الوصف",
+    "category": "التصنيف",
+    "image": "الصورة",
+    "save": "حفظ",
+    "uploading": "جاري التحميل...",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "loading": "جاري التحميل...",
+    "noPlants": "لا يوجد نباتات حتى الان.",
+    "deleteMessage": "هل تريد حذف هذا النبات؟"
+  },
+  "orders-client": {
+    "title": "الطلبات",
+    "order": "طلب",
+    "noDriver": "لا يوجد سائق معين",
+    "Paid": "مدفوع",
+    "unpaid": "غير مدفوع",
+    "customerInfo": "معلومات العميل",
+    "name": "الاسم",
+    "email": "البريد الالكتروني",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "deliveryStatus": "تحديث حالة التسليم",
+    "assignDriver": "تعيين سائق",
+    "selectDriver": "حدد سائق",
+    "currentDriver": "السائق الحالي",
+    "unknownDriver": "سائق غير معروف",
+    "orderedPlants": "نباتات الطلب",
+    "Jd": "دينار",
+    "total": "المجموع لهذا الطلب"
   },
   "editprofileCustomer": {
     "Edit Profile": "تعديل الملف الشخصي",

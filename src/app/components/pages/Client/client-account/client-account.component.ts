@@ -4,10 +4,11 @@ import { Client } from '../../../../model/client.model';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ClientService } from '../../../../services/client.service';
+import { TranslatePipe } from '../../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-client-account',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './client-account.component.html',
   styleUrl: './client-account.component.scss',
 })

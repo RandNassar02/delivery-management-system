@@ -41,6 +41,18 @@
       "email": "Driver2@Driver.com",
       "password": "$2b$10$Jik6F6Ji55etrUQykO3Gguh0zYT7RkXEG4.tIjIC6LVc7xC9OKdOK",
       "userType": "driver"
+    },
+    {
+      "id": "73ec",
+      "email": "floward@floward.com",
+      "password": "$2b$10$rTBRnyxHoLmgxYUQkU8KWuOrmlgcG99X360WFt2.hZ9CFvOHnGrNK",
+      "userType": "client"
+    },
+    {
+      "id": "ea4a",
+      "email": "Ahmad@Customer.com",
+      "password": "$2b$10$Ap2N.p4kZCLcO6NV0YhVrezIZAlVkxbzeT8MZXt69pyZdiBffuiLa",
+      "userType": "customer"
     }
   ],
   "clients": [
@@ -50,8 +62,8 @@
       "email": "kawthar@kawthar.com",
       "phone": "0789456123",
       "bankName": "kawthar",
-      "bankAccount": "kawthar",
-      "address": "Jorden nnnnn",
+      "bankAccount": "kawthar12",
+      "address": "Jorden",
       "approvalStatus": "approved",
       "imageProfile": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749061107/o927exxnijaubjqaqvt2.jpg"
     },
@@ -65,6 +77,17 @@
       "address": "Jordan",
       "approvalStatus": "approved",
       "imageProfile": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749072356/y4igwlrt5o2nftq5myhe.png"
+    },
+    {
+      "id": "73ec",
+      "name": "floward",
+      "email": "floward@floward.com",
+      "phone": "0789456123",
+      "bankName": "floward-jo",
+      "bankAccount": "floward-jo",
+      "address": "Amman",
+      "approvalStatus": "pending",
+      "imageProfile": ""
     }
   ],
   "customers": [
@@ -81,6 +104,13 @@
       "email": "kawthar@gmail.com",
       "phone": "782442297",
       "address": "amman"
+    },
+    {
+      "id": "ea4a",
+      "name": "Ahmad",
+      "email": "Ahmad@Customer.com",
+      "phone": "0789456335",
+      "address": "Amman"
     }
   ],
   "drivers": [
@@ -216,15 +246,6 @@
       "idClient": "f434"
     },
     {
-      "name": "Rose Bush",
-      "category": "Outdoor-Plants",
-      "price": 30,
-      "description": "Classic flowering shrub. Needs regular pruning and sunlight.",
-      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749065699/ehcspsyu3almpio8pozz.jpg",
-      "idClient": "f434",
-      "id": "8"
-    },
-    {
       "id": "9",
       "name": "Bamboo Palm",
       "category": "Outdoor-Plants",
@@ -357,6 +378,78 @@
       "price": 10.35,
       "description": "A succulent plant, there are many different types and colors of it, it is considered one of the easy plants to care for, and it can be placed in homes or different work environments",
       "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073219/mdhemw9teb9cddurbnkl.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "4647",
+      "name": "Turquoise Irrigation Jug",
+      "category": "Gardening-Tools",
+      "price": 29,
+      "description": "Small Turquoise Watering Can 1.8L for watering or mixing materials",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387647/yvg3uvc5c3gajoy6cecp.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "b215",
+      "name": "Cucumber Seeds",
+      "category": "Edible-Plants",
+      "price": 9.2,
+      "description": "The Cucumber Seeds are the perfect choice for home gardeners looking to grow their own fresh produce. With these seeds, you can cultivate cucumbers that offer a natural taste and unmatched flavor. They are designed to ensure healthy growth and generous yields, making them ideal for any home garden.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387829/fnis4wwcibdbb5lbccts.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "a0cb",
+      "name": "Cherry Tomato Seeds",
+      "category": "Edible-Plants",
+      "price": 9.2,
+      "description": "Cherry Tomato Seeds offer a delightful way to cultivate fresh, sweet tomatoes right at home. Known for their bright color and refreshing taste, these seeds are easy to grow, making them perfect for both novice and experienced gardeners. With minimal care, you can enjoy a bountiful harvest of juicy cherry tomatoes in no time.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387876/awi47evo4hqryrvf7ek5.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "086b",
+      "name": "Green Onion Seeds",
+      "category": "Edible-Plants",
+      "price": 9.2,
+      "description": "Introducing our Green Onion Seeds, a must-have for any kitchen garden! These seeds are perfect for those who love fresh flavors and want to grow their own herbs at home.\n\nDesigned for balcony or kitchen windowsill planting, they offer a quick and easy solution for adding fresh green onions to your culinary creations.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387914/wlzka2ir9hfiv8bhts43.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "4f1c",
+      "name": "Snow White River Stone",
+      "category": "Gardening-Tools",
+      "price": 40.25,
+      "description": "Enhance your gardening experience with Snow White River Stone, a decorative solution designed for plant lovers. These 1-2 cm stones serve not only as an attractive topping for your pots but also play a vital role in moisture retention. By reducing soil evaporation, they ensure your plants stay hydrated and healthy. Ideal for both indoor and outdoor settings, this 10 kg capacity bag of river stones is a must-have for any gardening enthusiast.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388020/oshknzydw1g0x709fbf6.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "2722",
+      "name": "Plant Pot for Seedlings",
+      "category": "Gardening-Tools",
+      "price": 1.15,
+      "description": "The Small Black Plant Pot is designed for seedling plants and is perfect for planting seeds. Made from lightweight plastic, this pot combines functionality with a simple and elegant aesthetic.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388064/ivaoadqpyh5ysjsia6is.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "c686",
+      "name": "Rio Cactus  ",
+      "category": "Indoor-Plants",
+      "price": 34.5,
+      "description": "The Rio Aloe Vera plant is a progressive plant with distinctive leaves and a beautiful purple-green color, giving us a wonderful appearance when living in the house or office.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388163/mlples7sus3hjimo6sj0.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "fbc3",
+      "name": "Black Steel Watering Can",
+      "category": "Gardening-Tools",
+      "price": 80.5,
+      "description": "Introducing our Sleek Black Steel Watering Can, a perfect blend of modern design and practicality. This stylish watering can features a long, narrow spout, making it ideal for reaching those hard-to-water plants, whether they are hanging or potted.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388254/jwahxnv9dpd4myvrgxgz.jpg",
       "idClient": "a4ea"
     }
   ]
