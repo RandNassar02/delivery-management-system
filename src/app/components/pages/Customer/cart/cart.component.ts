@@ -92,7 +92,8 @@ export class CartComponent {
     );
 
     const deliveryRequest: DeliveryRequest = {
-      id: Math.floor(Math.random() * 100000),
+      id: Math.floor(Math.random() * 100000).toString(),
+
       deliveryDetails: this.customerAddress,
       date: new Date().toISOString(),
       customerId: user.id,

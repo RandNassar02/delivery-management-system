@@ -8,10 +8,10 @@ export type DeliveryStatus =
 export type PaymentStatus = 'paid' | 'unpaid';
 
 export interface DeliveryRequest {
-  id: number;
+  id: string;
   deliveryDetails: string;
   date: string;
-  customerId: number;
+  customerId: string;
   deliveryStatus: DeliveryStatus;
   driverId: number;
   paymentStatus: PaymentStatus;

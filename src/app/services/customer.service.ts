@@ -50,7 +50,7 @@ export class CustomerService {
     );
   }
 
-  getCustomers(id: number): Observable<any> {
+  getCustomers(id: string): Observable<any> {
     return this.http.get(`${this.customersUrl}/${id}`);
   }
   updateCustomer(id: string, data: any): Observable<any> {
