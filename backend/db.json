@@ -137,7 +137,7 @@
       "deliveryDetails": "amman",
       "date": "2025-06-07T16:49:33.225Z",
       "customerId": "abc4",
-      "deliveryStatus": "pending",
+      "deliveryStatus": "in_progress",
       "driverId": "4d26",
       "paymentStatus": "unpaid",
       "paymentAmount": 272.25,
@@ -175,6 +175,110 @@
           "name": "Crassula Plant",
           "price": 10.35,
           "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073219/mdhemw9teb9cddurbnkl.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "16914",
+      "deliveryDetails": "Amman",
+      "date": "2025-06-08T16:14:07.669Z",
+      "customerId": "ea4a",
+      "deliveryStatus": "completed",
+      "driverId": "4d26",
+      "paymentStatus": "paid",
+      "paymentAmount": 24,
+      "plant": [
+        {
+          "id": "5",
+          "name": "Spider Plant",
+          "price": 12,
+          "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492144/bloomscape_spider-plant_medium_stone-768x922_okbhmt.jpg",
+          "idClient": "f434",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "43710",
+      "deliveryDetails": "Amman",
+      "date": "2025-06-08T16:21:48.454Z",
+      "customerId": "ea4a",
+      "deliveryStatus": "pending",
+      "driverId": "3487",
+      "paymentStatus": "unpaid",
+      "paymentAmount": 15472,
+      "plant": [
+        {
+          "id": "1",
+          "name": "Snake Plant",
+          "price": 15444,
+          "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491891/bloomscape_sansevieria_xs_charcoal-768x921_swbuxe.jpg",
+          "idClient": "f434",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Lavender",
+          "price": 18,
+          "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492399/begqpergt0ro8rqyj4ug_820x820_crop_center.jpg_ixjufe.jpg",
+          "idClient": "f434",
+          "quantity": 1
+        },
+        {
+          "id": "13",
+          "name": "Garden Trowel",
+          "price": 10,
+          "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748494911/2148224056_vp9bfw.jpg",
+          "idClient": "f434",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "83055",
+      "deliveryDetails": "Amman",
+      "date": "2025-06-08T16:36:42.776Z",
+      "customerId": "ea4a",
+      "deliveryStatus": "pending",
+      "driverId": 0,
+      "paymentStatus": "paid",
+      "paymentAmount": 18.4,
+      "plant": [
+        {
+          "id": "a0cb",
+          "name": "Cherry Tomato Seeds",
+          "price": 9.2,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387876/awi47evo4hqryrvf7ek5.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        },
+        {
+          "id": "b215",
+          "name": "Cucumber Seeds",
+          "price": 9.2,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387829/fnis4wwcibdbb5lbccts.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "82017",
+      "deliveryDetails": "Amman",
+      "date": "2025-06-08T16:40:34.574Z",
+      "customerId": "ea4a",
+      "deliveryStatus": "cancelled",
+      "driverId": "3487",
+      "paymentStatus": "paid",
+      "paymentAmount": 17.25,
+      "plant": [
+        {
+          "id": "8aab",
+          "name": " Cactus Plant",
+          "price": 17.25,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073152/mw4coccuxrisf08wosp8.jpg",
           "idClient": "a4ea",
           "quantity": 1
         }

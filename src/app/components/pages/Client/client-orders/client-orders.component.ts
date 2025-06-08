@@ -75,7 +75,7 @@ export class ClientOrdersComponent {
     });
   }
 
-  getCustomerById(id: number) {
+  getCustomerById(id: string) {
     return this.customers.find((c) => c.id === id);
   }
 

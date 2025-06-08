@@ -20,6 +20,9 @@ export class DeliveryRequestService {
   }
 
   updateOrder(order: DeliveryRequest): Observable<DeliveryRequest> {
-    return this.http.put<DeliveryRequest>(`${this.apiUrl}/${order.id}`, order);
+    return this.http.put<DeliveryRequest>(
+      `${this.apiUrl}/${Number(order.id)}`,
+      order
+    );
   }
 }
