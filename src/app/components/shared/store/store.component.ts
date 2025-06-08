@@ -5,10 +5,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { PlantService } from '../../../services/plant.service';
 import { CartService } from '../../../services/cart.service';
+import { TranslatePipe } from '../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-store',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './store.component.html',
   styleUrl: './store.component.scss',
 })

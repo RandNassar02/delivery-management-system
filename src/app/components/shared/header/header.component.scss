@@ -35,10 +35,31 @@ nav {
   padding-bottom: 7px;
 }
 
-.nav-items,
-.nav-links {
+.nav-items {
   display: flex;
   gap: 1.5rem;
+}
+[dir="rtl"] .nav-links {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* لما اللغة إنجليزي */
+[dir="ltr"] .nav-links {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.nav-link-btn {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.nav-link-btn:hover {
+  font-weight: bold;
+  color: var(--primary-color, #244d10);
 }
 
 .nav-items a {
