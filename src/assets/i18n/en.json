@@ -85,12 +85,9 @@
     "RIGHTS": "All rights reserved."
   },
   "homepage": {
-    "title": "Every plant tells a story.. Let's plant beauty in the corners of your home",
-
     "title1": "Every plant tells a story..",
     "title2": "Let's plant beauty in the corners of your home",
     "button": "Shop Now",
-
     "category": "Outdoor Plants",
     "category2": "Indoor Plants",
     "category3": "Edible Plants",
@@ -104,7 +101,8 @@
     "How We Deliver title": "With fast, reliable delivery and professional drivers, your plants arrive fresh and on time — to your home, office, or as a thoughtful gift.",
     "clienttitle": "Don't just be a shopper...be part of the Ghosn community and cultivate your passion with us!",
     "drivertitle": "Become a Ghosn Plant Ambassador - join us as a driver and make a difference with every delivery!",
-    "joinus": "Join Us"
+    "joinusDriver": "JoinUs as a Driver",
+    "joinusClient": "JoinUs as a Client"
   },
   "myAccount": {
     "My Profile": "My Profile",

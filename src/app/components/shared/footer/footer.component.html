@@ -1,22 +1,17 @@
-<!-- <footer class="app-footer">
-  <div class="footer-content">
-    <div class="lang-switch">
-      <a (click)="switchToArabic()">عربي</a> |
-      <a (click)="switchToEnglish()">English</a>
-    </div>
-  </div>
-</footer> -->
 <footer class="app-footer">
   <div class="container">
     <div class="row text-center text-md-start align-items-start">
       <div
         class="col-md-4 mb-3 d-flex flex-column align-items-center align-items-md-start"
       >
-        <img
-          src="assets/image/ghosn home-01.png"
-          alt="Ghossn logo"
-          class="footer-logo mb-2"
-        />
+        <a routerLink="/">
+          <img
+            src="assets/image/ghosn home-01.png"
+            alt="Ghossn logo"
+            class="footer-logo mb-2"
+          />
+        </a>
+
         <p class="slogan">{{ "FOOTER.SLOGAN" | translate }}</p>
       </div>
 
