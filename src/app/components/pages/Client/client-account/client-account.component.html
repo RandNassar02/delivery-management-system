@@ -18,15 +18,15 @@
           src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
           alt="Profile"
         />
-        <span>My Profile</span>
+        <span>{{ "myAccount.My Profile" | translate }}</span>
       </div>
 
       <div class="account-item" (click)="goToPlants()">
         <img
-          src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283786/package_pcmiw3.png"
+          src="https://res.cloudinary.com/dblomu3ce/image/upload/v1749389288/sprout_mkqm6m.png"
           alt="Add Plant"
         />
-        <span>Plants</span>
+        <span>{{ "myAccount.My Plants" | translate }}</span>
       </div>
 
       <div class="account-item" (click)="goToOrders()">
@@ -34,7 +34,7 @@
           src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283786/package_pcmiw3.png"
           alt="My Plants"
         />
-        <span>Orders</span>
+        <span>{{ "myAccount.My Orders" | translate }}</span>
       </div>
     </div>
   </ng-container>
@@ -51,10 +51,10 @@
 
     <div class="pending-message">
       <p *ngIf="client.approvalStatus === 'pending'">
-        ⏳ Your account is pending approval by the admin.
+        {{ "myAccount.Pending" | translate }}
       </p>
       <p *ngIf="client.approvalStatus === 'rejected'">
-        ❌ Your account has been rejected. Please contact support.
+        {{ "myAccount.Rejected" | translate }}
       </p>
     </div>
   </ng-template>
@@ -65,7 +65,7 @@
         src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283954/logout_15604119_fwruyw.png"
         alt="Logout"
       />
-      <span class="logout">Logout</span>
+      <span class="logout">{{ "myAccount.Logout" | translate }}</span>
     </div>
   </div>
 </div>

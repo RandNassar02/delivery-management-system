@@ -44,14 +44,6 @@
     "welcomeParagraph4": "We believe that every activated account is the beginning of a new opportunity and mutual growth.",
     "welcomeParagraph5": "For any inquiries or assistance, our team is ready to support you anytime."
   },
-  "add-plant": {
-    "title": "Add New Plant",
-    "name": "Name",
-    "price": "Price",
-    "category": "Category",
-    "description": "Description",
-    "image": "Image"
-  },
   "massages": {
     "nameRequired": "Name is required",
     "emailRequired": "Email is required",
@@ -67,8 +59,9 @@
     "error": "Error",
     "success": "Success",
     "bankNameRequired": "Bank Name is required",
-
-    "bankAccountRequired": "Bank Account is required"
+    "bankAccountRequired": "Bank Account is required",
+    "priceRequired": "Price is required",
+    "categoryRequired": "Category is required"
   },
   "header": {
     "HOME": "HOME",
@@ -107,7 +100,55 @@
   "myAccount": {
     "My Profile": "My Profile",
     "My Orders": "My Orders",
-    "Logout": "Logout"
+    "My Plants": "My Plants",
+    "Logout": "Logout",
+    "Pending": "⏳ Your account is pending approval by the admin.",
+    "Rejected": " ❌ Your account has been rejected. Please contact support."
+  },
+  "profile": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "bankName": "Bank Name",
+    "bankAccount": "Bank Account",
+    "address": "Address",
+    "saveChange": "Save Changes"
+  },
+  "plant": {
+    "AddPlant": "Add Plant",
+    "name": "Name",
+    "price": "Price",
+    "description": "Description",
+    "category": "Category",
+    "image": "Image",
+    "save": "Save",
+    "uploading": "Uploading...",
+    "edit": "Edit",
+    "delete": "Delete",
+    "loading": "Loading..",
+    "noPlants": "No plants added yet.",
+    "deleteMessage": "Are you sure you want to delete this plant?"
+  },
+  "orders-client": {
+    "title": "Orders",
+    "order": "Order",
+    "noDriver": "No Driver Assigned",
+    "Paid": "Paid",
+    "unpaid": "Unpaid",
+    "customerInfo": "Customer Info",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "deliveryStatus": "Update Delivery Status",
+    "assignDriver": "Assign Driver",
+    "selectDriver": "Select Driver",
+    "currentDriver": "Current Driver",
+    "unknownDriver": "Unknown driver",
+    "orderedPlants": "Ordered Plants",
+    "Jd": "JD",
+
+    "total": "Total for this order"
   },
   "editprofileCustomer": {
     "Edit Profile": "Edit Profile",
@@ -161,5 +202,12 @@
     "eFAWATEERcom": "eFAWATEERcom",
     "emptyCart": "Your cart is empty 🌿 Find the plant that matches your soul",
     "shop now": "Shop Now"
+  },
+
+  "messageServicetranslate": {
+    "success": "Success",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Info"
   }
 }

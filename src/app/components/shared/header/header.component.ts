@@ -17,6 +17,7 @@ export class HeaderComponent {
   isMenuOpen = false;
   isLoggedIn = false;
   userType: string | null = null;
+  isDrawerOpen = false;
 
   constructor(
     private authService: AuthService,
@@ -54,8 +55,6 @@ export class HeaderComponent {
     }
   }
 
-  isDrawerOpen = false;
-
   openDrawer() {
     this.isDrawerOpen = true;
     document.body.classList.add('no-scroll');
@@ -64,17 +63,5 @@ export class HeaderComponent {
   closeDrawer() {
     this.isDrawerOpen = false;
     document.body.classList.remove('no-scroll');
-  }
-
-  ngAfterViewInit() {
-    this.route.fragment.subscribe((fragment) => {
-      if (fragment) {
-        // Scroll to the element after the view is initialized
-        const element = document.getElementById(fragment);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    });
   }
 }

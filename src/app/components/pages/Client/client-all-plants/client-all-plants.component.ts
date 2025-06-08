@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../../services/auth.service';
 import { ClientAddplantComponent } from '../client-addplant/client-addplant.component';
 import { FormBuilder, Validators } from '@angular/forms';
+import { TranslatePipe } from '../../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-client-all-plants',
   standalone: true,
-  imports: [CommonModule, ClientAddplantComponent],
+  imports: [CommonModule, ClientAddplantComponent, TranslatePipe],
   templateUrl: './client-all-plants.component.html',
   styleUrl: './client-all-plants.component.scss',
 })

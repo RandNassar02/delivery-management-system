@@ -1,8 +1,8 @@
 <div class="form-container">
-  <h2>{{ "add-plant.title" | translate }}</h2>
+  <h2>{{ "plant.AddPlant" | translate }}</h2>
   <form [formGroup]="plantForm" (ngSubmit)="onSubmit()">
     <div>
-      <label>{{ "add-plant.name" | translate }}:</label>
+      <label>{{ "plant.name" | translate }}:</label>
       <input formControlName="name" />
       <div
         class="errorMessage"
@@ -18,7 +18,7 @@
     </div>
 
     <div>
-      <label>{{ "add-plant.category" | translate }}:</label>
+      <label>{{ "plant.category" | translate }}:</label>
       <select formControlName="category">
         <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
       </select>
@@ -36,7 +36,7 @@
     </div>
 
     <div>
-      <label>{{ "add-plant.price" | translate }}:</label>
+      <label>{{ "plant.price" | translate }}:</label>
       <input type="number" formControlName="price" />
       <div
         class="errorMessage"
@@ -52,20 +52,24 @@
     </div>
 
     <div>
-      <label>{{ "add-plant.description" | translate }}:</label>
+      <label>{{ "plant.description" | translate }}:</label>
       <textarea formControlName="description"></textarea>
     </div>
 
     <div>
-      <label>{{ "add-plant.image" | translate }}:</label>
+      <label>{{ "plant.image" | translate }}:</label>
       <input type="file" (change)="onImageSelected($event)" />
     </div>
     <div *ngIf="!plantToEdit">
-      <button type="submit" [disabled]="plantForm.invalid || uploading">
+      <button
+        type="submit"
+        [disabled]="plantForm.invalid || uploading"
+        class="btn btn-addPlant"
+      >
         {{
           uploading
-            ? ("add-plant.uploading" | translate)
-            : ("add-plant.addPlant" | translate)
+            ? ("plant.uploading" | translate)
+            : ("plant.AddPlant" | translate)
         }}
       </button>
     </div>
@@ -76,7 +80,7 @@
         class="btn btn-success w-100"
         [disabled]="plantForm.invalid || uploading"
       >
-        {{ "add-plant.save" | translate }}
+        {{ "plant.save" | translate }}
       </button>
 
       <button
@@ -84,7 +88,7 @@
         class="btn btn-secondary mt-2 w-100"
         (click)="cancelEdit.emit()"
       >
-        {{ "add-plant.cancel" | translate }}
+        {{ "plant.cancel" | translate }}
       </button>
     </div>
   </form>

@@ -15,7 +15,7 @@
           }}</a>
         </div>
       </div>
-      <div class="nav-links">
+      <div class="nav-links" *ngIf="!isLoggedIn">
         <a routerLink="/signin" class="nav-link-btn nav-link-signin">{{
           "header.SIGNIN" | translate
         }}</a>
@@ -23,6 +23,7 @@
           "header.SIGNUP" | translate
         }}</a>
       </div>
+
       <div
         class="nav-links customer-nav"
         *ngIf="isLoggedIn && userType === 'customer'"
