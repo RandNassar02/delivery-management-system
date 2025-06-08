@@ -5,7 +5,7 @@
         <samp>{{ "homepage.title1" | translate }} </samp>
         {{ "homepage.title2" | translate }}
       </h1>
-      <button routerLink="/store" class="welcome-home-button">
+      <button routerLink="/store" class="welcome-home-button shop-now-button">
         {{ "homepage.button" | translate }}
       </button>
     </div>
@@ -64,33 +64,33 @@
     </div>
   </div>
 
-  <div class="join-section" id="join">
-    <div class="join-text">
-      <h2>
-        {{ "homepage.clienttitle" | translate }}
-      </h2>
-      <button routerLink="/signup-client">
-        {{ "homepage.joinus" | translate }}
-      </button>
-    </div>
+  <div class="join-section" id="joinUs">
     <div class="join-img">
       <img
         src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748386589/t_ftewud.jpg"
         alt="plant"
       />
     </div>
+    <div class="join-text">
+      <h2>
+        {{ "homepage.clienttitle" | translate }}
+      </h2>
+      <button routerLink="/signup-client">
+        {{ "homepage.joinusClient" | translate }}
+      </button>
+    </div>
   </div>
 
-  <div class="join-section">
+  <div class="join-section driver-join">
     <div class="join-text">
       <h2>
         {{ "homepage.drivertitle" | translate }}
       </h2>
       <button routerLink="/signup-driver">
-        {{ "homepage.joinus" | translate }}
+        {{ "homepage.joinusDriver" | translate }}
       </button>
     </div>
-    <div class="join-img">
+    <div class="join-img joindriver-img">
       <img
         src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748356864/ghosn_home_Recovered_lgwohy.jpg"
         alt="plant"
