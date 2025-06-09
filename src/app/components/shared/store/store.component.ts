@@ -6,12 +6,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PlantService } from '../../../services/plant.service';
 import { CartService } from '../../../services/cart.service';
 import { TranslatePipe } from '../../../i18n/translate.pipe';
-
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { I18nService } from '../../../i18n/i18n.service';
 @Component({
   selector: 'app-store',
-  imports: [CommonModule, TranslatePipe],
+  imports: [CommonModule, TranslatePipe, ToastModule],
   templateUrl: './store.component.html',
   styleUrl: './store.component.scss',
+  providers: [MessageService],
 })
 export class StoreComponent {
   categories: Categories[] = [
@@ -29,7 +32,9 @@ export class StoreComponent {
     private router: Router,
 
     private plantservice: PlantService,
-    private cartService: CartService
+    private cartService: CartService,
+    private messageService: MessageService,
+    private translatePipe: I18nService
   ) {}
 
   ngOnInit(): void {
@@ -68,6 +73,16 @@ export class StoreComponent {
       quantity: 1,
       image: plant.image,
       idClient: plant.idClient,
+    });
+    this.messageService.add({
+      severity: 'success',
+      summary: this.translatePipe.t('messageServicetranslate.success'),
+      detail: 'Plant added to cart successfully!',
+    });
+  }
+  goToPlantDetails(plant: Plants) {
+    this.router.navigate(['/plant-details', plant.id], {
+      state: { category: this.activeCategory },
     });
   }
 }
