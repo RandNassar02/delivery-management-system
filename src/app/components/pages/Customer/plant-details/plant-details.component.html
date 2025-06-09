@@ -1,0 +1,48 @@
+<p-toast></p-toast>
+<div class="container">
+  <div *ngIf="plant" class="details-card">
+    <div class="image-section">
+      <img [src]="plant.image" [alt]="plant.name" />
+    </div>
+
+    <div class="details-content">
+      <div class="product-name-row">
+        <h1 class="product-name">{{ plant.name }}</h1>
+        <a routerLink="/store" class="back-link">
+          {{ "details.backTostore" | translate }}
+        </a>
+      </div>
+
+      <p>
+        <span class="label">{{ "details.price" | translate }}: </span>
+        <span class="value"
+          >{{ plant.price }} {{ "orders.Jd" | translate }}</span
+        >
+      </p>
+
+      <p>
+        <span class="label">{{ "details.description" | translate }}: </span>
+        <span class="value">{{ plant.description }}</span>
+      </p>
+
+      <div *ngIf="client" class="client-card">
+        <h3 class="card-title">{{ "details.ownerInfo" | translate }}:</h3>
+        <div class="client-info-wrapper">
+          <img
+            [src]="client.imageProfile"
+            [alt]="client.name"
+            class="client-image"
+          />
+          <div class="client-details">
+            <p class="client-name">{{ client.name }}</p>
+            <p class="client-email">{{ client.email }}</p>
+          </div>
+        </div>
+      </div>
+      <button class="main-btn" (click)="addToCart(plant)">
+        {{ "store.addTocart" | translate }}
+        <i class="ri-shopping-cart-line"></i>
+      </button>
+    </div>
+  </div>
+</div>

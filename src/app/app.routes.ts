@@ -17,6 +17,7 @@ import { ClientAllPlantsComponent } from './components/pages/Client/client-all-p
 import { ClientAccountComponent } from './components/pages/Client/client-account/client-account.component';
 import { DriverSignupComponent } from './components/pages/Driver/driver-signup/driver-signup.component';
 import { ClientOrdersComponent } from './components/pages/Client/client-orders/client-orders.component';
+import { PlantDetailsComponent } from './components/pages/Customer/plant-details/plant-details.component';
 
 export const routes: Routes = [
   {
@@ -73,6 +74,8 @@ export const routes: Routes = [
   { path: 'customer-edit-account', component: CustomerEditAccountComponent },
   { path: 'customer-account/orders', component: CustomerOrderComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'plant-details/:id', component: PlantDetailsComponent },
+
   {
     path: '**',
     component: NotFoundComponent,

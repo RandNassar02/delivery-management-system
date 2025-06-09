@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="container">
   <nav class="nav-tabs">
     <button
@@ -11,7 +12,11 @@
 
   <div class="plant-grid">
     <ng-container *ngIf="filteredPlants.length > 0">
-      <div *ngFor="let plant of filteredPlants" class="plant-card">
+      <div
+        *ngFor="let plant of filteredPlants"
+        class="plant-card"
+        (click)="goToPlantDetails(plant)"
+      >
         <img [src]="plant.image" [alt]="plant.name" />
         <h3>{{ plant.name }}</h3>
         <p>{{ plant.description }}</p>
@@ -20,7 +25,10 @@
         >
 
         <div class="custom-button-group">
-          <button class="main-btn" (click)="addToCart(plant)">
+          <button
+            class="main-btn"
+            (click)="addToCart(plant); $event.stopPropagation()"
+          >
             {{ "store.addTocart" | translate }}
           </button>
         </div>

@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { DrawerContentComponent } from '../../pages/Customer/drawer-content/drawer-content.component';
 import { CartService } from '../../../services/cart.service';
 import { TranslatePipe } from '../../../i18n/translate.pipe';
+import { I18nService } from '../../../i18n/i18n.service';
 
 @Component({
   selector: 'app-header',
@@ -23,7 +24,8 @@ export class HeaderComponent {
     private authService: AuthService,
     private router: Router,
     public cartService: CartService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private i18n: I18nService
   ) {}
 
   ngOnInit(): void {
@@ -63,5 +65,8 @@ export class HeaderComponent {
   closeDrawer() {
     this.isDrawerOpen = false;
     document.body.classList.remove('no-scroll');
+  }
+  get drawerSideClass(): string {
+    return this.i18n.getLanguage() === 'ar' ? 'drawer-left' : 'drawer-right';
   }
 }

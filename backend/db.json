@@ -65,7 +65,7 @@
       "bankAccount": "kawthar12",
       "address": "Jorden",
       "approvalStatus": "approved",
-      "imageProfile": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749061107/o927exxnijaubjqaqvt2.jpg"
+      "imageProfile": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749496440/stfbtlgbdyzpllvwrylu.png"
     },
     {
       "id": "a4ea",
@@ -289,7 +289,7 @@
     {
       "name": "Snake Plant",
       "category": "Indoor-Plants",
-      "price": 15444,
+      "price": 15,
       "description": "Low-maintenance plant that purifies the air.",
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491891/bloomscape_sansevieria_xs_charcoal-768x921_swbuxe.jpg",
       "idClient": "f434",
@@ -298,7 +298,7 @@
     {
       "name": "Monstera Deliciosa",
       "category": "Indoor-Plants",
-      "price": 255,
+      "price": 25,
       "description": "Large, beautiful leaves with natural splits. Loves indirect light.",
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491946/bloomscape_monstera_alt_clay-450x550_cpgwca.jpg",
       "idClient": "f434",
@@ -466,24 +466,7 @@
       "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073030/eclncdbdmafxkgismmmp.jpg",
       "idClient": "a4ea"
     },
-    {
-      "id": "8aab",
-      "name": " Cactus Plant",
-      "category": "Indoor-Plants",
-      "price": 17.25,
-      "description": "Small scooters are plants that contain a large and varied number of plants, as they are a small cart and do not need any care at all, and can be built in homes or different environments.",
-      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073152/mw4coccuxrisf08wosp8.jpg",
-      "idClient": "a4ea"
-    },
-    {
-      "id": "cf76",
-      "name": "Crassula Plant",
-      "category": "Indoor-Plants",
-      "price": 10.35,
-      "description": "A succulent plant, there are many different types and colors of it, it is considered one of the easy plants to care for, and it can be placed in homes or different work environments",
-      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073219/mdhemw9teb9cddurbnkl.jpg",
-      "idClient": "a4ea"
-    },
+
     {
       "id": "4647",
       "name": "Turquoise Irrigation Jug",
@@ -539,21 +522,147 @@
       "idClient": "a4ea"
     },
     {
-      "id": "c686",
-      "name": "Rio Cactus  ",
-      "category": "Indoor-Plants",
-      "price": 34.5,
-      "description": "The Rio Aloe Vera plant is a progressive plant with distinctive leaves and a beautiful purple-green color, giving us a wonderful appearance when living in the house or office.",
-      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388163/mlples7sus3hjimo6sj0.jpg",
-      "idClient": "a4ea"
-    },
-    {
       "id": "fbc3",
       "name": "Black Steel Watering Can",
       "category": "Gardening-Tools",
       "price": 80.5,
       "description": "Introducing our Sleek Black Steel Watering Can, a perfect blend of modern design and practicality. This stylish watering can features a long, narrow spout, making it ideal for reaching those hard-to-water plants, whether they are hanging or potted.",
       "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388254/jwahxnv9dpd4myvrgxgz.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "hoya1",
+      "name": "Hoya Heart",
+      "category": "Indoor-Plants",
+      "price": 19,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749487257/bloomscape_hoya-heart_xs_charcoal-3_retouched_720_y9hg1b.jpg",
+      "description": "Charming heart-shaped succulent. Low-maintenance and great as a gift.",
+      "idClient": "f434"
+    },
+    {
+      "id": "rpp2",
+      "name": "Red Prayer Plant",
+      "category": "Indoor-Plants",
+      "price": 23.5,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749487306/bloomscape_red-prayer-pant_sm_angle2-scaled_y5ikfs.jpg",
+      "description": "Features red-veined leaves that fold up at night. Thrives in indirect light.",
+      "idClient": "f434"
+    },
+    {
+      "id": "anth3",
+      "name": "Red Anthurium",
+      "category": "Indoor-Plants",
+      "price": 28,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749487357/bloomscape_red-anthurium_sm_care-indigo_ko1ru6.jpg",
+      "description": "Striking red flowers and glossy green leaves. Loves humidity and bright light.",
+      "idClient": "f434"
+    },
+    {
+      "id": "npp4",
+      "name": "Neon Prayer Plant",
+      "category": "Indoor-Plants",
+      "price": 21.75,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749487410/self-watering-slate-neon-prayer-plant_u44ijv.png",
+      "description": "Vivid neon-green leaves that move with the light cycle. Perfect for modern decor.",
+      "idClient": "f434"
+    },
+    {
+      "id": "brm5",
+      "name": "Bromeliad Summer",
+      "category": "Indoor-Plants",
+      "price": 26.5,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749487582/bloomscape_bromeliad-summer_small_slate_ek8hgq.jpg",
+      "description": "Tropical indoor plant with bright, long-lasting blooms. Adds a vibrant touch to any space.",
+      "idClient": "f434"
+    },
+    {
+      "id": "brm6",
+      "name": "Bromeliad Guzmania",
+      "category": "Indoor-Plants",
+      "price": 27,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749488439/Bloomscape_yellow-bromeliad_SM_clay_txnrai.jpg",
+      "description": "A vibrant tropical plant with bright red, orange, or yellow flower bracts. Low maintenance and thrives indoors.",
+      "idClient": "f434"
+    },
+    {
+      "id": "mmt7",
+      "name": "Mini Money Tree",
+      "category": "Indoor-Plants",
+      "price": 19.99,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749487687/bloomscape_mini-money-tree_clay_0621-scaled_ekc1sj.jpg",
+      "description": "Compact version of the classic money tree. Known for its braided trunk and symbolism of prosperity.",
+      "idClient": "f434"
+    },
+    {
+      "id": "flf8",
+      "name": "Fiddle Leaf Fig",
+      "category": "Indoor-Plants",
+      "price": 34.25,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749487655/self-watering-slate-xxl-fiddle-leaf-fig_sdbn5f.png",
+      "description": "Popular for its large, glossy leaves. Ideal for bright indoor spaces with indirect light.",
+      "idClient": "f434"
+    },
+    {
+      "id": "bop9",
+      "name": "Bird of Paradise",
+      "category": "Indoor-Plants",
+      "price": 38.5,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749487895/bloomscape_bird-of-paradise_clay-1_xjdmir.jpg",
+      "description": "Striking tropical plant with broad leaves. Brings a bold, architectural look to interiors.",
+      "idClient": "f434"
+    },
+    {
+      "id": "prc10",
+      "name": "Philodendron Rojo Congo",
+      "category": "Indoor-Plants",
+      "price": 28,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749488049/philo_congo_rojo_charcoal-1-e1721398141675_nyvbhy.jpg",
+      "description": "Bold and colorful hybrid philodendron with deep red stems and large green foliage.",
+      "idClient": "f434"
+    },
+    {
+      "id": "pav11",
+      "name": "Purple African Violet",
+      "category": "Indoor-Plants",
+      "price": 15,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749488152/bloomscape_african-violet-purple_sm_stone-scaled_kosonw.jpg",
+      "description": "Small flowering plant with fuzzy leaves and purple blooms. Thrives in indirect light.",
+      "idClient": "f434"
+    },
+    {
+      "id": "clf12",
+      "name": "Calathea Freddie",
+      "category": "Indoor-Plants",
+      "price": 22.75,
+      "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1749488180/bloomscape_calathea-freddie_sm_angle2-scaled_ex3fkq.jpg",
+      "description": "Known for its striking striped leaves that move with the light. Great for low-light spaces.",
+      "idClient": "f434"
+    },
+    {
+      "id": "8aab",
+      "name": " Cactus Plant",
+      "category": "Indoor-Plants",
+      "price": 17.25,
+      "description": "Small scooters are plants that contain a large and varied number of plants, as they are a small cart and do not need any care at all, and can be built in homes or different environments.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073152/mw4coccuxrisf08wosp8.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "cf76",
+      "name": "Crassula Plant",
+      "category": "Indoor-Plants",
+      "price": 10.35,
+      "description": "A succulent plant, there are many different types and colors of it, it is considered one of the easy plants to care for, and it can be placed in homes or different work environments",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073219/mdhemw9teb9cddurbnkl.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "c686",
+      "name": "Rio Cactus  ",
+      "category": "Indoor-Plants",
+      "price": 34.5,
+      "description": "The Rio Aloe Vera plant is a progressive plant with distinctive leaves and a beautiful purple-green color, giving us a wonderful appearance when living in the house or office.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388163/mlples7sus3hjimo6sj0.jpg",
       "idClient": "a4ea"
     }
   ]
