@@ -54,6 +54,7 @@
     "confirmPasswordRequired": "تاكيد كلمة المرور مطلوب",
     "passwordsNotMatch": "كلمات المرور لا تتطابق",
     "phoneRequired": "رقم الهاتف مطلوب",
+    "phoneInvalid": "رقم الهاتف يجب أن يكون مكون من أرقام فقط",
     "phoneNumberPattern": "رقم الهاتف يجب أن يكون مكون من 10 أرقام",
     "addressRequired": "العنوان مطلوب",
     "error": "خطأ",

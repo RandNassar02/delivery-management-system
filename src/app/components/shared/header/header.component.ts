@@ -66,7 +66,21 @@ export class HeaderComponent {
     this.isDrawerOpen = false;
     document.body.classList.remove('no-scroll');
   }
+
+
+  ngAfterViewInit() {
+    this.route.fragment.subscribe((fragment) => {
+      if (fragment) {
+        // Scroll to the element after the view is initialized
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+
   get drawerSideClass(): string {
     return this.i18n.getLanguage() === 'ar' ? 'drawer-left' : 'drawer-right';
+
   }
 }

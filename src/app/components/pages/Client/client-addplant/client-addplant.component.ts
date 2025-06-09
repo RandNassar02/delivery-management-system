@@ -112,7 +112,6 @@ export class ClientAddplantComponent {
       };
 
       if (this.plantToEdit) {
-        // تحديث نبات
         this.plantService.updatePlant(plantData).subscribe({
           next: () => {
             this.messageService.add({
@@ -132,7 +131,6 @@ export class ClientAddplantComponent {
           },
         });
       } else {
-        // إضافة نبات جديد
         this.plantService.addPlant(plantData).subscribe({
           next: () => {
             this.messageService.add({

@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '../../../../i18n/translate.pipe';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-client-signup',
@@ -32,7 +32,8 @@ export class ClientSignupComponent {
   constructor(
     private fb: FormBuilder,
     private clientService: ClientService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -49,7 +50,7 @@ export class ClientSignupComponent {
           ],
         ],
         confirmPassword: ['', [Validators.required]],
-        phone: ['', [Validators.required]],
+        phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
         bankName: ['', [Validators.required]],
         bankAccount: ['', [Validators.required]],
         address: ['', [Validators.required]],
@@ -70,11 +71,11 @@ export class ClientSignupComponent {
     this.clientService.signUpClient(this.formClientSignup.value).subscribe({
       next: () => {
         this.messageService.add({
-          severity: '{{messageService.success| translate}}',
+          severity: 'success',
           summary: 'sucsses',
           detail: 'creation account completed successfully',
         });
-        this.formClientSignup.reset();
+        this.router.navigate(['/signin']);
       },
       error: (err) => {
         if (err.message === 'This client name is already in use.') {

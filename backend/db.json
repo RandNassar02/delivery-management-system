@@ -53,6 +53,18 @@
       "email": "Ahmad@Customer.com",
       "password": "$2b$10$Ap2N.p4kZCLcO6NV0YhVrezIZAlVkxbzeT8MZXt69pyZdiBffuiLa",
       "userType": "customer"
+    },
+    {
+      "id": "1ae3",
+      "email": "nabtastore@hotmail.com",
+      "password": "$2b$10$g2Yq2OF/0QRDSNW5U3Ly0e7kxDthyuZAlsg/S1qMZsjzSRYvHZTje",
+      "userType": "client"
+    },
+    {
+      "id": "dddd",
+      "email": "info@7alashop.com",
+      "password": "$2b$10$kNGHPKFO8S885HFFgEdK2OwxzAAHXJ2.IVuwOyJ.IPStiq1aw2qv6",
+      "userType": "client"
     }
   ],
   "clients": [
@@ -85,6 +97,28 @@
       "phone": "0789456123",
       "bankName": "floward-jo",
       "bankAccount": "floward-jo",
+      "address": "Amman",
+      "approvalStatus": "pending",
+      "imageProfile": ""
+    },
+    {
+      "id": "1ae3",
+      "name": "Nabta Garden Store",
+      "email": "nabtastore@hotmail.com",
+      "phone": "0966556926417",
+      "bankName": "NabtaGarden",
+      "bankAccount": "NabtaGarden123456",
+      "address": "Riyadh",
+      "approvalStatus": "pending",
+      "imageProfile": ""
+    },
+    {
+      "id": "dddd",
+      "name": "7ala Shop",
+      "email": "info@7alashop.com",
+      "phone": "00962799392101",
+      "bankName": "7alaShop",
+      "bankAccount": "11111111111",
       "address": "Amman",
       "approvalStatus": "pending",
       "imageProfile": ""
