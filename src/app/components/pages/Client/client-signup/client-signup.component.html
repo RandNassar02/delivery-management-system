@@ -1,7 +1,6 @@
 <section class="container">
   <div class="main-container">
     <div class="signup">
-      <!-- <h2>{{ "client-signup.title" | translate }}</h2> -->
       <div class="form-container inputbox">
         <form [formGroup]="formClientSignup" (ngSubmit)="onSubmit()">
           <div class="name">
@@ -111,7 +110,6 @@
               <samp>{{ "massages.passwordsNotMatch" | translate }}</samp>
             </div>
           </div>
-
           <div class="phone">
             <input
               type="text"
@@ -129,6 +127,11 @@
                 *ngIf="formClientSignup.controls['phone']?.errors?.['required']"
               >
                 {{ "massages.phoneRequired" | translate }}
+              </samp>
+              <samp
+                *ngIf="formClientSignup.controls['phone']?.errors?.['pattern']"
+              >
+                {{ "massages.phoneInvalid" | translate }}
               </samp>
             </div>
           </div>

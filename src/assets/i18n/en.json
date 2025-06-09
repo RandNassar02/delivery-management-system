@@ -54,6 +54,7 @@
     "confirmPasswordRequired": "Confirm Password is required",
     "passwordsNotMatch": "Passwords do not match",
     "phoneRequired": "Phone Number is required",
+    "phoneInvalid": "Phone number must contain only numbers.",
     "phoneNumberPattern": "Phone Number must be exactly 10 digits",
     "addressRequired": "Address is required",
     "error": "Error",
@@ -68,7 +69,7 @@
     "ABOUT": "ABOUT",
     "CONTACT": "CONTACT",
     "SIGNUP": "SIGNUP",
-    "SIGNIN": "SIGNIN",
+    "SIGNIN": "LOGIN",
     "My Account": "My Account"
   },
   "FOOTER": {
@@ -94,8 +95,8 @@
     "How We Deliver title": "With fast, reliable delivery and professional drivers, your plants arrive fresh and on time — to your home, office, or as a thoughtful gift.",
     "clienttitle": "Don't just be a shopper...be part of the Ghosn community and cultivate your passion with us!",
     "drivertitle": "Become a Ghosn Plant Ambassador - join us as a driver and make a difference with every delivery!",
-    "joinusDriver": "JoinUs as a Driver",
-    "joinusClient": "JoinUs as a Client"
+    "joinusDriver": "Join Us as a Driver",
+    "joinusClient": "Join Us as a Client"
   },
   "myAccount": {
     "My Profile": "My Profile",

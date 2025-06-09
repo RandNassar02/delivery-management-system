@@ -59,7 +59,18 @@
           {{ "header.My Account" | translate }}</a
         >
       </div>
-
+      <div
+        class="nav-links customer-nav"
+        *ngIf="isLoggedIn && userType === 'admin'"
+      >
+        <a routerLink="/admin-dashboard" class="nav-link-btn">
+          <img
+            src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
+            alt="Profile"
+          />
+          {{ "header.My Account" | translate }}</a
+        >
+      </div>
       <div class="hamburger" (click)="toggleMenu()">
         <span></span>
         <span></span>
