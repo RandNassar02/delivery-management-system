@@ -112,18 +112,31 @@ img {
     border-radius: 2px;
   }
 }
-
 @media (max-width: 768px) {
   .nav-logo {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   .hamburger {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 4px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 2px;
+    background-color: black;
   }
 
   .nav-items,
-  .nav-links {
+  .nav-links:not(.customer-nav) {
     display: none;
   }
 
@@ -139,21 +152,66 @@ img {
     text-align: center;
     width: 100%;
   }
+
+  .nav-links.customer-nav {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .cart-icon-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cart-count-badge {
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: green;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+  }
 }
 .drawer {
+  visibility: hidden;
+  will-change: transform;
   position: fixed;
   top: 0;
-  right: -420px;
-  width: 400px;
   height: 100%;
+  width: 400px;
   background: #fff;
-  transition: right 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
   z-index: 1000;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .drawer.open {
+  visibility: visible;
+}
+/* فتح من اليمين */
+.drawer.drawer-right {
   right: 0;
+  transform: translateX(100%);
+}
+
+.drawer.drawer-right.open {
+  transform: translateX(0);
+}
+
+/* فتح من اليسار */
+.drawer.drawer-left {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.drawer.drawer-left.open {
+  transform: translateX(0);
 }
 
 .backdrop {

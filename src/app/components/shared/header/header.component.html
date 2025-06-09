@@ -60,7 +60,7 @@
         >
       </div>
 
-      <div class="hamburger" (click)="toggleMenu()">
+      <div class="hamburger" (click)="toggleMenu()" *ngIf="!isLoggedIn">
         <span></span>
         <span></span>
         <span></span>
@@ -69,7 +69,7 @@
   </nav>
 </header>
 
-<div class="drawer" [class.open]="isDrawerOpen">
+<div class="drawer" [class.open]="isDrawerOpen" [ngClass]="drawerSideClass">
   <div class="cart-header">
     <h4>{{ "drawer.cart" | translate }}</h4>
     <button class="close-btn" (click)="closeDrawer()">⨉</button>

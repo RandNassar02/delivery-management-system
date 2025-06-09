@@ -13,6 +13,9 @@ export class PlantService {
   getPlants(): Observable<Plants[]> {
     return this.http.get<Plants[]>(this.plantsUrl);
   }
+  getPlantsById(id: string): Observable<Plants> {
+    return this.http.get<Plants>(`${this.plantsUrl}/${id}`);
+  }
 
   addPlant(data: any) {
     return this.http.post(this.plantsUrl, data);
