@@ -1,0 +1,77 @@
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  input, select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+}
+
+.clients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .client-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fafafa;
+
+    .actions {
+      margin-top: 1rem;
+
+      button {
+        margin-right: 1rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:first-child {
+          background-color: #4caf50;
+          color: white;
+        }
+
+        &:last-child {
+          background-color: #f44336;
+          color: white;
+        }
+      }
+    }
+
+    .requests {
+      margin-top: 1rem;
+      background-color: #f1f1f1;
+      padding: 0.75rem;
+      border-radius: 6px;
+
+      ul {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
+    }
+  }
+}
+.top-bar {
+  text-align: right;
+  margin-bottom: 16px;
+
+  .btn-approved {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #27ae60;
+    }
+  }
+}

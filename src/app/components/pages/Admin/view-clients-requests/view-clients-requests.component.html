@@ -1,0 +1,40 @@
+<div class="filters">
+  <input type="text" placeholder="🔍 Search by name..." [(ngModel)]="searchTerm" (input)="applyFilters()" />
+  <select [(ngModel)]="filterStatus" (change)="applyFilters()">
+    <option value="">All Status</option>
+    <option value="pending">Pending</option>
+    <option value="approved">Approved</option>
+    <option value="rejected">Rejected</option>
+  </select>
+</div>
+
+<div class="clients-list">
+  <div *ngFor="let client of filteredClients" class="client-card">
+    <h3>{{ client.name }} ({{ client.approvalStatus }})</h3>
+    <p><strong>Email:</strong> {{ client.email }}</p>
+    <p><strong>Phone:</strong> {{ client.phone }}</p>
+    <p><strong>Bank:</strong> {{ client.bankName }} - {{ client.bankAccount }}</p>
+    <p><strong>Address:</strong> {{ client.address }}</p>
+
+    <div class="actions" *ngIf="client.approvalStatus === 'pending'">
+      <button (click)="updateStatus(client.id, 'approved')">✅ Approve</button>
+      <button (click)="updateStatus(client.id, 'rejected')">❌ Reject</button>
+    </div>
+
+    <div *ngIf="client.requests.length > 0" class="requests">
+      <h4>📄 Requests:</h4>
+      <ul>
+        <li *ngFor="let req of client.requests">
+          <strong>{{ req.title }}</strong>: {{ req.description }} <br />
+          <small>{{ req.createdAt | date: 'short' }}</small>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="top-bar">
+  <button routerLink="/approved-clients-requests" class="btn-approved">
+  View accepted clients and their requests✅
+  </button>
+</div>

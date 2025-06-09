@@ -39,15 +39,54 @@
   ],
   "clients": [
     {
-      "id": "19ac",
-      "userId": "19ac",
-      "name": "Client",
-      "email": "client@client.jo",
-      "phone": "0789456123",
-      "bankName": "test",
-      "bankAccount": "test",
-      "address": "test",
-      "approvalStatus": "pending"
+      "id": "1",
+      "name": "Alaa Naser",
+      "email": "alaa@example.com",
+      "phone": "0788888888",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "Amman, Jordan",
+      "approvalStatus": "approved"
+    },
+    {
+      "id": "2",
+      "name": "sara amer",
+      "email": "sara@example.com",
+      "phone": "0788883388",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "Amman, Jordan",
+      "approvalStatus": "rejected"
+    },
+    {
+      "id": "3",
+      "name": "lara amer",
+      "email": "lara@example.com",
+      "phone": "0788883388",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "irbid, Jordan",
+      "approvalStatus": "rejected"
+    },
+    {
+      "id": "4",
+      "name": "soso amer",
+      "email": "lara@example.com",
+      "phone": "0788883388",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "irbid, Jordan",
+      "approvalStatus": "rejected"
+    },
+    {
+      "id": "5",
+      "name": "zaia amer",
+      "email": "lara@example.com",
+      "phone": "0788883388",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "irbid, Jordan",
+      "approvalStatus": "approved"
     }
   ],
   "customers": [
@@ -80,7 +119,26 @@
       "address": "sdftgyhghhh"
     }
   ],
-  "drivers": [],
+  "drivers": [
+    {
+      "id": "1",
+      "name": "Khaled Ahmad",
+      "vehicleType": "Van",
+      "modelName": "KIA"
+    },
+    {
+      "id": "b759",
+      "name": "sara",
+      "vehicleType": "car",
+      "modelName": "hunda"
+    },
+    {
+      "id": "e84e",
+      "name": "kawther",
+      "vehicleType": "car",
+      "modelName": "ID6"
+    }
+  ],
   "deliveryRequests": [],
   "plants": [
     {
@@ -228,36 +286,42 @@
       "description": "Ideal for weeding and breaking up soil before planting."
     }
   ],
-
-
-  "clientsManag": [
-    {
-      "id": 1,
-      "fullName": "Ahmad Saleh",
-      "email": "ahmad@example.com",
-      "status": "approved"
-    },
-    {
-      "id": 2,
-      "fullName": "Lina Zayed",
-      "email": "lina@example.com",
-      "status": "pending"
-    }
-  ],
   "requests": [
     {
-      "id": 101,
-      "clientId": 1,
-      "title": "طلب اشتراك",
-      "description": "تفاصيل طلب الاشتراك",
-      "createdAt": "2025-05-30T08:00:00"
+      "id": "r1",
+      "clientId": "1",
+      "title": "Delivery to Irbid",
+      "description": "Deliver 5 packages to Irbid area.",
+      "createdAt": "2025-06-07T08:00:00Z"
+    }
+  ],
+  "customerss": [
+    {
+      "id": "1",
+      "name": "Ahmad Saleh",
+      "email": "ahmad@example.com",
+      "phone": "0799999999",
+      "address": "Amman",
+      "payments": [
+        {
+          "amount": 100,
+          "method": "Cash",
+          "date": "2024-12-01"
+        },
+        {
+          "amount": 250,
+          "method": "Credit Card",
+          "date": "2025-01-15"
+        }
+      ]
     },
     {
-      "id": 102,
-      "clientId": 1,
-      "title": "طلب دعم",
-      "description": "تفاصيل طلب الدعم",
-      "createdAt": "2025-05-31T10:15:00"
+      "id": "2",
+      "name": "Lina Haddad",
+      "email": "lina@example.com",
+      "phone": "0788888888",
+      "address": "Irbid",
+      "payments": []
     }
   ]
 }

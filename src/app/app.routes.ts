@@ -14,10 +14,11 @@ import { CustomerAccountComponent } from './components/pages/Customer/customer-a
 import { CustomerEditAccountComponent } from './components/pages/Customer/customer-edit-account/customer-edit-account.component';
 import { CustomerOrderComponent } from './components/pages/Customer/customer-order/customer-order.component';
 import { CartComponent } from './components/pages/Customer/cart/cart.component';
-import { ClientsManagementComponent } from './components/pages/Admin/clients-management/clients-management.component';
-import { CustomersManagementComponent } from './components/pages/Admin/customers-management/customers-management.component';
-import { DriversManagementComponent } from './components/pages/Admin/drivers-management/drivers-management.component';
-
+import { AddDriverComponent } from './components/pages/Admin/add-driver/add-driver.component';
+import { ApprovedClientsRequestsComponent } from './components/pages/Admin/approved-clients-requests/approved-clients-requests.component';
+import { DriversListComponent } from './components/pages/Admin/drivers-list/drivers-list.component';
+import { ViewClientsRequestsComponent } from './components/pages/Admin/view-clients-requests/view-clients-requests.component';
+import { ViewCustomersPaymentsComponent } from './components/pages/Admin/view-customers-payments/view-customers-payments.component';
 
 export const routes: Routes = [
   {
@@ -68,11 +69,14 @@ export const routes: Routes = [
   { path: 'cart', component: CartComponent },
 
 //Admin Pages (Linda)
-  {path:'admin/clients', component:ClientsManagementComponent},
-  {path:'admin/customers', component:CustomersManagementComponent},
-  {path:'admin/drivers' , component:DriversManagementComponent},
 
-  {
+  {path:'admin/adddrivers' , component:AddDriverComponent},
+  {path:'admin/approved', component:ApprovedClientsRequestsComponent},
+  {path:'admin/driversList', component:DriversListComponent},
+  {path:'admin/viewClients', component:ViewClientsRequestsComponent},
+  {path:'admin/viewCustomers', component:ViewCustomersPaymentsComponent}
+
+  ,{
     path: '**',
     component: NotFoundComponent,
   },
