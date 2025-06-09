@@ -17,6 +17,11 @@ import { ClientAllPlantsComponent } from './components/pages/Client/client-all-p
 import { ClientAccountComponent } from './components/pages/Client/client-account/client-account.component';
 import { DriverSignupComponent } from './components/pages/Driver/driver-signup/driver-signup.component';
 import { ClientOrdersComponent } from './components/pages/Client/client-orders/client-orders.component';
+import { AddDriverComponent } from './components/pages/Admin/add-driver/add-driver.component';
+import { ApprovedClientsRequestsComponent } from './components/pages/Admin/approved-clients-requests/approved-clients-requests.component';
+import { DriversListComponent } from './components/pages/Admin/drivers-list/drivers-list.component';
+import { ViewClientsRequestsComponent } from './components/pages/Admin/view-clients-requests/view-clients-requests.component';
+import { ViewCustomersPaymentsComponent } from './components/pages/Admin/view-customers-payments/view-customers-payments.component';
 
 export const routes: Routes = [
   {
@@ -73,7 +78,16 @@ export const routes: Routes = [
   { path: 'customer-edit-account', component: CustomerEditAccountComponent },
   { path: 'customer-account/orders', component: CustomerOrderComponent },
   { path: 'cart', component: CartComponent },
-  {
+
+//Admin Pages (Linda)
+
+  {path:'admin/adddrivers' , component:AddDriverComponent},
+  {path:'admin/approved', component:ApprovedClientsRequestsComponent},
+  {path:'admin/driversList', component:DriversListComponent},
+  {path:'admin/viewClients', component:ViewClientsRequestsComponent},
+  {path:'admin/viewCustomers', component:ViewCustomersPaymentsComponent}
+
+  ,{
     path: '**',
     component: NotFoundComponent,
   },

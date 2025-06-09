@@ -1,0 +1,20 @@
+<div class="top-bar">
+  <button class="btn-back" (click)="goBack()">⬅️ Back</button>
+</div>
+
+<h2>Accepted clients and their requests ✅</h2>
+
+<div *ngFor="let client of approvedClients" class="client-box">
+
+  <h3>{{ client.name }} ({{ client.email }})</h3>
+  <p>📞 {{ client.phone }} | 🏦 {{ client.bankName }} - {{ client.bankAccount }}</p>
+  <p>📍 {{ client.address }}</p>
+
+  <ul>
+    <li *ngFor="let req of client.requests">
+      <strong>{{ req.title }}</strong>: {{ req.description }}
+      <br>
+      <small>Date {{ req.createdAt | date:'short' }}</small>
+    </li>
+  </ul>
+</div>

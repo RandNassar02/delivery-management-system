@@ -88,6 +88,54 @@
       "address": "Amman",
       "approvalStatus": "pending",
       "imageProfile": ""
+      "id": "1",
+      "name": "Alaa Naser",
+      "email": "alaa@example.com",
+      "phone": "0788888888",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "Amman, Jordan",
+      "approvalStatus": "approved"
+    },
+    {
+      "id": "2",
+      "name": "sara amer",
+      "email": "sara@example.com",
+      "phone": "0788883388",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "Amman, Jordan",
+      "approvalStatus": "rejected"
+    },
+    {
+      "id": "3",
+      "name": "lara amer",
+      "email": "lara@example.com",
+      "phone": "0788883388",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "irbid, Jordan",
+      "approvalStatus": "rejected"
+    },
+    {
+      "id": "4",
+      "name": "soso amer",
+      "email": "lara@example.com",
+      "phone": "0788883388",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "irbid, Jordan",
+      "approvalStatus": "rejected"
+    },
+    {
+      "id": "5",
+      "name": "zaia amer",
+      "email": "lara@example.com",
+      "phone": "0788883388",
+      "bankName": "Arab Bank",
+      "bankAccount": "1234567890",
+      "address": "irbid, Jordan",
+      "approvalStatus": "approved"
     }
   ],
   "customers": [
@@ -285,6 +333,34 @@
       ]
     }
   ],
+      "id": "1c51",
+      "name": "edsssssss",
+      "email": "ddddddddddd@ghhhhhhhhh",
+      "phone": "1234567891",
+      "address": "sdftgyhghhh"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "1",
+      "name": "Khaled Ahmad",
+      "vehicleType": "Van",
+      "modelName": "KIA"
+    },
+    {
+      "id": "b759",
+      "name": "sara",
+      "vehicleType": "car",
+      "modelName": "hunda"
+    },
+    {
+      "id": "e84e",
+      "name": "kawther",
+      "vehicleType": "car",
+      "modelName": "ID6"
+    }
+  ],
+  "deliveryRequests": [],
   "plants": [
     {
       "name": "Snake Plant",
@@ -555,6 +631,48 @@
       "description": "Introducing our Sleek Black Steel Watering Can, a perfect blend of modern design and practicality. This stylish watering can features a long, narrow spout, making it ideal for reaching those hard-to-water plants, whether they are hanging or potted.",
       "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388254/jwahxnv9dpd4myvrgxgz.jpg",
       "idClient": "a4ea"
+    }
+  ]
+}
+      "description": "Ideal for weeding and breaking up soil before planting."
+    }
+  ],
+  "requests": [
+    {
+      "id": "r1",
+      "clientId": "1",
+      "title": "Delivery to Irbid",
+      "description": "Deliver 5 packages to Irbid area.",
+      "createdAt": "2025-06-07T08:00:00Z"
+    }
+  ],
+  "customerss": [
+    {
+      "id": "1",
+      "name": "Ahmad Saleh",
+      "email": "ahmad@example.com",
+      "phone": "0799999999",
+      "address": "Amman",
+      "payments": [
+        {
+          "amount": 100,
+          "method": "Cash",
+          "date": "2024-12-01"
+        },
+        {
+          "amount": 250,
+          "method": "Credit Card",
+          "date": "2025-01-15"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Lina Haddad",
+      "email": "lina@example.com",
+      "phone": "0788888888",
+      "address": "Irbid",
+      "payments": []
     }
   ]
 }

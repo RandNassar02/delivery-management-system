@@ -1,0 +1,66 @@
+.drivers-list {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  direction: rtl;
+
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    input,
+    select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      flex: 1;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    button {
+      margin-left: 5px;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+
+      &:first-child {
+        background-color: #ffc107;
+        color: #fff;
+      }
+
+      &:last-child {
+        background-color: #dc3545;
+        color: #fff;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}

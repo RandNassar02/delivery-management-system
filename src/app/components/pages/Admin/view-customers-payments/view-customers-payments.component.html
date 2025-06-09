@@ -1,0 +1,28 @@
+<h2>👥 View Customers and Payments 💳</h2>
+
+<input
+  type="text"
+  [(ngModel)]="searchTerm"
+  placeholder="🔍 Search by customer name"
+  class="search-input"
+/>
+
+<div *ngFor="let customer of filteredCustomers" class="customer-box">
+  <h3>{{ customer.name }}</h3>
+  <p>📧 {{ customer.email }} | 📞 {{ customer.phone }} | 📍 {{ customer.address }}</p>
+
+
+    <h4>💰 Payments:</h4>
+    <ul>
+      <li *ngFor="let payment of customer.payments">
+        💵 {{ payment.amount | currency }} - {{ payment.method }}
+        <br />
+        📅 {{ payment.date | date:'shortDate' }}
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noPayments>
+    <p>🚫 No payments found.</p>
+  </ng-template>
+

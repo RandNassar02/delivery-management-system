@@ -1,0 +1,40 @@
+<div class="drivers-list">
+  <h2>🚚 Drivers list  </h2>
+
+  <div class="filters">
+    <input
+      type="text"
+      placeholder="🔍Search by driver name"
+      [(ngModel)]="searchTerm"
+      (input)="filterDrivers()"
+    />
+
+    <select [(ngModel)]="selectedVehicleType" (change)="filterDrivers()">
+  <option value="">🚛 VehicleTypes </option>
+  <option *ngFor="let type of vehicleTypes" [value]="type">
+    {{ type }}
+  </option>
+</select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th> VehicleTypes</th>
+        <th> ModelName</th>
+        <th>Procedures</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let driver of filteredDrivers">
+        <td>{{ driver.name }}</td>
+        <td>{{ driver.vehicleType }}</td>
+        <td>{{ driver.modelName }}</td>
+        <td>
+          <button (click)="deleteDriver(driver.id)">🗑️ Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
