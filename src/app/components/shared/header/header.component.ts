@@ -67,7 +67,6 @@ export class HeaderComponent {
     document.body.classList.remove('no-scroll');
   }
 
-
   ngAfterViewInit() {
     this.route.fragment.subscribe((fragment) => {
       if (fragment) {
@@ -78,9 +77,9 @@ export class HeaderComponent {
         }
       }
     });
+  }
 
   get drawerSideClass(): string {
     return this.i18n.getLanguage() === 'ar' ? 'drawer-left' : 'drawer-right';
-
   }
 }
