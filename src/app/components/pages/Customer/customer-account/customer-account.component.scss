@@ -36,14 +36,13 @@
 
   .account-item {
     border: 2px solid #a3d18c8b;
-
     display: flex;
     align-items: center;
     background: var(--background-color);
     padding: 1rem;
     border-radius: 15px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
 
     img {
       width: 24px;
@@ -57,22 +56,17 @@
       color: var(--text-color);
     }
 
-    .arrow {
-      margin-left: auto;
-      font-size: 18px;
-      color: var(--primary-color);
+    &:hover {
+      transform: scale(1.05);
     }
 
-    &:hover {
+    &:not(.logout):hover {
       background: var(--secondary-color);
     }
-  }
 
-  .logout {
-    color: red;
-
-    .arrow {
-      color: red;
+    &.logout:hover {
+      background: rgba(255, 0, 0, 0.1);
+      border-color: rgba(255, 0, 0, 0.436);
     }
   }
 }

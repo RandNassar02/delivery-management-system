@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
 import { DrawerContentComponent } from '../../pages/Customer/drawer-content/drawer-content.component';
 import { CartService } from '../../../services/cart.service';
+import { TranslatePipe } from '../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, CommonModule, DrawerContentComponent],
+  imports: [RouterLink, CommonModule, DrawerContentComponent, TranslatePipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -16,29 +17,25 @@ export class HeaderComponent {
   isMenuOpen = false;
   isLoggedIn = false;
   userType: string | null = null;
+  isDrawerOpen = false;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    public cartService: CartService
+    public cartService: CartService,
+    private route: ActivatedRoute
   ) {}
-  ngOnInit(): void {
-    this.checkLoginStatus();
-  }
 
-  checkLoginStatus() {
-    this.isLoggedIn = this.authService.isLoggedIn();
-    if (this.isLoggedIn) {
-      if (
-        typeof window !== 'undefined' &&
-        typeof window.localStorage !== 'undefined'
-      ) {
+  ngOnInit(): void {
+    this.authService.loggedIn$.subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
+      if (loggedIn) {
         const user = JSON.parse(localStorage.getItem('currentUser')!);
         this.userType = user.userType;
+      } else {
+        this.userType = null;
       }
-    } else {
-      this.userType = null;
-    }
+    });
   }
 
   logout() {
@@ -57,8 +54,6 @@ export class HeaderComponent {
       navItemsContainer?.classList.remove('open');
     }
   }
-
-  isDrawerOpen = false;
 
   openDrawer() {
     this.isDrawerOpen = true;

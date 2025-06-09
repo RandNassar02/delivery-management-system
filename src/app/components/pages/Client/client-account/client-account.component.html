@@ -1,0 +1,71 @@
+<div class="account-container" *ngIf="client">
+  <ng-container *ngIf="client.approvalStatus === 'approved'; else notApproved">
+    <div class="account-header">
+      <img
+        src="{{
+          client.imageProfile ||
+            'https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png'
+        }}"
+        alt="User Icon"
+        class="user-icon"
+      />
+      <p class="user-name">{{ client.name }}</p>
+    </div>
+
+    <div class="account-options">
+      <div class="account-item" (click)="goToProfile()">
+        <img
+          src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
+          alt="Profile"
+        />
+        <span>{{ "myAccount.My Profile" | translate }}</span>
+      </div>
+
+      <div class="account-item" (click)="goToPlants()">
+        <img
+          src="https://res.cloudinary.com/dblomu3ce/image/upload/v1749389288/sprout_mkqm6m.png"
+          alt="Add Plant"
+        />
+        <span>{{ "myAccount.My Plants" | translate }}</span>
+      </div>
+
+      <div class="account-item" (click)="goToOrders()">
+        <img
+          src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283786/package_pcmiw3.png"
+          alt="My Plants"
+        />
+        <span>{{ "myAccount.My Orders" | translate }}</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #notApproved>
+    <div class="account-header">
+      <img
+        src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
+        alt="User Icon"
+        class="user-icon"
+      />
+      <p class="user-name">{{ client.name }}</p>
+    </div>
+
+    <div class="pending-message">
+      <p *ngIf="client.approvalStatus === 'pending'">
+        {{ "myAccount.Pending" | translate }}
+      </p>
+      <p *ngIf="client.approvalStatus === 'rejected'">
+        {{ "myAccount.Rejected" | translate }}
+      </p>
+    </div>
+  </ng-template>
+
+  <div class="account-options-logout">
+    <div class="account-item logout" (click)="logout()">
+      <img
+        src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283954/logout_15604119_fwruyw.png"
+        alt="Logout"
+      />
+      <span class="logout">{{ "myAccount.Logout" | translate }}</span>
+    </div>
+  </div>
+</div>

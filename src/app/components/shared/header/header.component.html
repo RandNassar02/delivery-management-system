@@ -5,23 +5,25 @@
         <a routerLink="/">
           <img src="assets/image/ghosn home-01.png" class="logo" alt="logo" />
         </a>
-        <div class="nav-items" *ngIf="userType !== 'customer'">
-          <a routerLink="/home">HOME</a>
-          <a routerLink="/about">ABOUT</a>
-          <a routerLink="/contact">CONTACT</a>
+        <div class="nav-items" *ngIf="!isLoggedIn">
+          <a routerLink="/">{{ "header.HOME" | translate }}</a>
+          <a [routerLink]="['/']" fragment="about">{{
+            "header.ABOUT" | translate
+          }}</a>
+          <a [routerLink]="['/']" fragment="joinUs">{{
+            "header.CONTACT" | translate
+          }}</a>
         </div>
       </div>
       <div class="nav-links" *ngIf="!isLoggedIn">
-        <a routerLink="/signin" class="nav-link-btn nav-link-signin">SIGN IN</a>
-        <a routerLink="/signup" class="nav-link-btn nav-link-signup">SIGNUP</a>
+        <a routerLink="/signin" class="nav-link-btn nav-link-signin">{{
+          "header.SIGNIN" | translate
+        }}</a>
+        <a routerLink="/signup" class="nav-link-btn nav-link-signup">{{
+          "header.SIGNUP" | translate
+        }}</a>
       </div>
 
-      <!-- <div class="nav-links" *ngIf="isLoggedIn">
-        <span>Welcome, {{ userType }}</span>
-        <button (click)="logout()" class="nav-link-btn nav-link-logout">
-          Logout
-        </button>
-      </div> -->
       <div
         class="nav-links customer-nav"
         *ngIf="isLoggedIn && userType === 'customer'"
@@ -31,7 +33,7 @@
             src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
             alt="Profile"
           />
-          My Account</a
+          {{ "header.My Account" | translate }}</a
         >
         <a (click)="openDrawer()" class="nav-link-btn cart-icon-wrapper">
           <img
@@ -43,13 +45,19 @@
             cartService.cartCount$ | async
           }}</span>
         </a>
-        <!-- <div class="nav-link-btn" (click)="logout()">
+      </div>
+
+      <div
+        class="nav-links customer-nav"
+        *ngIf="isLoggedIn && userType === 'client'"
+      >
+        <a routerLink="/client-account" class="nav-link-btn">
           <img
-            src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283954/logout_15604119_fwruyw.png"
-            alt="Logout"
+            src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748283052/profile_1_fc9nw0.png"
+            alt="Profile"
           />
-          <span class="logout">Logout</span>
-        </div> -->
+          {{ "header.My Account" | translate }}</a
+        >
       </div>
 
       <div class="hamburger" (click)="toggleMenu()">
@@ -63,7 +71,7 @@
 
 <div class="drawer" [class.open]="isDrawerOpen">
   <div class="cart-header">
-    <h3>Cart</h3>
+    <h4>{{ "drawer.cart" | translate }}</h4>
     <button class="close-btn" (click)="closeDrawer()">⨉</button>
   </div>
   <app-drawer-content (closeDrawer)="closeDrawer()"></app-drawer-content>

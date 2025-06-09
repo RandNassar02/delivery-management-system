@@ -2,10 +2,12 @@
   <div class="welcome-home">
     <div class="welcome-home-text-section">
       <h1 class="welcome-home-text">
-        <samp> Every plant tells a story.. </samp>
-        Let's plant beauty in the corners of your home
+        <samp>{{ "homepage.title1" | translate }} </samp>
+        {{ "homepage.title2" | translate }}
       </h1>
-      <button routerLink="/store" class="welcome-home-button">Shop Now</button>
+      <button routerLink="/store" class="welcome-home-button shop-now-button">
+        {{ "homepage.button" | translate }}
+      </button>
     </div>
     <img src="{{ 'img.logo' | translate }}" alt="plant" class="imgWelcome" />
   </div>
@@ -35,65 +37,60 @@
     </div>
   </div>
 
-  <div class="about-section">
-    <h2 class="about-section-title">About Us</h2>
+  <div class="about-section" id="about">
+    <h2 class="about-section-title">{{ "homepage.about" | translate }}</h2>
     <div class="all-about-box">
       <div class="about-box">
         <i class="ri-leaf-line icon"></i>
-        <h3 class="about-title">Who We Are</h3>
+        <h3 class="about-title">{{ "homepage.Who We Are" | translate }}</h3>
         <p class="about-text">
-          At Ghosn, we believe every plant brings life and beauty to any space.
-          We're more than a plant store — we're a green passion and a growing
-          community of nature lovers.
+          {{ "homepage.Who We Are title" | translate }}
         </p>
       </div>
       <div class="about-box">
         <i class="ri-seedling-line icon"></i>
-        <h3 class="about-title">What We Offer</h3>
+        <h3 class="about-title">{{ "homepage.What We Offer" | translate }}</h3>
         <p class="about-text">
-          We handpick a beautiful selection of indoor & outdoor plants,
-          succulents, and elegant care tools — all delivered with love and ready
-          to thrive with you.
+          {{ "homepage.What We Offer title" | translate }}
         </p>
       </div>
       <div class="about-box">
         <i class="ri-truck-line icon"></i>
-        <h3 class="about-title">How We Deliver</h3>
+        <h3 class="about-title">{{ "homepage.How We Deliver" | translate }}</h3>
         <p class="about-text">
-          With fast, reliable delivery and professional drivers, your plants
-          arrive fresh and on time — to your home, office, or as a thoughtful
-          gift.
+          {{ "homepage.How We Deliver title" | translate }}
         </p>
       </div>
     </div>
   </div>
-  <!-- Section 1: Client -->
-  <div class="join-section">
-    <div class="join-text">
-      <h2>
-        Don't just be a shopper...be part of the Ghosn community and cultivate
-        your passion with us!
-      </h2>
-      <button routerLink="/signup-client">Join Us</button>
-    </div>
+
+  <div class="join-section" id="joinUs">
     <div class="join-img">
       <img
         src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748386589/t_ftewud.jpg"
         alt="plant"
       />
     </div>
-  </div>
-
-  <!-- Section 2: Driver -->
-  <div class="join-section">
     <div class="join-text">
       <h2>
-        Become a Ghosn Plant Ambassador - join us as a driver and make a
-        difference with every delivery!
+        {{ "homepage.clienttitle" | translate }}
       </h2>
-      <button routerLink="/signup-driver">Join Us</button>
+      <button routerLink="/signup-client">
+        {{ "homepage.joinusClient" | translate }}
+      </button>
     </div>
-    <div class="join-img">
+  </div>
+
+  <div class="join-section driver-join">
+    <div class="join-text">
+      <h2>
+        {{ "homepage.drivertitle" | translate }}
+      </h2>
+      <button routerLink="/signup-driver">
+        {{ "homepage.joinusDriver" | translate }}
+      </button>
+    </div>
+    <div class="join-img joindriver-img">
       <img
         src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748356864/ghosn_home_Recovered_lgwohy.jpg"
         alt="plant"

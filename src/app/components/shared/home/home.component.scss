@@ -13,7 +13,6 @@
   align-items: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  // padding-left: 3rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   flex-wrap: wrap;
 }
@@ -22,8 +21,7 @@
   padding-left: 30px;
 }
 .welcome-home-text {
-  // color: var(--text-color);
-  color: #2e5e4e;
+  color: var(--primary-color);
   flex: 1;
   font-size: 2rem;
   font-weight: 600;
@@ -52,18 +50,17 @@
   border-radius: 20px;
 }
 
-// about style
 .about-section {
   padding: 4rem 2rem;
   background-color: #f4f9f4;
   text-align: center;
   border-radius: 24px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); /* ظل أوضح */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 .about-section-title {
   font-size: 2.2rem;
-  color: #2e5e4e;
+  color: var(--primary-color);
   margin-bottom: 3rem;
   font-weight: bold;
   position: relative;
@@ -108,25 +105,21 @@
 
 .about-title {
   font-size: 1.3rem;
-  color: #2e5e4e;
-  // color: #333;
+  color: var(--primary-color);
   margin-bottom: 0.75rem;
   font-weight: 600;
 }
 
 .about-text {
   font-size: 1rem;
-  // color: #555;
-  color: #2e5e4e;
+  color: var(--text-color);
   line-height: 1.6;
 }
-// join us style
 
 .join-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   background-color: #f4f9f4;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -135,23 +128,8 @@
   z-index: 1;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
-// .join-section::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 40%; /* خلي الصورة بس على الطرف الشمال */
-//   height: 100%;
-//   background-image: url("https://res.cloudinary.com/ddsrofo4o/image/upload/v1748073639/ghosn_home_english_gzfjqr.png");
-//   background-size: cover;
-//   background-position: center left;
-//   background-repeat: no-repeat;
-//   opacity: 0.2;
-//   z-index: -1;
-//   border-top-left-radius: 16px;
-//   border-bottom-left-radius: 16px;
-// }
 
 .join-text {
   flex: 1;
@@ -161,8 +139,7 @@
 
 .join-text h2 {
   font-size: 1.5rem;
-  // color: #2e2e2e;
-  color: #2e5e4e;
+  color: var(--primary-color);
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-weight: 600;
@@ -187,11 +164,18 @@
   flex: 1;
   min-width: 280px;
   display: flex;
+  justify-content: flex-start;
+}
+
+.joindriver-img {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
   justify-content: flex-end;
 }
 
 .join-img img {
-  max-width: 70%;
+  max-width: 100%;
   height: auto;
   opacity: 70%;
   box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
@@ -199,7 +183,7 @@
 
 .shop-now-button {
   display: inline-block;
-  background-color: #4caf50;
+  background-color: var(--secondary-color);
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -212,13 +196,13 @@
 }
 
 .shop-now-button:hover {
-  background-color: #388e3c;
+  background-color: var(--secondary-color);
   transform: translateY(-2px);
 }
 
 .shop-now-button:active {
   transform: translateY(1px);
-  background-color: #2e7d32;
+  background-color: var(--secondary-color);
 }
 .categories {
   display: flex;
@@ -262,7 +246,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.281); /* خلفية شفافة ناعمة */
+  background: rgba(0, 0, 0, 0.281);
   color: rgba(255, 255, 255, 0.756);
   text-align: center;
   padding: 0.5rem;
@@ -299,4 +283,28 @@
 
 .scroll-indicators .dot.active {
   background-color: #2ecc71;
+}
+
+@media (max-width: 768px) {
+  .scroll-item {
+    flex: 0 0 80vw;
+  }
+  .scroll-item .caption {
+    font-size: 1.5rem;
+  }
+  .imgWelcome {
+    display: none;
+  }
+  .join-section {
+    text-align: center;
+  }
+  .driver-join {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .joindriver-img img {
+    width: 100%; /* تأكد من أن الصورة تشغل العرض الكامل */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+  }
 }

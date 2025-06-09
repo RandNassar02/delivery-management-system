@@ -10,10 +10,11 @@ import { CustomerService } from '../../../../services/customer.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslatePipe } from '../../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-customer-edit-account',
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, TranslatePipe],
   templateUrl: './customer-edit-account.component.html',
   styleUrl: './customer-edit-account.component.scss',
 })

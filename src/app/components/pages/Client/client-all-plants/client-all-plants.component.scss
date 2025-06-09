@@ -1,0 +1,81 @@
+.sidebar {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.plants-list {
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding-left: 15px;
+}
+
+.container-fluid {
+  padding: 20px;
+}
+
+.sidebar {
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+  .card-footer {
+    background-color: transparent;
+    border-top: none;
+  }
+
+  .btn-edit {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+
+  .btn-edit:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    margin-bottom: 20px;
+  }
+
+  .plants-list {
+    padding: 0;
+  }
+
+  .card-img-top {
+    height: 160px;
+  }
+}

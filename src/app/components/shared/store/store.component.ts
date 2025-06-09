@@ -2,13 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Categories, Plants } from '../../../model/plant.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+
 import { PlantService } from '../../../services/plant.service';
 import { CartService } from '../../../services/cart.service';
+import { TranslatePipe } from '../../../i18n/translate.pipe';
 
 @Component({
   selector: 'app-store',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './store.component.html',
   styleUrl: './store.component.scss',
 })
@@ -54,7 +55,7 @@ export class StoreComponent {
   }
 
   filterByCategory() {
-    const readableCategory = this.slugToName(this.activeCategory);
+    const readableCategory = this.activeCategory;
     this.filteredPlants = this.allPlants.filter(
       (plant) => plant.category === readableCategory
     );
@@ -66,9 +67,7 @@ export class StoreComponent {
       price: plant.price,
       quantity: 1,
       image: plant.image,
+      idClient: plant.idClient,
     });
-  }
-  slugToName(slug: string): string {
-    return slug.replace(/-/g, ' ');
   }
 }

@@ -2,9 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { CartService } from '../../../../services/cart.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslatePipe } from '../../../../i18n/translate.pipe';
 @Component({
   selector: 'app-drawer-content',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './drawer-content.component.html',
   styleUrl: './drawer-content.component.scss',
   standalone: true,
@@ -32,12 +33,10 @@ export class DrawerContentComponent {
     this.cartService.removeFromCart(itemToRemove.id);
   }
   goToCart() {
-    console.log('Emit closeDrawer');
     this.closeDrawer.emit();
     this.router.navigate(['/cart']);
   }
   gotostore() {
-    console.log('Emit closeDrawer');
     this.closeDrawer.emit();
     this.router.navigate(['/store']);
   }

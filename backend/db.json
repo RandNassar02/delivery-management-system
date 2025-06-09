@@ -19,26 +19,75 @@
       "userType": "customer"
     },
     {
-      "id": "748f",
-      "email": "testreset@gmail.com",
-      "password": "$2b$10$sXTD5tyNvByhLasmv3Rr6enRlWI14TexjhzpLO87CMEloyj41sxV2",
-      "userType": "customer"
-    },
-    {
-      "id": "1c51",
-      "email": "ddddddddddd@ghhhhhhhhh",
-      "password": "$2b$10$x2NnGkUcVw3y.tKFs.w86e.mUvBym6RcDIYW2JhnAVCw8FSeY7slC",
-      "userType": "customer"
-    },
-    {
-      "id": "19ac",
-      "email": "client@client.jo",
-      "password": "$2b$10$RJHVCDl4gw/PnJ5vBGbgse3guLT8A2OTcPjV/OOEXn3DFbJ6HBkcm",
+      "id": "f434",
+      "email": "kawthar@kawthar.com",
+      "password": "$2b$10$46gYD81LhuVHyAzdFUkv3OZ3tJg7K6cZ3J3fJvIMGmNERGk4cSaI.",
       "userType": "client"
+    },
+    {
+      "id": "a4ea",
+      "email": "nabataty@nabataty.com",
+      "password": "$2b$10$u7F1323mgy4IH2CSZxMeVur0d2PYZdNXwpWEQ3si2eG5iJywlbl.6",
+      "userType": "client"
+    },
+    {
+      "id": "4d26",
+      "email": "Driver@Driver.com",
+      "password": "$2b$10$VCYgPKNTLLtlYAYlgT6sH..2s2Bl7BzL3hjZSqJ84/1kJOif5TB3i",
+      "userType": "driver"
+    },
+    {
+      "id": "3487",
+      "email": "Driver2@Driver.com",
+      "password": "$2b$10$Jik6F6Ji55etrUQykO3Gguh0zYT7RkXEG4.tIjIC6LVc7xC9OKdOK",
+      "userType": "driver"
+    },
+    {
+      "id": "73ec",
+      "email": "floward@floward.com",
+      "password": "$2b$10$rTBRnyxHoLmgxYUQkU8KWuOrmlgcG99X360WFt2.hZ9CFvOHnGrNK",
+      "userType": "client"
+    },
+    {
+      "id": "ea4a",
+      "email": "Ahmad@Customer.com",
+      "password": "$2b$10$Ap2N.p4kZCLcO6NV0YhVrezIZAlVkxbzeT8MZXt69pyZdiBffuiLa",
+      "userType": "customer"
     }
   ],
   "clients": [
     {
+      "id": "f434",
+      "name": "kawthar",
+      "email": "kawthar@kawthar.com",
+      "phone": "0789456123",
+      "bankName": "kawthar",
+      "bankAccount": "kawthar12",
+      "address": "Jorden",
+      "approvalStatus": "approved",
+      "imageProfile": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749061107/o927exxnijaubjqaqvt2.jpg"
+    },
+    {
+      "id": "a4ea",
+      "name": "nabataty",
+      "email": "nabataty@nabataty.com",
+      "phone": "0789456123",
+      "bankName": "nabataty",
+      "bankAccount": "nabataty123789",
+      "address": "Jordan",
+      "approvalStatus": "approved",
+      "imageProfile": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749072356/y4igwlrt5o2nftq5myhe.png"
+    },
+    {
+      "id": "73ec",
+      "name": "floward",
+      "email": "floward@floward.com",
+      "phone": "0789456123",
+      "bankName": "floward-jo",
+      "bankAccount": "floward-jo",
+      "address": "Amman",
+      "approvalStatus": "pending",
+      "imageProfile": ""
       "id": "1",
       "name": "Alaa Naser",
       "email": "alaa@example.com",
@@ -105,13 +154,185 @@
       "address": "amman"
     },
     {
-      "id": "748f",
-      "name": "test12",
-      "email": "testreset@gmail.com",
-      "phone": "1234567891",
-      "address": "qwertyuiokhgvvv"
+      "id": "ea4a",
+      "name": "Ahmad",
+      "email": "Ahmad@Customer.com",
+      "phone": "0789456335",
+      "address": "Amman"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "4d26",
+      "name": "Driver",
+      "email": "Driver@Driver.com",
+      "vehicleType": "Car",
+      "modelName": "test",
+      "approvalStatus": "pending"
     },
     {
+      "id": "3487",
+      "name": "Driver2",
+      "email": "Driver2@Driver.com",
+      "vehicleType": "Car",
+      "modelName": "test",
+      "approvalStatus": "pending"
+    }
+  ],
+  "deliveryRequests": [
+    {
+      "id": "52391",
+      "deliveryDetails": "amman",
+      "date": "2025-06-07T16:49:33.225Z",
+      "customerId": "abc4",
+      "deliveryStatus": "in_progress",
+      "driverId": "4d26",
+      "paymentStatus": "unpaid",
+      "paymentAmount": 272.25,
+      "plant": [
+        {
+          "id": "2",
+          "name": "Monstera Deliciosa",
+          "price": 255,
+          "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491946/bloomscape_monstera_alt_clay-450x550_cpgwca.jpg",
+          "idClient": "f434",
+          "quantity": 1
+        },
+        {
+          "id": "8aab",
+          "name": " Cactus Plant",
+          "price": 17.25,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073152/mw4coccuxrisf08wosp8.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "88251",
+      "deliveryDetails": "amman",
+      "date": "2025-06-07T16:52:12.329Z",
+      "customerId": "abc4",
+      "deliveryStatus": "in_progress",
+      "driverId": 0,
+      "paymentStatus": "paid",
+      "paymentAmount": 10.35,
+      "plant": [
+        {
+          "id": "cf76",
+          "name": "Crassula Plant",
+          "price": 10.35,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073219/mdhemw9teb9cddurbnkl.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "16914",
+      "deliveryDetails": "Amman",
+      "date": "2025-06-08T16:14:07.669Z",
+      "customerId": "ea4a",
+      "deliveryStatus": "completed",
+      "driverId": "4d26",
+      "paymentStatus": "paid",
+      "paymentAmount": 24,
+      "plant": [
+        {
+          "id": "5",
+          "name": "Spider Plant",
+          "price": 12,
+          "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492144/bloomscape_spider-plant_medium_stone-768x922_okbhmt.jpg",
+          "idClient": "f434",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "43710",
+      "deliveryDetails": "Amman",
+      "date": "2025-06-08T16:21:48.454Z",
+      "customerId": "ea4a",
+      "deliveryStatus": "pending",
+      "driverId": "3487",
+      "paymentStatus": "unpaid",
+      "paymentAmount": 15472,
+      "plant": [
+        {
+          "id": "1",
+          "name": "Snake Plant",
+          "price": 15444,
+          "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491891/bloomscape_sansevieria_xs_charcoal-768x921_swbuxe.jpg",
+          "idClient": "f434",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Lavender",
+          "price": 18,
+          "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492399/begqpergt0ro8rqyj4ug_820x820_crop_center.jpg_ixjufe.jpg",
+          "idClient": "f434",
+          "quantity": 1
+        },
+        {
+          "id": "13",
+          "name": "Garden Trowel",
+          "price": 10,
+          "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748494911/2148224056_vp9bfw.jpg",
+          "idClient": "f434",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "83055",
+      "deliveryDetails": "Amman",
+      "date": "2025-06-08T16:36:42.776Z",
+      "customerId": "ea4a",
+      "deliveryStatus": "pending",
+      "driverId": 0,
+      "paymentStatus": "paid",
+      "paymentAmount": 18.4,
+      "plant": [
+        {
+          "id": "a0cb",
+          "name": "Cherry Tomato Seeds",
+          "price": 9.2,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387876/awi47evo4hqryrvf7ek5.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        },
+        {
+          "id": "b215",
+          "name": "Cucumber Seeds",
+          "price": 9.2,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387829/fnis4wwcibdbb5lbccts.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "82017",
+      "deliveryDetails": "Amman",
+      "date": "2025-06-08T16:40:34.574Z",
+      "customerId": "ea4a",
+      "deliveryStatus": "cancelled",
+      "driverId": "3487",
+      "paymentStatus": "paid",
+      "paymentAmount": 17.25,
+      "plant": [
+        {
+          "id": "8aab",
+          "name": " Cactus Plant",
+          "price": 17.25,
+          "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073152/mw4coccuxrisf08wosp8.jpg",
+          "idClient": "a4ea",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
       "id": "1c51",
       "name": "edsssssss",
       "email": "ddddddddddd@ghhhhhhhhh",
@@ -142,147 +363,277 @@
   "deliveryRequests": [],
   "plants": [
     {
-      "id": "1",
       "name": "Snake Plant",
-      "category": "Indoor Plants",
-      "price": 15,
+      "category": "Indoor-Plants",
+      "price": 15444,
+      "description": "Low-maintenance plant that purifies the air.",
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491891/bloomscape_sansevieria_xs_charcoal-768x921_swbuxe.jpg",
-      "description": "Low-maintenance plant that purifies the air."
+      "idClient": "f434",
+      "id": "1"
     },
     {
-      "id": "2",
       "name": "Monstera Deliciosa",
-      "category": "Indoor Plants",
-      "price": 25,
+      "category": "Indoor-Plants",
+      "price": 255,
+      "description": "Large, beautiful leaves with natural splits. Loves indirect light.",
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491946/bloomscape_monstera_alt_clay-450x550_cpgwca.jpg",
-      "description": "Large, beautiful leaves with natural splits. Loves indirect light."
+      "idClient": "f434",
+      "id": "2"
     },
     {
       "id": "3",
       "name": "Peace Lily",
-      "category": "Indoor Plants",
+      "category": "Indoor-Plants",
       "price": 18,
       "image": "https://bloomscape.com/wp-content/uploads/2022/10/bloomscape_peace-lily6_md_charcoal-768x922.jpg?ver=955366",
-      "description": "Elegant white blooms and glossy leaves. Great for shaded areas."
+      "description": "Elegant white blooms and glossy leaves. Great for shaded areas.",
+      "idClient": "f434"
     },
     {
       "id": "4",
       "name": "ZZ Plant",
-      "category": "Indoor Plants",
+      "category": "Indoor-Plants",
       "price": 22,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748491779/bloomscape_zz-plant_clay_dlsmix.jpg",
-      "description": "Tolerates low light and dry air. Perfect for beginners."
+      "description": "Tolerates low light and dry air. Perfect for beginners.",
+      "idClient": "f434"
     },
     {
       "id": "5",
       "name": "Spider Plant",
-      "category": "Indoor Plants",
+      "category": "Indoor-Plants",
       "price": 12,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492144/bloomscape_spider-plant_medium_stone-768x922_okbhmt.jpg",
-      "description": "Fast-growing with baby offshoots. Air-purifying and resilient."
+      "description": "Fast-growing with baby offshoots. Air-purifying and resilient.",
+      "idClient": "f434"
     },
     {
       "id": "6",
       "name": "Pothos",
-      "category": "Indoor Plants",
+      "category": "Indoor-Plants",
       "price": 14,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492228/bloomscape_silver-satin-pothos_alt-3_charcoal-768x922_ngaeve.jpg",
-      "description": "Trailing vine with heart-shaped leaves. Low maintenance."
+      "description": "Trailing vine with heart-shaped leaves. Low maintenance.",
+      "idClient": "f434"
     },
     {
       "id": "7",
       "name": "Lavender",
-      "category": "Outdoor Plants",
+      "category": "Outdoor-Plants",
       "price": 18,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492399/begqpergt0ro8rqyj4ug_820x820_crop_center.jpg_ixjufe.jpg",
-      "description": "Aromatic plant with purple flowers. Loves full sun."
-    },
-    {
-      "id": "8",
-      "name": "Rose Bush",
-      "category": "Outdoor Plants",
-      "price": 30,
-      "image": "https://images.unsplash.com/photo-1594824476967-daa6c1ee6c1d",
-      "description": "Classic flowering shrub. Needs regular pruning and sunlight."
+      "description": "Aromatic plant with purple flowers. Loves full sun.",
+      "idClient": "f434"
     },
     {
       "id": "9",
       "name": "Bamboo Palm",
-      "category": "Outdoor Plants",
+      "category": "Outdoor-Plants",
       "price": 25,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748492661/pfcuutakror8ylszzuu3_820x820_crop_center.jpg_acpzc7.jpg",
-      "description": "Tropical look with low maintenance. Can grow tall outdoors."
+      "description": "Tropical look with low maintenance. Can grow tall outdoors.",
+      "idClient": "f434"
     },
     {
       "id": "10",
       "name": "Lemon",
-      "category": "Edible Plants",
+      "category": "Edible-Plants",
       "price": 8,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748493035/zcf65g0nk2zdf4mqdz9x_820x820_crop_center.jpg_tisnkc.jpg",
-      "description": "Lemon is a citrus plant known for its bright yellow fruit with a tangy flavor. Commonly used in cooking, drinks, and natural remedies. Requires full sun, well-drained soil, and regular watering."
+      "description": "Lemon is a citrus plant known for its bright yellow fruit with a tangy flavor. Commonly used in cooking, drinks, and natural remedies. Requires full sun, well-drained soil, and regular watering.",
+      "idClient": "f434"
     },
     {
       "id": "11",
       "name": "Tomato Plant",
-      "category": "Edible Plants",
+      "category": "Edible-Plants",
       "price": 12,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748493975/723_nejolq.jpg",
-      "description": "Produces juicy tomatoes. Requires sun and staking support."
+      "description": "Produces juicy tomatoes. Requires sun and staking support.",
+      "idClient": "f434"
     },
     {
       "id": "12",
       "name": "Mint",
-      "category": "Edible Plants",
+      "category": "Edible-Plants",
       "price": 7,
       "image": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748493469/65076_uqvptq.jpg",
-      "description": "Fragrant herb used in drinks and dishes. Spreads quickly."
+      "description": "Fragrant herb used in drinks and dishes. Spreads quickly.",
+      "idClient": "f434"
     },
     {
       "id": "13",
       "name": "Garden Trowel",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 10,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748494911/2148224056_vp9bfw.jpg",
-      "description": "Small hand tool for digging and planting."
+      "description": "Small hand tool for digging and planting.",
+      "idClient": "f434"
     },
     {
       "id": "14",
       "name": "Watering Can",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 15,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748494993/2148128722_asgsrw.jpg",
-      "description": "Essential tool for watering indoor and outdoor plants."
+      "description": "Essential tool for watering indoor and outdoor plants.",
+      "idClient": "f434"
     },
     {
       "id": "15",
       "name": "Pruning Shears",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 18,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748495066/2148826126_wwgxfi.jpg",
-      "description": "Used for cutting branches and stems cleanly."
+      "description": "Used for cutting branches and stems cleanly.",
+      "idClient": "f434"
     },
     {
       "id": "16",
       "name": "Gardening Gloves",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 12,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748495951/2147844289_zbweog.jpg",
-      "description": "Protective gloves for handling gardening tools."
+      "description": "Protective gloves for handling gardening tools.",
+      "idClient": "f434"
     },
     {
       "id": "17",
       "name": "Garden Rake",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 14,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748496662/2148224033_pkr6vh.jpg",
-      "description": "Used to level soil, remove debris, and spread mulch in garden beds."
+      "description": "Used to level soil, remove debris, and spread mulch in garden beds.",
+      "idClient": "f434"
     },
     {
       "id": "18",
       "name": "Hoe",
-      "category": "Gardening Tools",
+      "category": "Gardening-Tools",
       "price": 16,
       "image": "https://res.cloudinary.com/dzuir3psc/image/upload/v1748496810/web_09519371_01_hpv5zm.jpg",
+      "description": "Ideal for weeding and breaking up soil before planting.",
+      "idClient": "f434"
+    },
+    {
+      "id": "1b56",
+      "name": "Large Aloe Vera",
+      "category": "Outdoor-Plants",
+      "price": 46,
+      "description": "Under natural conditions, aloe vera requires bright light. However, it can grow in dim light and can withstand extreme temperatures. Aloe vera is a fast-growing plant. Water only after the soil has dried out, as overwatering is often the cause of aloe vera problems.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749072797/lgsgkds7cnmm7nll82hh.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "5adf",
+      "name": "European Olive Seedlings",
+      "category": "Outdoor-Plants",
+      "price": 126.5,
+      "description": "European olive plant. The plant features full, shiny silver leaves that add a classic touch to any space, in addition to being easy to care for.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749072915/lqpgwedh2sojay54vbob.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "c47b",
+      "name": "Leopard Skin Plant",
+      "category": "Outdoor-Plants",
+      "price": 125,
+      "description": "It is considered an air-purifying plant and does not require much care. Its sizes and colors vary, and it can be used in the home or various work environments.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073030/eclncdbdmafxkgismmmp.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "8aab",
+      "name": " Cactus Plant",
+      "category": "Indoor-Plants",
+      "price": 17.25,
+      "description": "Small scooters are plants that contain a large and varied number of plants, as they are a small cart and do not need any care at all, and can be built in homes or different environments.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073152/mw4coccuxrisf08wosp8.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "cf76",
+      "name": "Crassula Plant",
+      "category": "Indoor-Plants",
+      "price": 10.35,
+      "description": "A succulent plant, there are many different types and colors of it, it is considered one of the easy plants to care for, and it can be placed in homes or different work environments",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749073219/mdhemw9teb9cddurbnkl.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "4647",
+      "name": "Turquoise Irrigation Jug",
+      "category": "Gardening-Tools",
+      "price": 29,
+      "description": "Small Turquoise Watering Can 1.8L for watering or mixing materials",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387647/yvg3uvc5c3gajoy6cecp.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "b215",
+      "name": "Cucumber Seeds",
+      "category": "Edible-Plants",
+      "price": 9.2,
+      "description": "The Cucumber Seeds are the perfect choice for home gardeners looking to grow their own fresh produce. With these seeds, you can cultivate cucumbers that offer a natural taste and unmatched flavor. They are designed to ensure healthy growth and generous yields, making them ideal for any home garden.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387829/fnis4wwcibdbb5lbccts.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "a0cb",
+      "name": "Cherry Tomato Seeds",
+      "category": "Edible-Plants",
+      "price": 9.2,
+      "description": "Cherry Tomato Seeds offer a delightful way to cultivate fresh, sweet tomatoes right at home. Known for their bright color and refreshing taste, these seeds are easy to grow, making them perfect for both novice and experienced gardeners. With minimal care, you can enjoy a bountiful harvest of juicy cherry tomatoes in no time.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387876/awi47evo4hqryrvf7ek5.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "086b",
+      "name": "Green Onion Seeds",
+      "category": "Edible-Plants",
+      "price": 9.2,
+      "description": "Introducing our Green Onion Seeds, a must-have for any kitchen garden! These seeds are perfect for those who love fresh flavors and want to grow their own herbs at home.\n\nDesigned for balcony or kitchen windowsill planting, they offer a quick and easy solution for adding fresh green onions to your culinary creations.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749387914/wlzka2ir9hfiv8bhts43.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "4f1c",
+      "name": "Snow White River Stone",
+      "category": "Gardening-Tools",
+      "price": 40.25,
+      "description": "Enhance your gardening experience with Snow White River Stone, a decorative solution designed for plant lovers. These 1-2 cm stones serve not only as an attractive topping for your pots but also play a vital role in moisture retention. By reducing soil evaporation, they ensure your plants stay hydrated and healthy. Ideal for both indoor and outdoor settings, this 10 kg capacity bag of river stones is a must-have for any gardening enthusiast.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388020/oshknzydw1g0x709fbf6.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "2722",
+      "name": "Plant Pot for Seedlings",
+      "category": "Gardening-Tools",
+      "price": 1.15,
+      "description": "The Small Black Plant Pot is designed for seedling plants and is perfect for planting seeds. Made from lightweight plastic, this pot combines functionality with a simple and elegant aesthetic.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388064/ivaoadqpyh5ysjsia6is.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "c686",
+      "name": "Rio Cactus  ",
+      "category": "Indoor-Plants",
+      "price": 34.5,
+      "description": "The Rio Aloe Vera plant is a progressive plant with distinctive leaves and a beautiful purple-green color, giving us a wonderful appearance when living in the house or office.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388163/mlples7sus3hjimo6sj0.jpg",
+      "idClient": "a4ea"
+    },
+    {
+      "id": "fbc3",
+      "name": "Black Steel Watering Can",
+      "category": "Gardening-Tools",
+      "price": 80.5,
+      "description": "Introducing our Sleek Black Steel Watering Can, a perfect blend of modern design and practicality. This stylish watering can features a long, narrow spout, making it ideal for reaching those hard-to-water plants, whether they are hanging or potted.",
+      "image": "https://res.cloudinary.com/dblomu3ce/image/upload/v1749388254/jwahxnv9dpd4myvrgxgz.jpg",
+      "idClient": "a4ea"
+    }
+  ]
+}
       "description": "Ideal for weeding and breaking up soil before planting."
     }
   ],

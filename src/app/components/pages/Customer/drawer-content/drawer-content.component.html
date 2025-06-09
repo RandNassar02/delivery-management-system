@@ -19,10 +19,13 @@
   <div class="cart-footer">
     <div class="cart-summary">
       <p>
-        Subtotal: <span class="total">{{ getTotal() | number : "1.2-2" }}</span>
+        {{ "drawer.Subtotal" | translate }}:
+        <span class="total">{{ getTotal() | number : "1.2-2" }}</span>
       </p>
     </div>
-    <button class="view-cart-btn" (click)="goToCart()">View cart</button>
+    <button class="view-cart-btn" (click)="goToCart()">
+      {{ "drawer.button" | translate }}
+    </button>
   </div>
 </div>
 

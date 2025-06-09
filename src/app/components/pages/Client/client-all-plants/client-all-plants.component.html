@@ -1,0 +1,55 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-md-4 sidebar">
+      <app-client-addplant
+        [plantToEdit]="selectedPlant"
+        (plantAdded)="loadPlants()"
+        (saveEdit)="onSaveEdit($event)"
+        (cancelEdit)="onCancelEdit()"
+      ></app-client-addplant>
+    </div>
+
+    <div class="col-md-8 plants-list">
+      <div *ngIf="loading" class="alert alert-info">
+        {{ "plant.loading" | translate }}
+      </div>
+      <div *ngIf="!loading && plants.length === 0" class="alert alert-warning">
+        {{ "plant.noPlants" | translate }}
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" *ngFor="let plant of plants">
+          <div class="card h-100 shadow-sm">
+            <img
+              [src]="plant.image"
+              class="card-img-top"
+              alt="{{ plant.name }}"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ plant.name }}</h5>
+              <p class="card-text">
+                <strong>{{ "plant.price" | translate }}:</strong>
+                {{ plant.price }}$
+              </p>
+              <p class="card-text">
+                <strong>{{ "plant.category" | translate }}:</strong>
+                {{ plant.category }}
+              </p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <button class="btn btn-edit" (click)="editPlant(plant)">
+                {{ "plant.edit" | translate }}
+              </button>
+              <button
+                class="btn btn-sm btn-danger"
+                (click)="deletePlant(plant.id)"
+              >
+                {{ "plant.delete" | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

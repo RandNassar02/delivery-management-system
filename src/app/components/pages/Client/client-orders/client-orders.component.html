@@ -1,0 +1,156 @@
+<div class="container mt-5">
+  <h2 class="mb-4">🛒 {{ "orders-client.title" | translate }}</h2>
+
+  <div
+    *ngFor="let order of filteredOrders"
+    class="order-card card p-4 mb-4 shadow-sm"
+  >
+    <div
+      class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2"
+    >
+      <div>
+        <h5 class="mb-1">
+          📦 {{ "orders-client.order" | translate }} #{{ order.id }}
+        </h5>
+        <small class="text-muted"
+          >🗓️ {{ order.date | date : "mediumDate" }}</small
+        >
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge bg-secondary">
+          <span *ngIf="order.driverId === 0">
+            <i class="fas fa-user-slash"></i>
+            {{ "orders-client.noDriver" | translate }}</span
+          >
+          <span *ngIf="order.driverId !== 0"
+            ><i class="fas fa-user-check"></i>
+            {{ getDriverById(order.driverId)?.name }}</span
+          >
+        </span>
+
+        <span class="badge bg-secondary">
+          <span *ngIf="order.paymentStatus === 'paid'">
+            <i class="fas fa-check-circle"></i>
+            {{ "orders-client.paid" | translate }}</span
+          >
+          <span *ngIf="order.paymentStatus === 'unpaid'"
+            ><i class="fas fa-hourglass-half"></i>
+            {{ "orders-client.unpaid" | translate }}</span
+          >
+        </span>
+
+        <span
+          class="badge"
+          [ngClass]="getDeliveryStatusClass(order.deliveryStatus)"
+        >
+          {{ order.deliveryStatus.replace("_", " ") }}
+        </span>
+      </div>
+    </div>
+
+    <div *ngIf="getCustomerById(order.customerId) as customer" class="mb-3">
+      <h6>👤 {{ "orders-client.customerInfo" | translate }}</h6>
+      <p class="mb-1">
+        <strong>{{ "orders-client.name" | translate }}:</strong>
+        {{ customer.name }}
+      </p>
+      <p class="mb-1">
+        <strong>{{ "orders-client.email" | translate }}:</strong>
+        {{ customer.email }}
+      </p>
+      <p class="mb-1">
+        <strong>{{ "orders-client.phone" | translate }}:</strong>
+        {{ customer.phone }}
+      </p>
+      <p class="mb-0">
+        <strong>{{ "orders-client.address" | translate }}:</strong>
+        {{ customer.address }}
+      </p>
+    </div>
+
+    <div class="mb-3">
+      <label
+        ><strong
+          >{{ "orders-client.deliveryStatus" | translate }}:</strong
+        ></label
+      >
+      <select
+        class="form-select w-auto d-inline-block ms-2"
+        [(ngModel)]="order.deliveryStatus"
+        (change)="updateDeliveryStatus(order)"
+      >
+        <option *ngFor="let status of deliveryStatusOptions" [value]="status">
+          {{ status }}
+        </option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label
+        ><strong>{{ "orders-client.assignDriver" | translate }}:</strong></label
+      >
+      <select
+        id="driverSelect{{ order.id }}"
+        class="form-select w-auto d-inline-block ms-2"
+        [(ngModel)]="order.driverId"
+        (change)="updateDeliveryStatus(order)"
+      >
+        <option [value]="0">
+          -- {{ "orders-client.selectDriver" | translate }} --
+        </option>
+
+        <option *ngFor="let driver of drivers" [value]="driver.id">
+          {{ driver.name }} ({{ driver.vehicleType }})
+        </option>
+      </select>
+
+      <small class="d-block mt-1"
+        >{{ "orders-client.currentDriver" | translate }}:
+        <span *ngIf="order.driverId === 0">{{
+          "orders-client.unknownDriver" | translate
+        }}</span>
+        <samp *ngIf="order.driverId !== 0">
+          {{ getDriverById(order.driverId)?.name }} ({{
+            getDriverById(order.driverId)?.vehicleType
+          }})
+        </samp>
+      </small>
+    </div>
+
+    <div>
+      <h6>🌿 {{ "orders-client.orderedPlants" | translate }}</h6>
+      <div class="row">
+        <div
+          *ngFor="let plant of order.plant"
+          class="col-md-4 col-sm-6 mb-3 d-flex align-items-start"
+        >
+          <img
+            [src]="plant.image"
+            alt="{{ plant.name }}"
+            class="me-3 rounded"
+            width="60"
+            height="60"
+          />
+          <div>
+            <p class="mb-1">
+              <strong>{{ plant.name }}</strong>
+            </p>
+            <span>
+              {{ plant.price }} {{ "orders-client.Jd" | translate }} ×
+              {{ plant.quantity }} =
+              <strong
+                >{{ plant.price * plant.quantity }}
+                {{ "orders-client.Jd" | translate }}</strong
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-2 text-end">
+        <strong>💰 {{ "orders-client.total" | translate }}:</strong>
+        {{ getTotalAmount(order) }} {{ "orders-client.Jd" | translate }}
+      </div>
+    </div>
+  </div>
+</div>

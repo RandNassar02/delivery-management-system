@@ -70,7 +70,7 @@ export class ClientSignupComponent {
     this.clientService.signUpClient(this.formClientSignup.value).subscribe({
       next: () => {
         this.messageService.add({
-          severity: 'success',
+          severity: '{{messageService.success| translate}}',
           summary: 'sucsses',
           detail: 'creation account completed successfully',
         });

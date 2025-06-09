@@ -5,28 +5,26 @@
       (click)="navigateToCategory(category)"
       [class.active]="category === activeCategory"
     >
-      {{ category }}
+      {{ "category." + category | translate }}
     </button>
   </nav>
 
   <div class="plant-grid">
-    <ng-container *ngIf="filteredPlants.length > 0; else noPlants">
+    <ng-container *ngIf="filteredPlants.length > 0">
       <div *ngFor="let plant of filteredPlants" class="plant-card">
         <img [src]="plant.image" [alt]="plant.name" />
         <h3>{{ plant.name }}</h3>
         <p>{{ plant.description }}</p>
-        <span class="price">{{ plant.price }} JD</span>
-        <!-- <button class="add-btn" (click)="addToCart(plant)">Add to Cart</button> -->
+        <span class="price"
+          >{{ plant.price }} {{ "orders.Jd" | translate }}</span
+        >
+
         <div class="custom-button-group">
           <button class="main-btn" (click)="addToCart(plant)">
-            Add to Cart
+            {{ "store.addTocart" | translate }}
           </button>
         </div>
       </div>
     </ng-container>
-
-    <ng-template #noPlants>
-      <p class="no-results">No plants available in this category.</p>
-    </ng-template>
   </div>
 </div>

@@ -1,28 +1,28 @@
 <div class="edit-account-container">
   <form [formGroup]="editForm" (ngSubmit)="saveChanges()" class="edit-form">
-    <h2>Edit Profile</h2>
+    <h2>{{ "editprofileCustomer.Edit Profile" | translate }}</h2>
 
     <div class="form-group">
-      <label>Name *</label>
-      <input type="text" formControlName="name" placeholder="Full Name" />
+      <label>{{ "editprofileCustomer.name" | translate }} *</label>
+      <input type="text" formControlName="name" />
       <div
         class="error"
         *ngIf="
           editForm.controls['name'].touched && editForm.controls['name'].invalid
         "
       >
-        <small *ngIf="editForm.controls['name'].errors?.['required']"
-          >Name is required</small
-        >
-        <small *ngIf="editForm.controls['name'].errors?.['minlength']"
-          >Minimum 5 characters</small
-        >
+        <small *ngIf="editForm.controls['name'].errors?.['required']">{{
+          "massages.nameRequired" | translate
+        }}</small>
+        <small *ngIf="editForm.controls['name'].errors?.['minlength']">{{
+          "editprofileCustomer.Minimum 5 characters" | translate
+        }}</small>
       </div>
     </div>
 
     <div class="form-group">
-      <label>Email *</label>
-      <input type="email" formControlName="email" placeholder="Email" />
+      <label>{{ "editprofileCustomer.email" | translate }} *</label>
+      <input type="email" formControlName="email" />
       <div
         class="error"
         *ngIf="
@@ -30,17 +30,17 @@
           editForm.controls['email'].invalid
         "
       >
-        <small *ngIf="editForm.controls['email'].errors?.['required']"
-          >Email is required</small
-        >
-        <small *ngIf="editForm.controls['email'].errors?.['email']"
-          >Invalid email format</small
-        >
+        <small *ngIf="editForm.controls['email'].errors?.['required']">{{
+          "massages.emailRequired" | translate
+        }}</small>
+        <small *ngIf="editForm.controls['email'].errors?.['email']">{{
+          "massages.emailInvalid" | translate
+        }}</small>
       </div>
     </div>
 
     <div class="form-group">
-      <label>Phone *</label>
+      <label>{{ "editprofileCustomer.phone" | translate }} *</label>
       <div class="phone-input">
         <div class="country-code">
           <img src="https://flagcdn.com/w40/jo.png" alt="jordan Flag" />
@@ -55,18 +55,18 @@
           editForm.controls['phone'].invalid
         "
       >
-        <small *ngIf="editForm.controls['phone'].errors?.['required']"
-          >Phone number is required</small
-        >
-        <small *ngIf="editForm.controls['phone'].errors?.['pattern']"
-          >Must be 9 digits</small
-        >
+        <small *ngIf="editForm.controls['phone'].errors?.['required']">{{
+          "editprofileCustomer.Phone number is required" | translate
+        }}</small>
+        <small *ngIf="editForm.controls['phone'].errors?.['pattern']">{{
+          "editprofileCustomer.validPhoneNumber" | translate
+        }}</small>
       </div>
     </div>
 
     <div class="form-group">
-      <label>Address *</label>
-      <input type="text" formControlName="address" placeholder="Address" />
+      <label>{{ "editprofileCustomer.address" | translate }} *</label>
+      <input type="text" formControlName="address" />
       <div
         class="error"
         *ngIf="
@@ -74,15 +74,17 @@
           editForm.controls['address'].invalid
         "
       >
-        <small *ngIf="editForm.controls['address'].errors?.['required']"
-          >Address is required</small
-        >
-        <small *ngIf="editForm.controls['address'].errors?.['minlength']"
-          >Minimum 5 characters</small
-        >
+        <small *ngIf="editForm.controls['address'].errors?.['required']">{{
+          "massages.addressRequired" | translate
+        }}</small>
+        <small *ngIf="editForm.controls['address'].errors?.['minlength']">{{
+          "editprofileCustomer.Minimum 5 characters" | translate
+        }}</small>
       </div>
     </div>
 
-    <button type="submit" [disabled]="editForm.invalid">Save Changes</button>
+    <button type="submit" [disabled]="editForm.invalid">
+      {{ "editprofileCustomer.save change" | translate }}
+    </button>
   </form>
 </div>

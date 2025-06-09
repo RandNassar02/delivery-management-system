@@ -6,7 +6,6 @@ import { CustomerSignUpComponent } from './components/pages/Customer/customer-si
 import { HomeComponent } from './components/shared/home/home.component';
 import { DashboardComponent } from './components/pages/Admin/dashboard/dashboard.component';
 import { ClientProfileComponent } from './components/pages/Client/client-profile/client-profile.component';
-import { CustomerProfileComponent } from './components/pages/Customer/customer-profile/customer-profile.component';
 import { DriverProfileComponent } from './components/pages/Driver/driver-profile/driver-profile.component';
 import { ClientAddplantComponent } from './components/pages/Client/client-addplant/client-addplant.component';
 import { StoreComponent } from './components/shared/store/store.component';
@@ -14,6 +13,10 @@ import { CustomerAccountComponent } from './components/pages/Customer/customer-a
 import { CustomerEditAccountComponent } from './components/pages/Customer/customer-edit-account/customer-edit-account.component';
 import { CustomerOrderComponent } from './components/pages/Customer/customer-order/customer-order.component';
 import { CartComponent } from './components/pages/Customer/cart/cart.component';
+import { ClientAllPlantsComponent } from './components/pages/Client/client-all-plants/client-all-plants.component';
+import { ClientAccountComponent } from './components/pages/Client/client-account/client-account.component';
+import { DriverSignupComponent } from './components/pages/Driver/driver-signup/driver-signup.component';
+import { ClientOrdersComponent } from './components/pages/Client/client-orders/client-orders.component';
 import { AddDriverComponent } from './components/pages/Admin/add-driver/add-driver.component';
 import { ApprovedClientsRequestsComponent } from './components/pages/Admin/approved-clients-requests/approved-clients-requests.component';
 import { DriversListComponent } from './components/pages/Admin/drivers-list/drivers-list.component';
@@ -39,15 +42,11 @@ export const routes: Routes = [
   },
   {
     path: 'signup-driver',
-    component: HomeComponent, //mest add the driver sign up component
+    component: DriverSignupComponent,
   },
   {
     path: 'admin-dashboard',
     component: DashboardComponent,
-  },
-  {
-    path: 'client-dashboard',
-    component: ClientProfileComponent,
   },
   {
     path: 'customer-dashboard',
@@ -58,8 +57,20 @@ export const routes: Routes = [
     component: DriverProfileComponent,
   },
   {
-    path: 'client-addplant',
-    component: ClientAddplantComponent,
+    path: 'client-profile',
+    component: ClientProfileComponent,
+  },
+  {
+    path: 'client-plants',
+    component: ClientAllPlantsComponent,
+  },
+  {
+    path: 'client-account',
+    component: ClientAccountComponent,
+  },
+  {
+    path: 'client-orders',
+    component: ClientOrdersComponent,
   },
   { path: 'store', component: StoreComponent },
   { path: 'store/:category', component: StoreComponent },
