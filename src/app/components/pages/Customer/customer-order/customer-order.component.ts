@@ -25,7 +25,6 @@ export class CustomerOrderComponent {
     this.route.queryParams.subscribe((params) => {
       const status = params['order_status'];
       if (this.isValidStatus(status)) {
-        // لو الحالة pending منخزن بدلها in_progress داخليًا
         this.selectedTab = status === 'pending' ? 'in_progress' : status;
       } else {
         this.selectedTab = 'in_progress';
@@ -57,7 +56,7 @@ export class CustomerOrderComponent {
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { order_status: tab },
-      //رح اخليها اذا رح ا  ينضاف فلتر هون
+
       queryParamsHandling: 'merge',
     });
   }

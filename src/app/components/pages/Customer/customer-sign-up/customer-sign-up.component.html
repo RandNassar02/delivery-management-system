@@ -116,9 +116,9 @@
         <small *ngIf="form.controls['phone'].errors?.['required']">{{
           "massages.phoneRequired" | translate
         }}</small>
-        <small *ngIf="form.controls['phone'].errors?.['pattern']">{{
-          "massages.phoneNumberPattern" | translate
-        }}</small>
+        <small *ngIf="form.controls['phone'].errors?.['pattern']">
+          {{ "massages.phoneInvalid" | translate }}</small
+        >
       </div>
 
       <input

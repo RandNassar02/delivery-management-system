@@ -78,7 +78,7 @@ small {
 
 .sign-up-form button {
   padding: 12px;
-  background-color: var(--text-color);
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 50px;
@@ -92,7 +92,7 @@ small {
 }
 
 .sign-up-form button:hover {
-  background-color: var(--text-color);
+  background-color: var(--secondary-color);
 }
 
 .sign-up-form button:disabled {

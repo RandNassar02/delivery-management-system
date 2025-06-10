@@ -12,7 +12,7 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastModule } from 'primeng/toast';
-
+import { Router } from '@angular/router';
 import { CustomerService } from '../../../../services/customer.service';
 import { I18nService } from '../../../../i18n/i18n.service';
 import { RouterLink } from '@angular/router';
@@ -39,7 +39,8 @@ export class CustomerSignUpComponent {
     private fb: FormBuilder,
     private authService: CustomerService,
     private messageService: MessageService,
-    public i18nService: I18nService
+    public i18nService: I18nService,
+    private router: Router
   ) {
     this.form = this.fb.group(
       {
@@ -55,7 +56,7 @@ export class CustomerSignUpComponent {
         ],
         confirmPassword: ['', [Validators.required]],
 
-        phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+        phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
         address: ['', [Validators.required, Validators.minLength(5)]],
       },
       {
@@ -68,8 +69,8 @@ export class CustomerSignUpComponent {
     if (this.form.valid) {
       this.authService.signUpCustomer(this.form.value).subscribe({
         next: () => {
-          this.showSuccess();
           this.form.reset();
+          this.router.navigate(['/signin']);
         },
         error: () => {
           this.showError();
@@ -86,18 +87,11 @@ export class CustomerSignUpComponent {
     this.showConfirmPassword = !this.showConfirmPassword;
   }
 
-  showSuccess() {
-    this.messageService.add({
-      severity: 'success',
-      summary: 'sucsses',
-      detail: 'Creation Account Completed Successfully',
-    });
-  }
   showError() {
     this.messageService.add({
       severity: 'error',
-      summary: 'Error',
-      detail: 'Email Already Exists',
+      summary: this.i18nService.t('messageServicetranslate.error'),
+      detail: this.i18nService.t('messageServicetranslate.emialexist'),
     });
   }
 }

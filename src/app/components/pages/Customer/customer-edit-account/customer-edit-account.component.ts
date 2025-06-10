@@ -71,7 +71,7 @@ export class CustomerEditAccountComponent {
     this.editForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       address: ['', [Validators.required, Validators.minLength(5)]],
     });
   }

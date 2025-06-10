@@ -9,6 +9,7 @@ import { TranslatePipe } from '../../../i18n/translate.pipe';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { I18nService } from '../../../i18n/i18n.service';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-store',
   imports: [CommonModule, TranslatePipe, ToastModule],
@@ -34,7 +35,8 @@ export class StoreComponent {
     private plantservice: PlantService,
     private cartService: CartService,
     private messageService: MessageService,
-    private translatePipe: I18nService
+    private translatePipe: I18nService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -66,6 +68,15 @@ export class StoreComponent {
     );
   }
   addToCart(plant: Plants) {
+    if (!this.authService.isLoggedIn()) {
+      this.messageService.add({
+        severity: 'warn',
+        summary: this.translatePipe.t('messageServicetranslate.warning'),
+        detail: this.translatePipe.t('messageServicetranslate.loginRequired'),
+      });
+      return;
+    }
+
     this.cartService.addToCart({
       id: plant.id,
       name: plant.name,
@@ -74,10 +85,11 @@ export class StoreComponent {
       image: plant.image,
       idClient: plant.idClient,
     });
+
     this.messageService.add({
       severity: 'success',
       summary: this.translatePipe.t('messageServicetranslate.success'),
-      detail: 'Plant added to cart successfully!',
+      detail: this.translatePipe.t('messageServicetranslate.plantAdded'),
     });
   }
   goToPlantDetails(plant: Plants) {
