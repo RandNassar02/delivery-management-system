@@ -26,29 +26,38 @@
           <small>{{ "signIn.emailRequired" | translate }}</small>
         </div>
       </div>
-      <div class="password">
+      <div class="input-wrapper">
         <input
-          type="password"
           [type]="showPassword ? 'text' : 'password'"
           formControlName="password"
-          placeholder="{{ 'signIn.password' | translate }}"
+          [placeholder]="'custumer-signUp.password' | translate"
+          class="password-input"
         />
         <i
-          class="toggle-password-icon"
-          [ngClass]="
-            showPassword ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'
-          "
+          class="ri-eye-line toggle-icon"
+          *ngIf="!showPassword"
           (click)="togglePasswordVisibility()"
-          class="toggle-password-icon"
         ></i>
-        <div
-          *ngIf="
-            loginForm.controls['password']?.invalid &&
-            loginForm.controls['password']?.touched
-          "
-        >
-          <small>{{ "signIn.passwordRequired" | translate }}</small>
-        </div>
+        <i
+          class="ri-eye-close-line toggle-icon"
+          *ngIf="showPassword"
+          (click)="togglePasswordVisibility()"
+        ></i>
+      </div>
+      <div
+        *ngIf="
+          loginForm.controls['password'].touched && loginForm.controls['password'].invalid
+        "
+      >
+        <small *ngIf="loginForm.controls['password'].errors?.['required']">{{
+          "massages.passwordRequired" | translate
+        }}</small>
+        <small *ngIf="loginForm.controls['password'].errors?.['minlength']">{{
+          "editprofileCustomer.Minimum 5 characters" | translate
+        }}</small>
+        <small *ngIf="loginForm.controls['password'].errors?.['pattern']">
+          {{ "massages.passwordPattern" | translate }}
+        </small>
       </div>
       <div class="signInbutton">
         <button

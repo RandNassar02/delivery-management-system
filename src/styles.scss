@@ -12,3 +12,13 @@ body {
   overflow: hidden;
   height: 100vh;
 }
+
+html[dir="rtl"] .toggle-icon{
+  left: 60px !important;
+  right: auto !important;
+}
+
+html[dir="rtl"] .toggle-password-icon {
+  left: 12px !important;
+  right: auto !important;
+}
