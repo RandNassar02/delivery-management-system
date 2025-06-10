@@ -46,7 +46,7 @@
           <img src="https://flagcdn.com/w40/jo.png" alt="jordan Flag" />
           <span>+962</span>
         </div>
-        <input type="text" formControlName="phone" placeholder="7XXXXXXXX" />
+        <input type="text" formControlName="phone" placeholder="07XXXXXXXX" />
       </div>
       <div
         class="error"
@@ -58,9 +58,9 @@
         <small *ngIf="editForm.controls['phone'].errors?.['required']">{{
           "editprofileCustomer.Phone number is required" | translate
         }}</small>
-        <small *ngIf="editForm.controls['phone'].errors?.['pattern']">{{
-          "editprofileCustomer.validPhoneNumber" | translate
-        }}</small>
+        <small *ngIf="editForm.controls['phone'].errors?.['pattern']">
+          {{ "massages.phoneInvalid" | translate }}</small
+        >
       </div>
     </div>
 

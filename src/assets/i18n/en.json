@@ -209,6 +209,15 @@
     "success": "Success",
     "error": "Error",
     "warning": "Warning",
-    "info": "Info"
+    "info": "Info",
+    "loginRequired": "You must be logged in to add a plant to your cart.",
+    "plantAdded": "The plant has been added to your cart.",
+    "emialexist": "This Email Already Exists."
+  },
+  "details": {
+    "backTostore": "Back to store",
+    "price": "Price",
+    "description": "Description",
+    "ownerInfo": "Owner Info"
   }
 }
