@@ -96,15 +96,6 @@ backend/
 ### 🚚 Driver
 
 * Sign up and log in
- 
-
-## 🔐 Authentication Flow
-graph TD
-    A[Login] --> B{User Type}
-    B -->|Admin| C[Admin Dashboard]
-    B -->|Client| D[Client Portal]
-    B -->|Driver| E[Driver Interface]
-    B -->|Customer| F[Customer View]
 
 
 ## 📸 Screenshots
@@ -112,8 +103,6 @@ Include at least 3:
 - Login Page
 - Role Dashboard
 - Responsive View (mobile/tablet)
-
-
 
 
 ## 🌍 Internationalization (i18n)
