@@ -128,7 +128,8 @@
     "delete": "حذف",
     "loading": "جاري التحميل...",
     "noPlants": "لا يوجد نباتات حتى الان.",
-    "deleteMessage": "هل تريد حذف هذا النبات؟"
+    "deleteMessage": "هل تريد حذف هذا النبات؟",
+    "cancel": "إلغاء"
   },
   "orders-client": {
     "title": "الطلبات",

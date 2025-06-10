@@ -128,7 +128,8 @@
     "delete": "Delete",
     "loading": "Loading..",
     "noPlants": "No plants added yet.",
-    "deleteMessage": "Are you sure you want to delete this plant?"
+    "deleteMessage": "Are you sure you want to delete this plant?",
+    "cancel": "Cancel"
   },
   "orders-client": {
     "title": "Orders",
