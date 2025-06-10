@@ -108,11 +108,9 @@ graph TD
 
 
 ## 📸 Screenshots
-Include at least 3:
-- Login Page
-- Role Dashboard
-- Responsive View (mobile/tablet)
-
+Home page ![image](https://github.com/user-attachments/assets/217d4db5-f53d-40d1-8560-5f213d19bbbd)
+Login Page ![image](https://github.com/user-attachments/assets/5df0a8bb-8088-4b29-b1e5-c6b6d58c8b59)
+RTL Home Page ![image](https://github.com/user-attachments/assets/8b68433c-09ca-4a6e-aa14-6a347e9bf990)
 
 
 
