@@ -1,59 +1,147 @@
-# DeliveryManagementSystem
+# 🚚 Project Title: Delivery Management System (DMS)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+## 👥 Team Members
 
-## Development server
+* **Rand** – Client Role Implementation
+* **Kawthar** – Customer Role Implementation
+* **Linda** – Admin Role Implementation
+* **Laith** – Driver Role Implementation
 
-To start a local development server, run:
+## 📚 Project Description
 
+The **Delivery Management System (DMS)** is a role-based web application designed to streamline and manage the process of deliveries between **clients**, **drivers**, and **customers**, overseen by an **admin**. Each role has its unique workflows and permissions.
+
+The system supports **English and Arabic languages**, and is fully responsive for mobile, tablet, and desktop devices.
+
+
+## 🌐 Technologies Used
+* **Frontend Framework**: Angular 19 (Standalone Components)
+* **Styling**: SCSS / Bootstrap 5
+* **Backend Simulation**: JSON-server
+
+## 🚦 Setup Instructions
+Make sure you have Node.js and Angular CLI installed.
 ```bash
-ng serve
+# Clone the repository
+git clone https://github.com/RandNassar02/delivery-management-system.git
+cd delivery-management-system
+
+# Install dependencies
+npm install
+
+# Start the application  
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📁 Project Structure
 
 ```bash
-ng generate component component-name
+src/
+├── app/
+│   ├── components/
+│   │   ├── shared/                # Reusable components
+│   │   │   ├── footer/            # Global footer
+│   │   │   ├── header/            # Navigation header
+│   │   │   └── home/              # Landing page
+│   │   │   └── not-found/         # 404 page
+│   │   │   └── sign-in/           # Auth components
+│   │   │   └── store/             
+│   │   ├── pages/                 # Role-specific views
+│   │   │   ├── admin/             # Admin workflows
+│   │   │   ├── client/            # Client workflows
+│   │   │   └── customer/          # Customer workflows
+│   │   │   └──driver/             #Driver workflows
+│   ├── models/                    # TypeScript interfaces
+│   ├── services/                  # Core business logic
+│   └── app.routes.ts              # Route configuration
+├── assets/
+│   ├── i18n/
+│   │   ├── en.json                # English translations
+│   │   └── ar.json                # Arabic translations 
+│   └── images/                    #Static logos
+backend/
+├── db.json                    # Mock database
 ```
+## 👤 User Roles & Workflows
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 🔐 Authentication & Authorization
 
-```bash
-ng generate --help
-```
+* Role-based sign-up and login
+* Client & Customer & Driver : can sign up and log in
+* Admin : secure login only
 
-## Building
+### 🧑‍💼 Client
 
-To build the project run:
+* Sign up and log in
+* Manage client profile
+* View available drivers
+* Send delivery requests
+* Track request statuses
+* View customer payment history
 
-```bash
-ng build
-```
+### 🛡 Admin
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* Secure login to dashboard
+* Approve/reject client accounts
+* Approve/reject drivers accounts
+* View all client activities
+* Monitor customer payments
 
-## Running unit tests
+### 👤 Customer
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+* Sign up and log in
+* Update profile and location
+* View delivery history and upcoming deliveries
 
-```bash
-ng test
-```
+### 🚚 Driver
 
-## Running end-to-end tests
+* Sign up and log in
+ 
 
-For end-to-end (e2e) testing, run:
+## 🔐 Authentication Flow
+graph TD
+    A[Login] --> B{User Type}
+    B -->|Admin| C[Admin Dashboard]
+    B -->|Client| D[Client Portal]
+    B -->|Driver| E[Driver Interface]
+    B -->|Customer| F[Customer View]
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📸 Screenshots
+Include at least 3:
+- Login Page
+- Role Dashboard
+- Responsive View (mobile/tablet)
 
-## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## 🌍 Internationalization (i18n)
+* **ngx-translate** used for dynamic language switching
+* Supports **English** and **Arabic**
+* RTL layout supported for Arabic
+
+## 📱 Responsiveness
+
+* Built with Bootstrap 5 and SCSS
+* Optimized for **mobile**, **tablet**, and **desktop** views
+* Fully responsive UI components
+
+## ✅ Features Checklist
+- [ ] Role-based login
+- [ ] Form validation with feedback
+- [ ] Toast messages for all actions
+- [ ] EN/AR language switching
+- [ ] Responsive design
+- [ ] Realistic data with JSON-server
+
+## 🧪 Testing Guide
+
+| Test Scenario                   | Expected Result                         |
+| ------------------------------- | --------------------------------------- |
+| Login with each role            | Redirect to correct dashboard           |
+| Sign up as client/customer      | Success and login flow begins           |
+| Form validation (empty/invalid) | Show appropriate error messages         |
+| Language switch                 | UI language changes instantly           |
+| Responsive layout on devices    | All components scale correctly          |
+
