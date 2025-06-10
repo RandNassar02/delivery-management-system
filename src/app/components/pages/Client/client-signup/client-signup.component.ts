@@ -95,4 +95,15 @@ export class ClientSignupComponent {
       },
     });
   }
+
+  showPassword: boolean = false;
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
+  showConfirmPassword: boolean = false;
+  toggleConfirmPasswordVisibility() {
+    this.showConfirmPassword = !this.showConfirmPassword;
+  }
 }

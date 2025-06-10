@@ -16,6 +16,25 @@
   background: var(--background-color);
   align-items: stretch;
 }
+.password-icon {
+  position: relative;
+}
+
+.toggle-password-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 2;
+}
+
+.toggle-password-icon:hover {
+  color: var(--primary-color);
+}
 
 .signup {
   width: 100%;

@@ -3,7 +3,7 @@
     "logo": "https://res.cloudinary.com/ddsrofo4o/image/upload/v1748072675/ghosn_home_vewrfd.png"
   },
   "signIn": {
-    "title": "Sign In",
+    "title": "Login",
     "subtitle": "Welcome back! Please enter your details to continue your green journey.",
     "email": "Email",
     "password": "Password",
@@ -186,10 +186,13 @@
     "cart": "Cart",
     "Subtotal": "Subtotal",
     "button": "View cart",
-    "emptyCart": "Your cart is empty"
+    "emptyCart": "Your cart is empty",
+    "noItem": "No Item in the cart",
+    "shopnow": "Shop Now"
   },
   "store": {
-    "addTocart": "Add to cart"
+    "addTocart": "Add to cart",
+    "moreDetails": "More Details"
   },
   "cart": {
     "item": "Items",
@@ -212,12 +215,20 @@
     "info": "Info",
     "loginRequired": "You must be logged in to add a plant to your cart.",
     "plantAdded": "The plant has been added to your cart.",
-    "emialexist": "This Email Already Exists."
+    "emialexist": "This Email Already Exists.",
+    "accountcreated": "creation account completed successfully",
+    "warnName": "Name Exists",
+    "nameexist": "This client name is already in use. Please choose another."
   },
   "details": {
     "backTostore": "Back to store",
     "price": "Price",
     "description": "Description",
     "ownerInfo": "Owner Info"
+  },
+  "NotFound": {
+    "title": "Page Not Found 🌱😢",
+    "message": "The page you are looking for does not exist.",
+    "button": "Go Home"
   }
 }

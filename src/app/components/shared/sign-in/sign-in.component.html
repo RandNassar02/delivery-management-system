@@ -10,7 +10,7 @@
         {{ "signIn.subtitle" | translate }}
       </p>
     </div>
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form">
       <div class="email">
         <input
           type="email"
@@ -29,9 +29,18 @@
       <div class="password">
         <input
           type="password"
+          [type]="showPassword ? 'text' : 'password'"
           formControlName="password"
           placeholder="{{ 'signIn.password' | translate }}"
         />
+        <i
+          class="toggle-password-icon"
+          [ngClass]="
+            showPassword ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'
+          "
+          (click)="togglePasswordVisibility()"
+          class="toggle-password-icon"
+        ></i>
         <div
           *ngIf="
             loginForm.controls['password']?.invalid &&
@@ -41,9 +50,15 @@
           <small>{{ "signIn.passwordRequired" | translate }}</small>
         </div>
       </div>
-      <button type="submit" [disabled]="loginForm.invalid">
-        {{ "signIn.title" | translate }}
-      </button>
+      <div class="signInbutton">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="loginForm.invalid"
+        >
+          {{ "signIn.title" | translate }}
+        </button>
+      </div>
     </form>
 
     <div class="register">
