@@ -18,7 +18,6 @@
 
 .logo img {
   height: 100px;
-  // margin-bottom: 30px;
 }
 
 .title h1 {
@@ -34,8 +33,15 @@
   line-height: 1.5;
 }
 
+.form {
+  display: table;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
 form input {
-  width: 80%;
+  width: 90%;
   padding: 14px 18px;
   margin-bottom: 12px;
   border: 1.5px solid #ccc;
@@ -49,6 +55,38 @@ form input:focus {
   outline: none;
 }
 
+.password {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto 12px auto;
+}
+
+.password input {
+  width: 100%;
+}
+
+.password input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.toggle-password-icon {
+  position: absolute;
+  right: 16px;
+  top: 30%;
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s ease;
+}
+
+.toggle-password-icon:hover {
+  color: var(--primary-color);
+}
+
 small {
   color: #e53935;
   font-size: 13px;
@@ -57,14 +95,12 @@ small {
 }
 
 button[type="submit"] {
-  margin-top: 25px;
-  padding: 14px;
+  margin-top: 10px;
   background-color: var(--primary-color);
   color: #fff;
+  padding: 12px 20px;
   border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 600;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

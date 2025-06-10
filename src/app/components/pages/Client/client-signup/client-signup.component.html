@@ -49,11 +49,21 @@
             </div>
           </div>
           <div class="password">
-            <input
-              type="password"
-              formControlName="password"
-              placeholder="{{ 'client-signup.password' | translate }}"
-            />
+            <div class="password-icon">
+              <input
+                [type]="showPassword ? 'text' : 'password'"
+                formControlName="password"
+                placeholder="{{ 'client-signup.password' | translate }}"
+              />
+              <i
+                class="toggle-password-icon"
+                [ngClass]="
+                  showPassword ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash'
+                "
+                (click)="togglePasswordVisibility()"
+                class="toggle-password-icon"
+              ></i>
+            </div>
             <div
               class="errorMessage"
               *ngIf="
@@ -83,11 +93,23 @@
           </div>
 
           <div class="confirm-password">
-            <input
-              type="password"
-              formControlName="confirmPassword"
-              placeholder="{{ 'client-signup.confirmPassword' | translate }}"
-            />
+            <div class="password-icon">
+              <input
+                [type]="showConfirmPassword ? 'text' : 'password'"
+                formControlName="confirmPassword"
+                placeholder="{{ 'client-signup.confirmPassword' | translate }}"
+              />
+              <i
+                class="toggle-password-icon"
+                [ngClass]="
+                  showConfirmPassword
+                    ? 'fa-regular fa-eye'
+                    : 'fa-regular fa-eye-slash'
+                "
+                (click)="toggleConfirmPasswordVisibility()"
+                class="toggle-password-icon"
+              ></i>
+            </div>
             <div
               class="errorMessage"
               *ngIf="

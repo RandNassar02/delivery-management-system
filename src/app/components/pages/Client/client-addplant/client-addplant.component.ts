@@ -18,7 +18,6 @@ import { PlantService } from '../../../../services/plant.service';
 import { TranslatePipe } from '../../../../i18n/translate.pipe';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { RouterLink } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { AuthService } from '../../../../services/auth.service';
 

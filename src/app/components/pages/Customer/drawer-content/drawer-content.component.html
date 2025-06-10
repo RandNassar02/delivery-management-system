@@ -31,10 +31,12 @@
 
 <ng-template #emptyCart>
   <div class="empty-cart">
-    <p>No Item in the cart</p>
+    <p>{{ "drawer.noItem" | translate }}</p>
     <img
       src="https://res.cloudinary.com/ddsrofo4o/image/upload/v1748620413/emp_s7lwqw.png"
     />
-    <button class="view-cart-btn" (click)="gotostore()">Shop Now</button>
+    <button class="view-cart-btn" (click)="gotostore()">
+      {{ "drawer.shopnow" | translate }}
+    </button>
   </div>
 </ng-template>

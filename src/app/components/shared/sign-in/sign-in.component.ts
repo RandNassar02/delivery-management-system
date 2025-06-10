@@ -72,4 +72,10 @@ export class SignInComponent {
         }),
     });
   }
+
+  showPassword = false;
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 }

@@ -19,7 +19,16 @@
       >
         <img [src]="plant.image" [alt]="plant.name" />
         <h3>{{ plant.name }}</h3>
-        <p>{{ plant.description }}</p>
+        <p>
+          {{
+            plant.description.length > 15
+              ? plant.description.substring(0, 15) + "..."
+              : plant.description
+          }}<a (click)="goToPlantDetails(plant)" class="more-details">
+            {{ "store.moreDetails" | translate }}
+          </a>
+        </p>
+
         <span class="price"
           >{{ plant.price }} {{ "orders.Jd" | translate }}</span
         >

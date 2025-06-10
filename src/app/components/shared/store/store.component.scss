@@ -60,7 +60,7 @@
 
 .plant-card img {
   max-width: 100%;
-  height: auto;
+  height: 250px;
   border-radius: 12px;
   margin-bottom: 0.75rem;
 }
@@ -143,4 +143,15 @@
   width: 20px;
   height: 20px;
   margin-bottom: 0%;
+}
+
+.more-details {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.more-details:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
 }
