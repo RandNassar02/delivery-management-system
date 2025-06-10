@@ -55,36 +55,23 @@ form input:focus {
   outline: none;
 }
 
-.password {
+.input-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  width: 90%;
-  margin: 0 auto 12px auto;
 }
 
-.password input {
+.password-input {
   width: 100%;
+  padding-right: 40px;
 }
 
-.password input:focus {
-  border-color: var(--primary-color);
-  outline: none;
-}
-
-.toggle-password-icon {
+.toggle-icon {
   position: absolute;
-  right: 16px;
-  top: 30%;
-  font-size: 18px;
-  color: #888;
+  right: 60px;
+  top: 45%;
+  transform: translateY(-50%);
   cursor: pointer;
-  z-index: 2;
-  transition: color 0.2s ease;
-}
-
-.toggle-password-icon:hover {
-  color: var(--primary-color);
+  color: #666;
+  font-size: 20px;
 }
 
 small {
